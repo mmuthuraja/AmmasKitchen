@@ -1,0 +1,191 @@
+/* Empty. Add your own CSS if you like */
+.footerBg {
+  background-color: #8BC34A;
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+  color: Black;
+}
+.icon-circle, .icon-circle-large, .icon-circle-small{
+  position: relative;
+  display: inline-block;
+  margin: -1px;
+  padding: -26px;
+  
+  
+  width: 45px; /* 60*/
+	height: 45px; 
+  font-size:40px; 
+  
+   -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+	border-radius: 50%;
+  
+	
+  
+  border: 1px solid #ebebeb;
+ 
+  /*background: rgb(0, 161, 225); /*#ececec;ebebeb*/
+  background: rgb(255, 0, 0); /*#ececec;ebebeb*/
+  color: #fff;
+  
+  text-align:center;
+  vertical-align: middle;
+}
+
+.icon-circle-large {
+  width: 100px;
+  height: 100px;
+  font-size: 64px; /* 64, originally 60 */
+  padding: 16px;
+  
+  
+}
+.icon-circle-small {
+  width: 28px;
+  height: 28px;
+  font-size: 15px;
+}
+
+
+/*.icon-circle i, .icon-circle-small i, .icon-circle-large i { vertical-align: middle; }*/
+
+.icon-circle-outline {
+   border: 1px solid rgb(0, 161, 225);
+   background: transparent;
+  color: rgb(0, 161, 225);
+   /*color: #8a6de9;*/
+}
+
+.icon-circle-outline i {  }
+/*icon-circle-bg and icon-circle and circle-bg*/
+
+
+
+
+/*http://davidwalsh.name/css-circles*/
+
+
+
+.item-icon-circle {
+   -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px; 
+  /* width and height can be anything, as long as they're equal */
+  
+  text-align:center;
+  color:white;
+  /* font size here wont work */
+
+}
+
+.item-icon-circle i {
+  /*text-align:center;
+  color:white;*/
+   /*margin: 0px auto;
+  padding: 0px;
+  display:block;*/
+  font-size:60px;
+}
+
+
+
+/*
+    letter-spacing: 1px;
+  overflow: hidden;
+  
+  
+    perspective-origin: 40px 40px;
+    transform-origin: 40px 40px;
+    background: rgb(0, 161, 225) none repeat scroll 0% 0% / auto padding-box border-box;
+*/
+
+.bg-circle-alt {
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+	border-radius: 50%;
+	width: 100px;
+	height: 100px; 
+}
+.side-menu{
+ background: #333;
+}
+.menu-item{
+ background: #3f4041 !important;
+}
+
+.menu-item item{
+    background-color:transparent;
+    border:none;
+    border-top: 1px solid;
+    border-bottom: 2px solid;
+    border-color: #666;
+    color:white;
+    
+}
+.menuionitem{
+    background-color:transparent;
+    border:none;
+    border-top: 1px solid;
+    border-bottom: 2px solid;
+    border-color: #666;
+    color:white;
+    
+}
+.menuionitem:hover{
+    background-color:transparent;
+    border:none;
+    border-top: 1px solid;
+    border-bottom: 2px solid;
+    border-color: #666;
+    color:white;
+    
+}
+.menu-item .item:last-child{
+    border-bottom: 1px solod #666;
+}
+.menu-item .item-complex .item-content, .dark .item-radio .item-content{
+    background-color: transparent;
+}
+
+.menu-item h2, 
+.menu-item h3,
+.menu-item p,
+.menu-item a{
+    color:white;
+}
+.item.thumb-centre img{
+  position: center !important;
+  top: 10px !important;
+  left: 20px !important;
+  max-width: 80px !important;
+  max-height: 80px !important;
+}
+.price{
+    background-color: white;
+    border-radius: 10px;
+    color:dimgrey;
+    font-weight: bold;
+    font-size: larger;
+}
+
+/*
+.item.item-thumbnail-left{
+  margin-left: 20px !important;
+  
+}
+*/
+
+.scroll{
+    height: 100%;
+}
+
+.mapview{
+    height: 40%;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+}

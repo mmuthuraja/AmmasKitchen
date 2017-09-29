@@ -1,0 +1,33 @@
+<ion-view view-title="Login" style="background-image:url('../img/bg3.png')">
+  <ion-content>
+      <div class="list">
+        <center>
+          <div style="height:100%;margin-top:70px;margin-bottom:30px;">
+            <img src="img/logo-trans.png" style="width:90%;"/>
+          </div>
+        </center>
+      </div>
+        <div class="card" style="background-color:slategray; border-radius: 10px;">
+          <label class="item item-input">
+            <input type="text" placeholder="Email Id" ng-model="loginData.emailId">
+          </label>
+          <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="loginData.password">
+          </label>
+          <label class="item" >
+            <button class="button button-block button-positive" ng-click="signIn()">Log in</button>
+            <table style="width:100%">
+              <tr>
+                <td style="vertical-align:middle;">
+                  <img src="img/forgotpassword.png" style="width:32px;height:32px;" /><a href="">Forgot password?</a>
+                </td>
+                <td style="text-align:right;vertical-align:middle;">
+                  <img src="img/newuser.png" style="width:30px;height:30px;" /> <a href="">Sign Up</a>
+                </td>
+              </tr>
+            </table>
+            </center>
+          </label>
+        </div>
+  </ion-content>
+</ion-view>

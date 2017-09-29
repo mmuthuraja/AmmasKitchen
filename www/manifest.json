@@ -1,0 +1,12 @@
+
+{
+  "name": "AmmasKitchen",
+  "short_name": "AmmasKitchen",
+  "start_url": "index.html",
+  "display": "standalone",
+  "icons": [{
+    "src": "logo_icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }]
+}

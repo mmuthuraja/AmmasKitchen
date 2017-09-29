@@ -1,0 +1,47 @@
+api key: AIzaSyByPdB5w2-jrowFAJl_ujdLvX8W66v1_ms
+
+ionic start ExampleProject blank
+clear
+ce exampleproject
+open index.html 
+<script src="http://maps.googleapis.com/maps/api/js?key=***************************&sensor=true"></script>
+open style.css file
+
+.scroll{height:100%;}
+#map{
+height:100%;
+width:100%;
+}
+
+add the following for map in index.html
+
+<div id=:map" data-tap-disabled="true"></div>
+
+open app.js
+
+example.controller("MapController", function($scope){
+
+	google.maps.event.addDomListner(div, "load", function(){
+		var myLatLng = new google.maps.LatLng(3.3000, -120.4833);
+		var mapOptions = {
+			center: myLatLng,
+			zoom: 16,			
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+			};
+		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+		navigator.geolocation.getCurrentPosition(function(pos) {
+			map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.langtitude));
+		});
+
+		$scope.map = map;
+
+	});
+
+});
+
+
+cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-geolocation.git
+
+
+https://www.youtube.com/watch?v=LkNKoSO9X60

@@ -1,0 +1,13 @@
+Simple Code to use Firebase on app:
+https://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-angularjs-and-firebase--cms-22391
+https://codepen.io/MoeBDC/pen/ByoZxm
+*****************
+https://www.firebase.com/docs/web/api/
+**************
+
+SETUP: https://www.youtube.com/watch?v=k1D0_wFlXgo
+AUTH: https://www.youtube.com/watch?v=-OKrloDzGpU
+Full Tutorials: https://www.youtube.com/watch?v=LOeioOKUKI8&list=PLl-K7zZEsYLmnJ_FpMOZgyg6XcIGBu2OX
+AngularJS: https://www.youtube.com/watch?v=LdDwbIEpT4s&list=PLl-K7zZEsYLmnJ_FpMOZgyg6XcIGBu2OX&index=16
+
+

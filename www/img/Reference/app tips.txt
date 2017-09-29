@@ -1,0 +1,11 @@
+Sending WhatsApp message thru mobile app
+	https://faq.whatsapp.com/en/android/28000012
+	https://forum.ionicframework.com/t/send-whatsapp-message-to-specific-contact/34463
+	https://github.com/ranjitpandit/whatsapp-phonegap-plugin
+	https://n8henrie.com/2014/02/how-to-get-the-abid-for-whatsapp-url-schemes/
+	https://www.macstories.net/tutorials/use-whatsapps-url-scheme-with-drafts-launch-center-pro-or-a-bookmarklet/
+	
+
+Downgrade
+	npm install -g cordova@6.5.0
+	npm install -g ionic@
