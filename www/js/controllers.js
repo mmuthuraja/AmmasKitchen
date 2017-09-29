@@ -52,9 +52,11 @@ angular.module('starter.controllers',[])
     { title: 'Rap', id: 5 },
     { title: 'Cowbell', id: 6 }
   ];
+  //test
 })
+
 .controller('todaysmenuCtrl',function($scope){
-    
+    //test
 })
 .controller('locationCtrl', function($scope){
     $scope.Locations = [];
@@ -78,8 +80,9 @@ angular.module('starter.controllers',[])
       weekday[6] = "Saturday";
       return (weekday[d.getDay()]==dayName);
   };
-  $scope.setMapLocation = function(lat, lng) {
   //google.maps.event.addDomListener(window, 'load', function() {
+  $scope.setMapLocation = function(lat, lng) {
+  
         var myLatlng = new google.maps.LatLng(lat, lng);
 
         var mapOptions = {
@@ -112,20 +115,20 @@ angular.module('starter.controllers',[])
 .controller('homeCtrl', function($scope) {
   //$scope.CartQuantity = cartService.getCartQuantity();
 })
-.controller('loginCtrl',['$scope', '$firebaseAuth' ,function($scope, $firebaseAuth){
-    $scope.loginData = {};
+.controller('loginCtrl',['$scope', function($scope){
+    $scope.loggedInUser = {};
     $scope.signIn = function(){
-      debugger;
         var emailId = $scope.loginData.emailId;
         var password = $scope.loginData.password;
-        var auth = $firebaseAuth();
-          auth.$signInWithEmailAndPassword(emailId, password)
-                .then(function(){
-                  console.log("User login successful");
-                    })
-                .catch(function(error){
-                    console.log(error);
-                });
+        firebase.auth().signInWithEmailAndPassword(emailId, password)
+        .then( function(data){
+          console.log("User login successful");
+          console.log(data);
+        })
+        .catch(function(error){
+          console.log("Error while User login...");
+          console.log(error);
+        });
     };
 }])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
