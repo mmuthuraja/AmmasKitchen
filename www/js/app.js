@@ -41,6 +41,15 @@ angular.module('starter', ['ionic',  'starter.controllers'])
       }
     }
   })
+.state('app.aboutus', {
+    url: '/aboutus',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/aboutus.html',
+        service:'cartService'
+      }
+    }
+  })
 
   .state('app.locations', {
       url: '/locations',

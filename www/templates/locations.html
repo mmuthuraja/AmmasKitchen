@@ -8,12 +8,13 @@
     </div>
     <div id="map"  data-tap-disabled="true"  class="mapview"></div>
     <ion-scroll direction="y" >
-    <div class = "item item-body item-text-wrap" style="background-color:#f3fce5">
-      <img src="img/call.png" style="width:40px;height:30px;">
-      <a href="tel:{{selectedLocation.Contact}}">{{selectedLocation.Contact}}</a>
+    <div class = "item item-body item-text-wrap" style="background-color:transparent">
+       Contact us: <img src="img/call.png" style="width:25px;height:19px;">
+      <a href="tel:{{selectedLocation.Contact}}">{{selectedLocation.Contact}}</a> 
       <table style="width:100%;font-size:12px;">
-          <tr><td>&nbsp;</td><td></td></tr>
-          <tr ng-repeat="hour in selectedLocation.Hours" style="border-bottom:1px solid lightblue;">
+          <tr><td>&nbsp;</td><td>&nbsp;<td><td>&nbsp;</td></tr>
+          <tr ng-repeat="hour in selectedLocation.Hours" class="{{ (IsItToday(hour.Day))?'today':'otherday' }}">
+            <td><i ng-show="IsItToday(hour.Day)" class="rightarrow"></i> </td>
             <td>{{hour.Day}}</td>
             <td>{{hour.Hour}}{{hour.Hours}}</td>
           </tr>
