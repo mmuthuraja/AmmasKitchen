@@ -92,7 +92,7 @@ angular.module('starter', ['ionic',  'starter.controllers'])
         }
       }
   })
-  
+   
    .state('app.login', {
     url: '/login',
       views:{

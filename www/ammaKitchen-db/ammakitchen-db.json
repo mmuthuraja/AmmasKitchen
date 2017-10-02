@@ -1,0 +1,341 @@
+{
+  "Category" : [ {
+    "Id" : "C1",
+    "Name" : "Dessert",
+    "SubCategory" : [ {
+      "Desc" : "All Hot and Soft Beverages are available",
+      "Id" : "SC1",
+      "Name" : "Beverages"
+    }, {
+      "Desc" : "Ask about our house special dessert of the day!",
+      "Id" : "SC2",
+      "Name" : "Dessert"
+    } ],
+    "SubCategoryCount" : 2
+  }, {
+    "Id" : "C2",
+    "Name" : "Main Course",
+    "SubCategory" : [ {
+      "Desc" : "Kid's Menu",
+      "Id" : "SC1",
+      "Name" : "Kid's Menu"
+    }, {
+      "Desc" : "Side Order",
+      "Id" : "SC2",
+      "Name" : "Side Order"
+    }, {
+      "Desc" : "All entrees are served with basmati rice.",
+      "Id" : "SC3",
+      "Name" : "Kurma"
+    }, {
+      "Desc" : "Chettinad cuisine may be the spiciest and most aromatic cuisine in south India. Features 22 varieties of spices and herbs.",
+      "Id" : "SC4",
+      "Name" : "Chettinadu"
+    }, {
+      "Desc" : "A spinach-based dish cooked with mustard, fenugreek and cream.",
+      "Id" : "SC5",
+      "Name" : "Saag"
+    }, {
+      "Desc" : "Featuring a delicious tangy cream sauce.",
+      "Id" : "SC6",
+      "Name" : "Butter Masala"
+    }, {
+      "Desc" : "Roasted and served in a flavorful creamy sauce.",
+      "Id" : "SC7",
+      "Name" : "Tikka Masala"
+    }, {
+      "Desc" : "Vindaloo is a popular dish in ocean side of Goa. Cooked with tangy spicy curry",
+      "Id" : "SC8",
+      "Name" : "Vindaloo Curry"
+    }, {
+      "Desc" : "Nilgiri Curry",
+      "Id" : "SC9",
+      "Name" : "Nilgiri Curry"
+    }, {
+      "Desc" : "There is a rising popularity of Kerala cuisine. It is aromatic, and gorgeously golden brown.",
+      "Id" : "SC10",
+      "Name" : "Thalassery"
+    }, {
+      "Desc" : "The meat is cooked with sorrel leaves known as gongura to get a tangy taste. It�s commonly made in the Andra region.",
+      "Id" : "SC11",
+      "Name" : "Gongura"
+    }, {
+      "Desc" : "The most popular cuisine in Tamilnadu. Features 18 varieties of ground spices.",
+      "Id" : "SC12",
+      "Name" : "Kaaraikudi"
+    }, {
+      "Desc" : "All entrees are served with basmati rice.",
+      "Id" : "SC13",
+      "Name" : "Vegetarian Homestyle Entrees"
+    }, {
+      "Desc" : "Soft Breads",
+      "Id" : "SC14",
+      "Name" : "Soft Breads"
+    } ],
+    "SubCategoryCount" : 14
+  }, {
+    "Id" : "C3",
+    "Name" : "South Indian Specials",
+    "SubCategory" : [ {
+      "Desc" : "WEEKDAY LUNCH SPECIALS - (Available Monday - Friday, 11am - 3pm) 10 Item Thali - A feast for one! Nutritious combination of flavors and textures featuring 10 different items: chapathi, basmati rice, sambar, rasam, sauteed vegetable of the day, mor kuzhambu, pickle, pappad, chef�s vegetable curry or meat curry, and dessert of the day. Feel free to ask for extra rice. Sorry - no substitutions.",
+      "Id" : "SC1",
+      "Name" : "Amma Kitchen Specials (WEEKDAY)"
+    }, {
+      "Desc" : "WEEKEND LUNCH SPECIAL - (Available Saturday & Sunday, 11am - 3pm) Grand Thali (Same as the 10 Item Thali above but with 5 additional items)",
+      "Id" : "SC2",
+      "Name" : "Amma Kitchen Specials (WEEKEND)"
+    }, {
+      "Desc" : "Savory cakes made by steaming a batter consisting of fermented black lentil and rice. A traditional South Indian breakfast. Three cakes per order.",
+      "Id" : "SC3",
+      "Name" : "Idli"
+    }, {
+      "Desc" : "Two pieces. Made with fermented rice batter. (Please allow 25 - 30 minutes for preparation) Does not include stew.",
+      "Id" : "SC4",
+      "Name" : "Aappam"
+    }, {
+      "Desc" : "Made with fermented rice batter and beans. A thin rice crepe available in 18 different varieties.",
+      "Id" : "SC5",
+      "Name" : "Dosa"
+    }, {
+      "Desc" : "All Day / Everyday Specials",
+      "Id" : "SC6",
+      "Name" : "All Day Specials"
+    }, {
+      "Desc" : "Traditionally prepared, aromatic, blended with marinated spices and gently cooked with basmathi rice served with raitha.",
+      "Id" : "SC7",
+      "Name" : "Biryani"
+    }, {
+      "Desc" : "Served only with Idli, Dosa, Uthappam, Chapathi, Porotta and Appam",
+      "Id" : "SC8",
+      "Name" : "Chef's Special Stews"
+    }, {
+      "Desc" : "A delicacy popular in south Indian state of Tamilnadu. Multi-layered fluffy bread, egg, meat, and salna (a spicy sauce).",
+      "Id" : "SC9",
+      "Name" : "Kothu Parotta"
+    } ],
+    "SubCategoryCount" : 9
+  }, {
+    "Id" : "C4",
+    "Name" : "Starters",
+    "SubCategory" : [ {
+      "Desc" : "In the South Indian tradition, our soups are prepared from a base of tamarind, tomato, cumin, peppercorns, turmeric, and curry leaves. These lightly spiced soups are popular not only for their delicious flavor, but also for their health benefits.",
+      "Id" : "SC1",
+      "Name" : "Soups"
+    }, {
+      "Desc" : "These south Indian street snacks are also called tea shop bench snacks or beach snacks. They come with homemade chutneys on the side, and are served with banana leaves.",
+      "Id" : "SC2",
+      "Name" : "Veg Appetizer"
+    }, {
+      "Desc" : "Other Veg. Appetizers",
+      "Id" : "SC3",
+      "Name" : "Other Veg Appetizers"
+    }, {
+      "Desc" : "Non-Veg Appetizers",
+      "Id" : "SC4",
+      "Name" : "Non-Veg Appetizers"
+    } ],
+    "SubCategoryCount" : 4
+  } ],
+  "Items" : [ {
+    "CategoryId" : 2,
+    "Desc" : "",
+    "Id" : "DUMMY",
+    "Name" : "Idly",
+    "Price" : 4,
+    "Text" : "2 Idlys will be served with Coconut Chutney and Sambar"
+  }, {
+    "CategoryId" : "C1",
+    "Desc" : "",
+    "Id" : "AK0002",
+    "Name" : "Amma's Homemade Vanilla Ice Cream",
+    "Price" : 4,
+    "SubCategoryId" : "SC2"
+  }, {
+    "CategoryId" : "C1",
+    "Desc" : "",
+    "Id" : "AK0003",
+    "Name" : "Limca",
+    "Price" : 2,
+    "SubCategoryId" : "SC2"
+  }, {
+    "CategoryId" : "C2",
+    "Desc" : "Thin whole wheat homemade soft bread.",
+    "Id" : "AK0004",
+    "Name" : "Whole Wheat Chapathi",
+    "Price" : 2.95,
+    "SubCategoryId" : "SC14"
+  }, {
+    "CategoryId" : "C3",
+    "Desc" : "",
+    "Id" : "AK0005",
+    "Name" : "Vegetarian",
+    "Price" : 8.95,
+    "SubCategoryId" : "SC1"
+  }, {
+    "CategoryId" : "C4",
+    "Desc" : "Tomato, Chili, Pepper, and cumin in a tamarind juice base.",
+    "Id" : "AK0006",
+    "Name" : "Rasam",
+    "Price" : 3,
+    "SubCategoryId" : "SC1"
+  } ],
+  "Locations" : [ {
+    "Address" : "1700 Oak Tree Road, Edison, NJ 08820",
+    "Contact" : "8562675797",
+    "Hours" : [ {
+      "Day" : "Sunday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Monday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Tuesday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Wednesday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Thursday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Friday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Saturday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    } ],
+    "Name" : "Edison, NJ",
+    "latitude" : 40.5735114,
+    "longitude" : -74.345801
+  }, {
+    "Address" : "Lincoln Highway 27, Somerset, NJ",
+    "Contact" : "8562675797",
+    "Hours" : [ {
+      "Day" : "Sunday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Monday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Tuesday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Wednesday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Thursday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Friday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Saturday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    } ],
+    "Name" : "Somerset, NJ",
+    "latitude" : 40.4581135,
+    "longitude" : -74.5116484
+  }, {
+    "Address" : " 101 NJ-73 #147, Marlton, NJ 08053",
+    "Contact" : "8562675797",
+    "Hours" : [ {
+      "Day" : "Sunday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Monday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Tuesday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Wednesday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Thursday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Friday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    }, {
+      "Day" : "Saturday",
+      "Hour" : "10:00 AM to 08:30 PM"
+    } ],
+    "Name" : "Malton, NJ",
+    "latitude" : 39.8905883,
+    "longitude" : -74.9273394
+  } ],
+  "Orders" : {
+    "NEW" : [ {
+      "CustId" : "testuser",
+      "Date" : "2017-09-13",
+      "DiscountAmount" : 0,
+      "DiscountPercentage" : 0,
+      "Id" : "AKO201709130001",
+      "Items" : [ {
+        "Cd" : "AK0001",
+        "Qty" : 2,
+        "Rt" : 4
+      }, {
+        "Cd" : "AK0005",
+        "Qty" : 1,
+        "Rt" : 8.95
+      } ],
+      "Location" : "Edison, NJ",
+      "Mode" : "Pickup",
+      "Notes" : "Please make everything medium spice!",
+      "PaymentMode" : "In person",
+      "Tax" : 1.19,
+      "Time" : "04:15 PM",
+      "Total" : 18.14
+    } ]
+  },
+  "TodayMenuItem" : [ {
+    "Id" : "AK0001"
+  }, {
+    "Id" : "AK0002"
+  }, {
+    "Id" : "AK0014"
+  }, {
+    "Id" : "AK0009"
+  }, {
+    "Id" : "AK0010"
+  } ],
+  "Users" : {
+    "muthuajaryahoocom": {
+      "Address" : "Not Available",
+      "Admin" : true,
+      "CallName" : "Muthu",
+      "Email" : "muthuajar@yahoo.com",
+      "Password" : "password123",
+      "Phone" : "5512007894",
+      "SMS" : true,
+      "ShowNotification" : true,
+      "UserName" : "Muthuraja",
+      "WhatsApp" : true
+    }, 
+    "ranjinidevigmailcom": {
+      "Address" : "Not Available",
+      "Admin" : false,
+      "CallName" : "Abi",
+      "Email" : "ranjinidevi@gmail.com",
+      "Password" : "test123",
+      "Phone" : "5512007617",
+      "SMS" : true,
+      "ShowNotification" : true,
+      "UserName" : "Ranjinidevi",
+      "WhatsApp" : true
+    }, 
+    "testtestcom": {
+      "Address" : "Not Available",
+      "Admin" : false,
+      "CallName" : "Test",
+      "Email" : "test@test.com",
+      "Password" : "test",
+      "Phone" : "1231231233",
+      "SMS" : true,
+      "ShowNotification" : true,
+      "UserName" : "testuser",
+      "WhatsApp" : true
+    } 
+  }
+}
