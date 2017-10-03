@@ -35,7 +35,7 @@ angular.module('starter.controllers',[])
 })
 
 .controller('todaysmenuCtrl',function($scope){
-    //test
+    $scope.
 })
 .controller('locationCtrl', function($scope){
     $scope.Locations = [];
@@ -91,12 +91,14 @@ angular.module('starter.controllers',[])
   };
   $scope.setSelectedLocation($scope.selectedLocation);
 })
+
 .controller('homeCtrl', function($scope, userInfo) {
   $scope.welcomeName = userInfo.getUserData().callName;
 })
+
 .controller('loginCtrl',['$scope', '$location','userInfo','$state', function($scope, $location, userInfo, $state){
     $scope.loginData = {
-        emailId: "muthuajar@yahoo.com",
+        emailId: "muthuajar@yahoo.com", 
         password: "testuser"
       };
     $scope.signIn = function(){
@@ -131,6 +133,7 @@ angular.module('starter.controllers',[])
       });
     };
 }])
+
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });
 
