@@ -4,7 +4,7 @@ angular.module('starter')
     	"ItemsCount":0,
     	"Items":[{"Id":"Dummy", "Quantity":0, "Discount":0, "UnitPrice":0, "Total":0}]
     };
-    Array.prototype.removeCartItem = function(name, value){
+    Array.prototype.removeCartItemTemp = function(name, value){
  		var array = $.map(this, function(v,i){
       			return v[name] === value ? null : v;
    			});

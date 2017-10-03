@@ -136,49 +136,56 @@
     } ],
     "SubCategoryCount" : 4
   } ],
-  "Items" : [ {
-    "CategoryId" : 2,
-    "Desc" : "",
-    "Id" : "DUMMY",
-    "Name" : "Idly",
-    "Price" : 4,
-    "Text" : "2 Idlys will be served with Coconut Chutney and Sambar"
-  }, {
-    "CategoryId" : "C1",
-    "Desc" : "",
-    "Id" : "AK0002",
-    "Name" : "Amma's Homemade Vanilla Ice Cream",
-    "Price" : 4,
-    "SubCategoryId" : "SC2"
-  }, {
-    "CategoryId" : "C1",
-    "Desc" : "",
-    "Id" : "AK0003",
-    "Name" : "Limca",
-    "Price" : 2,
-    "SubCategoryId" : "SC2"
-  }, {
-    "CategoryId" : "C2",
-    "Desc" : "Thin whole wheat homemade soft bread.",
-    "Id" : "AK0004",
-    "Name" : "Whole Wheat Chapathi",
-    "Price" : 2.95,
-    "SubCategoryId" : "SC14"
-  }, {
-    "CategoryId" : "C3",
-    "Desc" : "",
-    "Id" : "AK0005",
-    "Name" : "Vegetarian",
-    "Price" : 8.95,
-    "SubCategoryId" : "SC1"
-  }, {
-    "CategoryId" : "C4",
-    "Desc" : "Tomato, Chili, Pepper, and cumin in a tamarind juice base.",
-    "Id" : "AK0006",
-    "Name" : "Rasam",
-    "Price" : 3,
-    "SubCategoryId" : "SC1"
-  } ],
+  "Items" : {
+    "DUMMY": {
+        "CategoryId" : 2,
+        "Desc" : "",
+        "Id" : "DUMMY",
+        "Name" : "Idly",
+        "Price" : 4,
+        "Text" : "2 Idlys will be served with Coconut Chutney and Sambar"
+      },
+    "AK0002": {
+        "CategoryId" : "C1",
+        "Desc" : "",
+        "Id" : "AK0002",
+        "Name" : "Amma's Homemade Vanilla Ice Cream",
+        "Price" : 4,
+        "SubCategoryId" : "SC2"
+      }, 
+    "AK0003" :{
+        "CategoryId" : "C1",
+        "Desc" : "",
+        "Id" : "AK0003",
+        "Name" : "Limca",
+        "Price" : 2,
+        "SubCategoryId" : "SC2"
+      }, 
+    "AK0004": {
+        "CategoryId" : "C2",
+        "Desc" : "Thin whole wheat homemade soft bread.",
+        "Id" : "AK0004",
+        "Name" : "Whole Wheat Chapathi",
+        "Price" : 2.95,
+        "SubCategoryId" : "SC14"
+      }, 
+    "AK0005": {
+        "CategoryId" : "C3",
+        "Desc" : "",
+        "Id" : "AK0005",
+        "Name" : "Vegetarian",
+        "Price" : 8.95,
+        "SubCategoryId" : "SC1"
+    }, 
+    "AK0006": {
+        "CategoryId" : "C4",
+        "Desc" : "Tomato, Chili, Pepper, and cumin in a tamarind juice base.",
+        "Id" : "AK0006",
+        "Name" : "Rasam",
+        "Price" : 3,
+        "SubCategoryId" : "SC1"
+    } 
+  },
   "Locations" : [ {
     "Address" : "1700 Oak Tree Road, Edison, NJ 08820",
     "Contact" : "8562675797",
