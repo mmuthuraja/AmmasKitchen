@@ -1,6 +1,6 @@
 angular.module('starter.controllers',[])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$state, userInfo) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$state, userInfo,ionicToast) {
     $scope.hasUserLoggedIn = function(){
       return userInfo.hasUserLoggedIn();
     };
@@ -8,6 +8,7 @@ angular.module('starter.controllers',[])
       return ($state.current.name == "app.login");
     };
     $scope.signOut = function(){
+      firebase.auth().signOut();
       userInfo.clearUserData();
       $state.go("app.home", {
             url: '/home',
@@ -19,7 +20,8 @@ angular.module('starter.controllers',[])
               }
             }
           });
-      alert("Logout successful!");
+      ionicToast.show('You are logged out now !', 'bottom', false, 4000);
+      //alert("Logout successful!");
     };
 })
 
@@ -97,21 +99,14 @@ angular.module('starter.controllers',[])
   $scope.welcomeName = userInfo.getUserData().callName;
 })
 
-.controller('loginCtrl',['$scope', '$location','userInfo','$state', function($scope, $location, userInfo, $state){
+.controller('loginCtrl',['$scope', '$location','userInfo','$state','ionicToast', function($scope, $location, userInfo, $state,ionicToast){
     $scope.loginData = {
         emailId: "muthuajar@yahoo.com", 
         password: "testuser"
       };
 
-    $scope.errorMessage="test";
-    $scope.setError = function(error){
-       //$ionicLoading.show({ template: error.message, noBackdrop: true, duration: 2000 });
-       alert(error.message);
-          console.log("Error while User login...");
-          console.log(error);
-    };
+    $scope.setError = 
     $scope.signIn = function(){
-        $scope.errorMessage="";
         var emailId = $scope.loginData.emailId;
         var password = $scope.loginData.password;
         firebase.auth().signInWithEmailAndPassword(emailId, password)
@@ -128,9 +123,17 @@ angular.module('starter.controllers',[])
                 }
               }
             });
-          alert("Logged in successful!");
+          ionicToast.show('You are logged in now !', 'bottom', false, 4000);
+          //alert("Logged in successful!");
         })
-        .catch($scope.setError);
+        .catch(function(error){
+          //userInfo.setUserData(data);
+          //$ionicLoading.show({ template: error.message, noBackdrop: true, duration: 2000 });
+          //alert(error.message);
+          ionicToast.show("", 'bottom', false, 4000);
+          //console.log("Error while User login...");
+          //console.log(error);
+        });
     };
     $scope.singOut = function(){
       firebase.auth().singOut().then(function(){
