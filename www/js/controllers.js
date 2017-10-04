@@ -19,6 +19,7 @@ angular.module('starter.controllers',[])
               }
             }
           });
+      alert("Logout successful!");
     };
 })
 
@@ -35,7 +36,7 @@ angular.module('starter.controllers',[])
 })
 
 .controller('todaysmenuCtrl',function($scope){
-    $scope.
+    //$scope.
 })
 .controller('locationCtrl', function($scope){
     $scope.Locations = [];
@@ -101,7 +102,16 @@ angular.module('starter.controllers',[])
         emailId: "muthuajar@yahoo.com", 
         password: "testuser"
       };
+
+    $scope.errorMessage="test";
+    $scope.setError = function(error){
+       //$ionicLoading.show({ template: error.message, noBackdrop: true, duration: 2000 });
+       alert(error.message);
+          console.log("Error while User login...");
+          console.log(error);
+    };
     $scope.signIn = function(){
+        $scope.errorMessage="";
         var emailId = $scope.loginData.emailId;
         var password = $scope.loginData.password;
         firebase.auth().signInWithEmailAndPassword(emailId, password)
@@ -118,11 +128,9 @@ angular.module('starter.controllers',[])
                 }
               }
             });
+          alert("Logged in successful!");
         })
-        .catch(function(error){
-          console.log("Error while User login...");
-          console.log(error);
-        });
+        .catch($scope.setError);
     };
     $scope.singOut = function(){
       firebase.auth().singOut().then(function(){
