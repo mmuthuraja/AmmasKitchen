@@ -1,0 +1,347 @@
+/*<label class="item item-input" for="sms"> Text / SMS Alert ? <p style="width:100%;align:right;">
+            <div class="roundCheckBox"><input type="checkbox" id="sms" ng-model="userInfo.sms" /><label for="sms"></label> </div></p>
+          </label>*/
+/********************ROUND CHECKBOX*******************/
+.roundCheckBox {
+  position: relative;
+}
+
+.roundCheckBox label {
+  background-color: lightgray;
+  border: 1px solid darkgray;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 25px;
+}
+
+.roundCheckBox label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 8px;
+  transform: rotate(-45deg);
+  width: 12px;
+}
+
+.roundCheckBox input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.roundCheckBox input[type="checkbox"]:checked + label {
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+.roundCheckBox input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+/********************SMALL BAR CHECKBOX*******************/
+.smallbarCheckBox {
+  position: relative;
+  width: 40px;
+  height: 10px;
+  background: #555;
+  margin: 20px 80px;
+  position: relative;
+  border-radius: 3px;
+}
+
+.smallbarCheckBox input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.smallbarCheckBox label {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  background: #ccc;
+}
+
+.smallbarCheckBox input[type=checkbox]:checked + label {
+  left: 27px;
+  background-color: #26ca28;
+}
+
+/*******************BIG BAR CHECKBOX**************/
+
+.bigbarCheckBox {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  background: #333;
+  margin: 20px 60px;
+  border-radius: 50px;
+  position: relative;
+}
+.bigbarCheckBox:before {
+  content: '';
+  position: absolute;
+  top: 19px;
+  left: 14px;
+  height: 2px;
+  width: 90px;
+  background: #111;
+}
+.bigbarCheckBox label {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 9px;
+  z-index: 1;
+  left: 12px;
+  background: #ddd;
+}
+.bigbarCheckBox input[type=checkbox]:checked + label {
+  left: 84px;
+  background: #26ca28;
+}
+
+/*******************ON OFF BAR CHECKBOX**************/
+
+.onoffbarCheckBox {
+  position: relative;
+  width: 120px;
+  height: 40px;
+  background: #333;
+  margin: 20px 60px;
+
+  border-radius: 50px;
+  position: relative;
+}
+.onoffbarCheckBox:before {
+  content: 'On';
+  position: absolute;
+  top: 12px;
+  left: 13px;
+  height: 2px;
+  color: #26ca28;
+  font-size: 16px;
+}
+.onoffbarCheckBox:after {
+  content: 'Off';
+  position: absolute;
+  top: 12px;
+  left: 84px;
+  height: 2px;
+  color: #111;
+  font-size: 16px;
+}
+.onoffbarCheckBox label {
+  display: block;
+  width: 52px;
+  height: 22px;
+  border-radius: 50px;
+
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 9px;
+  z-index: 1;
+  left: 12px;
+  background: #ddd;
+}
+.onoffbarCheckbox input[type=checkbox]:checked + label {
+  left: 60px;
+  background: #26ca28;
+}
+
+
+/*******************BUTTON CHECKBOX**************/
+
+.buttonCheckbox{
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background: #ddd;
+  margin: 10px 20px;
+
+  border-radius: 100%;
+  position: relative;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.buttonCheckbox label {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 30px;
+
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  z-index: 1;
+
+  background: #bbc1cc;
+  box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+.buttonCheckbox input[type=checkbox]:checked + label {
+  background: #26ca28;
+}
+
+
+/*******************REGULAR CHECKBOX**************/
+.regularCheckBox{
+  width: 25px;
+  margin: 20px 100px;
+  position: relative;
+}
+
+.regularCheckBox label {
+  cursor: pointer;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+    left: 0;
+  background: #eee;
+  border:1px solid #ddd;
+}
+
+.regularCheckBox label:after {
+  opacity: 0.2;
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  background: transparent;
+  top: 6px;
+  left: 7px;
+  border: 3px solid #333;
+  border-top: none;
+  border-right: none;
+
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.regularCheckBox label:hover::after {
+  opacity: 0.5;
+}
+
+.regularCheckBox input[type=checkbox]:checked + label:after {
+  opacity: 1;
+}
+/*******************FLAT ROUNDED CHECKBOX**************/
+
+.flatroundedCheckBox{
+  width: 20px;
+  height: 40px;
+  margin: 5px 5px;
+  position: relative;
+}
+
+.flatroundedCheckBox div {
+    width: 10%;
+    height:10%;
+    background: #d3d3d3;
+    border-radius: 50px;
+    position: relative;
+    top:-30px;
+}
+
+.flatroundedCheckBox label
+{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    z-index: 1;
+    left: 8px;
+    background: #FFF;
+}
+
+.flatroundedCheckBox input[type=checkbox]:checked ~ div
+{
+    background: #4fbe79;
+}
+
+.flatroundedCheckBox input[type=checkbox]:checked ~ label {
+    left: 85px;
+}
+
+
+.flatCheckBox{
+  width: 120px;
+  height: 50px;
+  margin: 20px 30px;
+  position: relative;
+}
+
+.flatCheckBox div
+{
+    width: 100%;
+    height:100%;
+    background: #2fca6c;
+    position: relative;
+    top:-30px;
+}
+.flatCheckBox label
+{
+    display: block;
+    width: 30px;
+    height: 30px;
+
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    z-index: 1;
+    left: 8px;
+    background: red;
+}
+.flatCheckBox label:before
+{
+    color: #ccc;
+    content:'|||';
+    font-size: 15px;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 7px;
+    top:3px;
+}
+.flatCheckBox input[type=checkbox]:checked ~ div
+{
+    background: green;
+}
+.flatCheckBox input[type=checkbox]:checked ~ label {
+    left: 75px;
+}
