@@ -104,8 +104,32 @@ angular.module('starter.controllers',[])
         emailId: "muthuajar@yahoo.com", 
         password: "testuser"
       };
+    $scope.userInfo = {
+      emailId: "",
+      password: "",
+      address: "",
+      callName: "",
+      phone: "",
+      sms: true,
+      showNotification: true,
+      whatsApp: true
+    };
+    $scope.showLogin=true;
+    $scope.showResetPassword=false;
+    $scope.showRegistration=false;
 
-    $scope.setError = 
+    $scope.showPanel = function(panelName){
+      $scope.showLogin=false;
+      $scope.showResetPassword=false;
+      $scope.showRegistration=false;
+      if(panelName=="login")
+        $scope.showLogin = true;
+      else if(panelName=="register")
+        $scope.showRegistration = true;
+      else if(panelName=="reset")
+        $scope.showResetPassword = true;
+    };
+
     $scope.signIn = function(){
         var emailId = $scope.loginData.emailId;
         var password = $scope.loginData.password;
@@ -134,6 +158,18 @@ angular.module('starter.controllers',[])
           //console.log("Error while User login...");
           //console.log(error);
         });
+    };
+    $scope.resetPassword = function(){
+      firebase.auth();
+      var emailAddress = "user@example.com";
+      auth.sendPasswordResetEmail(emailAddress).then(function() {
+        // Email sent.
+      }).catch(function(error) {
+        // An error happened.
+      });
+    };
+    $scope.registerUser = function(){
+
     };
     $scope.singOut = function(){
       firebase.auth().singOut().then(function(){

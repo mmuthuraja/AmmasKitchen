@@ -2,12 +2,14 @@
   <ion-content>
       <div class="list">
         <center>
-          <div style="height:100%;margin-top:70px;margin-bottom:30px;">
+          <div style="height:100%;margin-top:20px;margin-bottom:30px;">
             <img src="img/logo-trans.png" style="width:90%;"/>
           </div>
         </center>
       </div>
-        <div class="card" style="background-color:slategray; border-radius: 10px;">
+<!-- LOGIN PANEL -->
+
+        <div class="card" style="background-color:slategray; border-radius: 10px;" ng-show="showLogin">
           <label class="item item-input">
             <input type="text" placeholder="Email Id" ng-model="loginData.emailId" value="muthuajar@yahoo.com">
           </label>
@@ -15,20 +17,82 @@
             <input type="password" placeholder="Password" ng-model="loginData.password" value="testuser">
           </label>
           <label class="item">
-            <button class="button button-block button-positive" ng-click="signIn()">Log in</button>
-            <table style="width:100%">
+            <button class="button button-block button-positive" type="button" ng-click="signIn()">Log in</button>
+          </label>
+          <table style="width:100%">
               <tr>
                 <td style="vertical-align:middle;">
-                  <img src="img/forgotpassword.png" style="width:32px;height:32px;" /><a href="">Forgot password?</a>
+                  <button ng-click="showPanel('reset')" type="button"  style="width:100%;"><img src="img/forgotpassword.png" style="width:32px;height:32px;" /> Forgot password?</button>
                 </td>
                 <td style="text-align:right;vertical-align:middle;">
-                  <img src="img/newuser.png" style="width:30px;height:30px;" /> <a href="">Sign Up</a>
+                  <button ng-click="showPanel('register')" style="width:100%;" type="button" ><img src="img/newuser.png" style="width:30px;height:30px;" /> Sign Up</button>
                 </td>
               </tr>
              <!--  <tr><td colspan="2"><center>Err: {{errorMessage}}</center></td></tr> -->
             </table>
-            </center>
+        </div>
+
+<!-- RESET PASSWORD PANEL -->
+        
+         <div class="card" style="background-color:white; border-radius: 10px;" ng-show="showResetPassword">
+          <label class="item item-input">
+            <input type="text" placeholder="Email Id" ng-model="loginData.emailId" value="muthuajar@yahoo.com">
+          </label> <center>
+            <button ion-button round class="button button-block button-positive" type="button" style="width:80%" ng-click="resetPassword()">Reset Password</button>
+            <button class="button button-block button-positive" type="button"  style="width:80%" ng-click="showPanel('login');">Cancel</button>
+          </center>
+        </div>
+
+<!-- REGISTER NEW USER PANEL -->
+
+        <div class="card" style="background-color:white; border-radius: 10px;" ng-show="showRegistration">
+          <label class="item item-input">
+            <input type="text" placeholder="Name" ng-model="userInfo.callName" value="">
+          </label> 
+          <label class="item item-input">
+            <input type="text" placeholder="Email Id" ng-model="userInfo.emailId" value="">
+          </label> 
+          <label class="item item-input">
+            <input type="password" placeholder="Password" ng-model="userInfo.password" value="">
           </label>
+          <label class="item item-input">
+            <textarea placeholder="Your address.." ng-model="userInfo.address" > </textarea>
+          </label>
+          <label class="item item-input">
+            <input type="text" placeholder="Phone number" ng-model="userInfo.phone" value="">
+          </label> 
+          <center>
+            <table border="1" style="width:100%;margin-left:20px;">
+              <tr>
+                <td style="width:70%;text-align:left;" nowrap="true">Text / SMS Alert?</td>
+                <td style="width:30%;text-align:right;">
+                  <div class="smallbarCheckBox">
+                    <input type="checkbox" checked id="sms" ng-model="userInfo.sms" /><label for="sms"></label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="width:70%;text-align:left;" nowrap="true">Show Notification?</td>
+                <td style="width:30%;text-align:right;">
+                  <div class="smallbarCheckBox">
+                    <input type="checkbox" checked id="sms" ng-model="userInfo.showNotification" /><label for="sms"></label>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="width:70%;text-align:left;" nowrap="true">Send WhatsApp Msg?</td>
+                <td style="width:30%;text-align:right;">
+                  <div class="smallbarCheckBox">
+                    <input type="checkbox" checked id="sms" ng-model="userInfo.whatsApp" /><label for="sms"></label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </center>
+          <center>
+            <button ion-button round class="button button-block button-positive" type="button" style="width:80%" ng-click="registerUser()">Register Me</button>
+            <button class="button button-block button-positive" type="button"  style="width:80%" ng-click="showPanel('login');">Cancel</button>
+          </center>
         </div>
   </ion-content>
 </ion-view>
