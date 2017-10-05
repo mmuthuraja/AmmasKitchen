@@ -56,7 +56,7 @@ angular.module('starter', ['ionic', 'ionic-toast', 'starter.controllers'])
       views: {
         'menuContent': {
           templateUrl: 'templates/locations.html',
-          controller: 'locationCtrl',
+          controller: 'locationsCtrl',
           service:'cartService'
         }
       }

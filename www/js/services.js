@@ -68,7 +68,43 @@ angular.module('starter')
 		}
 	};
 })
-.service("userInfo", function(){
+.service("pageService",function($state){
+	/*
+		AppCtrl			templates/menu.html
+		aboutusCtrl		templates/aboutus.html
+		locationsCtrl	templates/locations.html
+		homeCtrl		templates/home.html
+		todaysmenuCtrl	templates/todaysmenu.html
+		loginCtrl		templates/login.html
+	*/
+	return {
+		goTo: function(pageName){
+			$state.go("app."+pageName, {
+            url: '/'+pageName,
+            views: {
+              'menuContent': {
+                templateUrl: 'templates/'+pageName+'.html',
+                controller: pageName+'Ctrl',
+                service:'cartService'
+              }
+            }
+          });
+		}
+	};
+})
+.service("stringHandler",function(){
+	return {
+		replaceSymbol: function(source, symbols, replaceWith){
+			var dummy = source;
+			if(source != "") 
+				if(symbols != "")
+					for(var index=0;index<symbols.length;index++)
+						dummy = dummy.replace(symbols.substring(index,index+1), replaceWith);
+			return dummy;
+		}
+	}
+})
+.service("currentUser", function(){
 	var emailKey = '';
 	var email = '';
 	var token = {};
