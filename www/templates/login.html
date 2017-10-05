@@ -7,6 +7,18 @@
           </div>
         </center>
       </div>
+
+<!-- ERROR PANEL -->
+          <!-- class="alert alert-success"
+          class="alert alert-info"
+          class="alert alert-warning"
+          class="alert alert-danger" -->
+          <center>
+            <div ng-show="hasAlert" class="alert alert-info" style="width:80%;">
+                {{alertMessage}}
+            </div>
+          </center>
+
 <!-- LOGIN PANEL -->
 
         <div class="card" style="background-color:slategray; border-radius: 10px;" ng-show="showLogin">
@@ -94,5 +106,6 @@
             <button class="button button-block button-positive" type="button"  style="width:80%" ng-click="showPanel('login');">Cancel</button>
           </center>
         </div>
+
   </ion-content>
 </ion-view>

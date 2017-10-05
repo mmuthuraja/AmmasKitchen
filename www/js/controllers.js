@@ -91,8 +91,9 @@ angular.module('starter.controllers',[])
   $scope.welcomeName = currentUser.getUserData().callName;
 })
 
-.controller('loginCtrl',['$scope', '$location','currentUser','$state','ionicToast','stringHandler',
- function($scope, $location, currentUser, $state,ionicToast,stringHandler){
+.controller('loginCtrl',['$scope', '$location','currentUser','$state','ionicToast','stringHandler','pageService',
+ function($scope, $location, currentUser, $state,ionicToast,stringHandler,pageService){
+    $scope.hasAlert = false;
     $scope.loginData = {
         emailId: "muthuajar@yahoo.com", 
         password: "testuser"
@@ -110,6 +111,12 @@ angular.module('starter.controllers',[])
     $scope.showLogin=true;
     $scope.showResetPassword=false;
     $scope.showRegistration=false;
+    $scope.alertMessage = "";
+
+    function setAlert(message){
+      $scope.hasAlert = true;
+      $scope.alertMessage = message;
+    };
 
     $scope.showPanel = function(panelName){
       $scope.showLogin=false;
@@ -118,28 +125,36 @@ angular.module('starter.controllers',[])
       if(panelName=="login")
         $scope.showLogin = true;
       else if(panelName=="register")
-        $scope.showRegistration = true;
+        {$scope.showRegistration = true;$scope.hasAlert=false;}
       else if(panelName=="reset")
-        $scope.showResetPassword = true;
+        {$scope.showResetPassword = true;$scope.hasAlert=false;}
     };
 
     $scope.signIn = function(){
+        $scope.hasAlert=false;
         var emailId = $scope.loginData.emailId;
         var password = $scope.loginData.password;
         firebase.auth().signInWithEmailAndPassword(emailId, password)
         .then( function(data){
           currentUser.setUserData(data);
-          pageService.goTo('home');
+          setAlert('You are logged in now !');
           ionicToast.show('You are logged in now !', 'bottom', false, 4000);
+          pageService.goTo('home');
         })
         .catch(function(error){
-          ionicToast.show("", 'bottom', false, 4000);
+          setAlert(error.message);
+          ionicToast.show("error.message", 'bottom', false, 4000);
         });
     };
     $scope.resetPassword = function(){
+      $scope.hasAlert = false;
       var emailAddress = $scope.loginData.emailId;
       firebase.auth().sendPasswordResetEmail(emailAddress)
+        .then(function(){
+          setAlert("An email has been sent to you to reset your password.");
+        })
         .catch(function(error) {
+          setAlert(error.message);
           ionicToast.show(error.message, 'bottom', false, 4000);
         });
       ionicToast.show("An email has been sent to you to reset your password.", 'bottom', false, 4000);
@@ -147,6 +162,7 @@ angular.module('starter.controllers',[])
     };
 
     $scope.registerUser = function(){
+      $scope.hasAlert = false;
        var emailKey = stringHandler.replaceSymbol($scope.userInfo.emailId,"@_.","");
        dBase.ref('/Users/' + emailKey).set({
           Address: $scope.userInfo.address,
@@ -162,8 +178,10 @@ angular.module('starter.controllers',[])
        });
       firebase.auth().createUserWithEmailAndPassword($scope.userInfo.emailId, $scope.userInfo.password)
         .catch(function(error){
+          setAlert(error.message);
           ionicToast.show("Unable to create user. " + error.message , 'bottom',false, 4000);
         });
+      setAlert('Registered successfully!');
       $scope.showPanel('login');
     };
 
