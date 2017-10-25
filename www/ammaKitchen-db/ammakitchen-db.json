@@ -2,6 +2,7 @@
   "Category" : [ {
     "Id" : "C1",
     "Name" : "Dessert",
+    "Position" : 4,
     "SubCategory" : [ {
       "Desc" : "All Hot and Soft Beverages are available",
       "Id" : "SC1",
@@ -15,6 +16,7 @@
   }, {
     "Id" : "C2",
     "Name" : "Main Course",
+    "Position" : 3,
     "SubCategory" : [ {
       "Desc" : "Kid's Menu",
       "Id" : "SC1",
@@ -56,7 +58,7 @@
       "Id" : "SC10",
       "Name" : "Thalassery"
     }, {
-      "Desc" : "The meat is cooked with sorrel leaves known as gongura to get a tangy taste. It�s commonly made in the Andra region.",
+      "Desc" : "The meat is cooked with sorrel leaves known as gongura to get a tangy taste. Itï¿½s commonly made in the Andra region.",
       "Id" : "SC11",
       "Name" : "Gongura"
     }, {
@@ -76,8 +78,9 @@
   }, {
     "Id" : "C3",
     "Name" : "South Indian Specials",
+    "Position" : 2,
     "SubCategory" : [ {
-      "Desc" : "WEEKDAY LUNCH SPECIALS - (Available Monday - Friday, 11am - 3pm) 10 Item Thali - A feast for one! Nutritious combination of flavors and textures featuring 10 different items: chapathi, basmati rice, sambar, rasam, sauteed vegetable of the day, mor kuzhambu, pickle, pappad, chef�s vegetable curry or meat curry, and dessert of the day. Feel free to ask for extra rice. Sorry - no substitutions.",
+      "Desc" : "WEEKDAY LUNCH SPECIALS - (Available Monday - Friday, 11am - 3pm) 10 Item Thali - A feast for one! Nutritious combination of flavors and textures featuring 10 different items: chapathi, basmati rice, sambar, rasam, sauteed vegetable of the day, mor kuzhambu, pickle, pappad, chefï¿½s vegetable curry or meat curry, and dessert of the day. Feel free to ask for extra rice. Sorry - no substitutions.",
       "Id" : "SC1",
       "Name" : "Amma Kitchen Specials (WEEKDAY)"
     }, {
@@ -117,6 +120,7 @@
   }, {
     "Id" : "C4",
     "Name" : "Starters",
+    "Position" : 1,
     "SubCategory" : [ {
       "Desc" : "In the South Indian tradition, our soups are prepared from a base of tamarind, tomato, cumin, peppercorns, turmeric, and curry leaves. These lightly spiced soups are popular not only for their delicious flavor, but also for their health benefits.",
       "Id" : "SC1",
@@ -137,54 +141,66 @@
     "SubCategoryCount" : 4
   } ],
   "Items" : {
-    "DUMMY": {
-        "CategoryId" : 2,
-        "Desc" : "",
-        "Id" : "DUMMY",
-        "Name" : "Idly",
-        "Price" : 4,
-        "Text" : "2 Idlys will be served with Coconut Chutney and Sambar"
-      },
-    "AK0002": {
-        "CategoryId" : "C1",
-        "Desc" : "",
-        "Id" : "AK0002",
-        "Name" : "Amma's Homemade Vanilla Ice Cream",
-        "Price" : 4,
-        "SubCategoryId" : "SC2"
-      }, 
-    "AK0003" :{
-        "CategoryId" : "C1",
-        "Desc" : "",
-        "Id" : "AK0003",
-        "Name" : "Limca",
-        "Price" : 2,
-        "SubCategoryId" : "SC2"
-      }, 
-    "AK0004": {
-        "CategoryId" : "C2",
-        "Desc" : "Thin whole wheat homemade soft bread.",
-        "Id" : "AK0004",
-        "Name" : "Whole Wheat Chapathi",
-        "Price" : 2.95,
-        "SubCategoryId" : "SC14"
-      }, 
-    "AK0005": {
-        "CategoryId" : "C3",
-        "Desc" : "",
-        "Id" : "AK0005",
-        "Name" : "Vegetarian",
-        "Price" : 8.95,
-        "SubCategoryId" : "SC1"
-    }, 
-    "AK0006": {
-        "CategoryId" : "C4",
-        "Desc" : "Tomato, Chili, Pepper, and cumin in a tamarind juice base.",
-        "Id" : "AK0006",
-        "Name" : "Rasam",
-        "Price" : 3,
-        "SubCategoryId" : "SC1"
-    } 
+    "AK0002" : {
+      "CategoryId" : "C1",
+      "ChiefSpecial" : false,
+      "Desc" : "",
+      "Id" : "AK0002",
+      "Name" : "Amma's Homemade Vanilla Ice Cream",
+      "Price" : 4.75,
+      "Spicy" : "Normal",
+      "SubCategoryId" : "SC2"
+    },
+    "AK0003" : {
+      "CategoryId" : "C1",
+      "ChiefSpecial" : true,
+      "Desc" : "",
+      "Id" : "AK0003",
+      "Name" : "Limca",
+      "Price" : 2,
+      "Spicy" : "Normal",
+      "SubCategoryId" : "SC2"
+    },
+    "AK0004" : {
+      "CategoryId" : "C2",
+      "ChiefSpecial" : false,
+      "Desc" : "Thin whole wheat homemade soft bread.",
+      "Id" : "AK0004",
+      "Name" : "Whole Wheat Chapathi",
+      "Price" : 2.95,
+      "Spicy" : "Medium",
+      "SubCategoryId" : "SC14"
+    },
+    "AK0005" : {
+      "CategoryId" : "C3",
+      "ChiefSpecial" : true,
+      "Desc" : "",
+      "Id" : "AK0005",
+      "Name" : "Vegetarian",
+      "Price" : 8.95,
+      "Spicy" : "Normal",
+      "SubCategoryId" : "SC1"
+    },
+    "AK0006" : {
+      "CategoryId" : "C4",
+      "ChiefSpecial" : true,
+      "Desc" : "Tomato, Chili, Pepper, and cumin in a tamarind juice base.",
+      "Id" : "AK0006",
+      "Name" : "Rasam",
+      "Price" : 3,
+      "Spicy" : "Hot",
+      "SubCategoryId" : "SC1"
+    },
+    "DUMMY" : {
+      "CategoryId" : 2,
+      "ChiefSpecial" : false,
+      "Desc" : "",
+      "Id" : "DUMMY",
+      "Name" : "Idly",
+      "Price" : 4,
+      "Spicy" : "Normal",
+      "Text" : "2 Idlys will be served with Coconut Chutney and Sambar"
+    }
   },
   "Locations" : [ {
     "Address" : "1700 Oak Tree Road, Edison, NJ 08820",
@@ -297,18 +313,18 @@
     } ]
   },
   "TodayMenuItem" : [ {
-    "Id" : "AK0001"
-  }, {
     "Id" : "AK0002"
   }, {
-    "Id" : "AK0014"
+    "Id" : "AK0003"
   }, {
-    "Id" : "AK0009"
+    "Id" : "AK0004"
   }, {
-    "Id" : "AK0010"
+    "Id" : "AK0005"
+  }, {
+    "Id" : "AK0006"
   } ],
   "Users" : {
-    "muthuajaryahoocom": {
+    "muthuajaryahoocom" : {
       "Address" : "Not Available",
       "Admin" : true,
       "CallName" : "Muthu",
@@ -319,8 +335,8 @@
       "ShowNotification" : true,
       "UserName" : "Muthuraja",
       "WhatsApp" : true
-    }, 
-    "ranjinidevigmailcom": {
+    },
+    "ranjinidevigmailcom" : {
       "Address" : "Not Available",
       "Admin" : false,
       "CallName" : "Abi",
@@ -331,8 +347,8 @@
       "ShowNotification" : true,
       "UserName" : "Ranjinidevi",
       "WhatsApp" : true
-    }, 
-    "testtestcom": {
+    },
+    "testtestcom" : {
       "Address" : "Not Available",
       "Admin" : false,
       "CallName" : "Test",
@@ -343,6 +359,6 @@
       "ShowNotification" : true,
       "UserName" : "testuser",
       "WhatsApp" : true
-    } 
+    }
   }
 }

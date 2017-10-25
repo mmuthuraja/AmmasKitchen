@@ -23,10 +23,10 @@
 
         <div class="card" style="background-color:slategray; border-radius: 10px;" ng-show="showLogin">
           <label class="item item-input">
-            <input type="text" placeholder="Email Id" ng-model="loginData.emailId" value="muthuajar@yahoo.com">
+            <input type="text" placeholder="Email Id" ng-model="loginData.emailId" value="muthuajar@yahoo.com"  required>
           </label>
           <label class="item item-input">
-            <input type="password" placeholder="Password" ng-model="loginData.password" value="testuser">
+            <input type="password" placeholder="Password" ng-model="loginData.password" value="testuser"  required>
           </label>
           <label class="item">
             <button class="button button-block button-positive" type="button" ng-click="signIn()">Log in</button>

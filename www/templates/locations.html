@@ -1,6 +1,12 @@
 <ion-view view-title="Locations"  style="background-image:url('../img/bg3.png')">
   <ion-content>
+    <div class="tabs-striped tabs-top tabs-color-assertive" style="margin-top:-50px">
+      <div class="tabs"> 
+       <a class="{{ (Locations.child($index).val().Name==locName)?'tab-item active':'tab-item' }}" ng-repeat="loc in Locations" ng-click="setSelectedLocation(Locations.child($index).val());">{{Locations.child($index).val().Name}}</a>
+      </div>
+    </div><br><br><br><br>
   <span class = "card" style="width:80%;">
+
     <div class = "item item-avatar" style="background-color:#fcf3e5">
       <img src = "img/location.png">
       <h2>Amma's Kitchen</h2>
@@ -22,10 +28,6 @@
     </div>
     </ion-scroll>
   </span>
-    <div class="tabs-striped tabs-color-assertive">
-      <div class="tabs"> 
-  	   <a class="{{ (Locations.child($index).val().Name==locName)?'tab-item active':'tab-item' }}" ng-repeat="loc in Locations" ng-click="setSelectedLocation(Locations.child($index).val());">{{Locations.child($index).val().Name}}</a>
-      </div>
-    </div>
+   
    </ion-content>
 </ion-view>

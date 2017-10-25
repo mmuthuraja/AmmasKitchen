@@ -8,6 +8,7 @@ angular.module('starter.controllers',[])
       return ($state.current.name == "app.login");
     };
     $scope.signOut = function(){
+      for(var i=0; i<=100000;i++){}
       firebase.auth().signOut();
       currentUser.clearUserData();
       pageService.goTo('login');
@@ -29,8 +30,51 @@ angular.module('starter.controllers',[])
   //test
 })
 
-.controller('todaysmenuCtrl',function($scope){
-    //$scope.
+.controller('todaysmenuCtrl',function($scope, todaysMenu){
+    $scope.totalTodaysItems =-1;
+    $scope.itemsCategory = [];
+    $scope.itemsList = [];
+    $scope.sameCategory = function(catId, itemCatId){
+      return catId==itemCatId;
+    };
+    $scope.isEmptyDesc = function(desc){
+      return (desc=="" || desc == "undefined" || desc ==null);
+    }
+    $scope.isNormalSpicy = function(spicyCode){
+      return (spicyCode=="Normal" || spicyCode=="Medium" || spicyCode=="Hot");
+    }
+    $scope.isMediumSpicy = function(spicyCode){
+      return (spicyCode=="Medium" || spicyCode=="Hot");
+    }
+    $scope.isHotSpicy = function(spicyCode){
+      return (spicyCode=="Hot");
+    }
+    function isCategoryExist(categoryId){
+      var exists = false;
+      for(catIndex in $scope.itemsCategory)
+        if($scope.itemsCategory[catIndex].Id == categoryId)
+          {exists = true;break;}
+      return exists;
+    };
+    function refreshItems(){
+      $scope.totalTodaysItems = $scope.totalTodaysItems + 1;
+      if($scope.totalTodaysItems == 0){todaysMenu.loadCategories(refreshItems);}
+      if(todaysMenu.itemsCount>0){
+        if($scope.totalTodaysItems==todaysMenu.itemsCount)
+        {
+          $scope.itemsList = todaysMenu.getItems();
+          $scope.itemsList.sort(function(item1, item2){
+              return item1.Category.Index - item2.Category.Index;
+          });
+          for(itemIndex in $scope.itemsList){
+            if(!isCategoryExist($scope.itemsList[itemIndex].Category.Id)){
+              $scope.itemsCategory.push($scope.itemsList[itemIndex].Category);
+            }
+          }
+        }
+      }
+    };
+    refreshItems();
 })
 .controller('locationsCtrl', function($scope){
     $scope.Locations = [];
@@ -91,8 +135,9 @@ angular.module('starter.controllers',[])
   $scope.welcomeName = currentUser.getUserData().callName;
 })
 
-.controller('loginCtrl',['$scope', '$location','currentUser','$state','ionicToast','stringHandler','pageService',
- function($scope, $location, currentUser, $state,ionicToast,stringHandler,pageService){
+.controller('loginCtrl',function($scope, $location, currentUser, 
+                                  $state,ionicToast,stringHandler,
+                                  pageService){
     $scope.hasAlert = false;
     $scope.loginData = {
         emailId: "muthuajar@yahoo.com", 
@@ -129,22 +174,35 @@ angular.module('starter.controllers',[])
       else if(panelName=="reset")
         {$scope.showResetPassword = true;$scope.hasAlert=false;}
     };
+    function canLogin(emailId, password){
+        emailId = (emailId==undefined)?"":emailId.replace(" ","");
+        password = (password==undefined)?"":password.replace(" ","");
+        if(emailId=="" || password==""){
+          setAlert("email or password is missing..");
+          ionicToast.show('email or password is missing..', 'bottom', false, 4000);
+          return false;
+        }
+        return true;
+    };
+    function canRegister(){
 
+    };
     $scope.signIn = function(){
         $scope.hasAlert=false;
         var emailId = $scope.loginData.emailId;
         var password = $scope.loginData.password;
-        firebase.auth().signInWithEmailAndPassword(emailId, password)
-        .then( function(data){
-          currentUser.setUserData(data);
-          setAlert('You are logged in now !');
-          ionicToast.show('You are logged in now !', 'bottom', false, 4000);
-          pageService.goTo('home');
-        })
-        .catch(function(error){
-          setAlert(error.message);
-          ionicToast.show("error.message", 'bottom', false, 4000);
-        });
+        if(canLogin(emailId,password)){
+          firebase.auth().signInWithEmailAndPassword(emailId, password)
+          .then( function(data){
+            currentUser.setUserData(data);
+            ionicToast.show('You are logged in now !', 'bottom', false, 4000);
+            pageService.goTo('home');
+          })
+          .catch(function(error){
+            setAlert(error.message);
+            ionicToast.show("error.message", 'bottom', false, 4000);
+          });
+        }
     };
     $scope.resetPassword = function(){
       $scope.hasAlert = false;
@@ -193,7 +251,7 @@ angular.module('starter.controllers',[])
           console.log(error);
       });
     };
-}])
+})
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 });

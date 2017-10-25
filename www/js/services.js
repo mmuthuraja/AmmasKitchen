@@ -104,6 +104,107 @@ angular.module('starter')
 		}
 	}
 })
+.service("todaysMenu", function	(){
+	var items = [];
+	var categories = [];
+	var localServiceObject = {};
+	localServiceObject.itemsCount = 0;
+	localServiceObject.doneItems = false;
+	localServiceObject.doneCategory = false;
+	localServiceObject.cbFunction = null;
+	localServiceObject.getCategory = function(categoryId){
+		var category = {};
+		for(index in categories){
+			if(categories[index].Id == categoryId){
+				category = categories[index];
+				break;
+			}
+		}
+		return category;
+	}
+	localServiceObject.hasDataLoaded = function(){
+		return (localServiceObject.doneItems && localServiceObject.doneCategory);
+	};
+	localServiceObject.setCategories = function(snapshot){
+		categories = [];
+		for(index in snapshot.val()){
+			var catInfo = { "Id": snapshot.val()[index].Id, "Name": snapshot.val()[index].Name, "Index": snapshot.val()[index].Position };
+			categories.push(catInfo);
+		}
+		localServiceObject.doneCategory=true;
+		localServiceObject.loadItems();
+	};
+	localServiceObject.setItems = function(snapshot){
+		items = [];
+		localServiceObject.itemsCount = snapshot.val().length;
+		for(index in snapshot.val()){
+			var itemNo = snapshot.val()[index].Id;
+			localServiceObject.loadItemDetails(itemNo);
+		}
+		localServiceObject.doneItems=true;
+	};
+	localServiceObject.pushItem = function(snapshot){
+		var cat = localServiceObject.getCategory(snapshot.val().CategoryId);
+		item = {
+				"CategoryId": snapshot.val().CategoryId,
+				"Category": cat,
+				"ChiefSpecial": snapshot.val().ChiefSpecial,
+				"Desc": snapshot.val().Desc,
+				"Id": snapshot.val().Id,
+				"Name": snapshot.val().Name,
+				"Price": snapshot.val().Price,
+				"Spicy": snapshot.val().Spicy
+			};
+		items.push(item);
+		localServiceObject.cbFunction();
+	};
+	localServiceObject.pushEmptyItem = function(error){
+		item = {
+				"CategoryId": "",
+				"Category": {"Id":0,"Name":""},
+				"ChiefSpecial": false,
+				"Desc": "",
+				"Id": "NULL",
+				"Name": "DummyDummy",
+				"Price": "0.00",
+				"Spicy": "Normal"
+			};
+		items.push(item);
+		localServiceObject.cbFunction();
+	}
+	localServiceObject.getItems = function(){
+		return items;
+	};
+	localServiceObject.getCategories = function(){
+		return categories;
+	}
+	localServiceObject.loadItems = function(){
+		localServiceObject.doneItems=false;
+		dBase.ref('/TodayMenuItem').once('value')
+			.then(localServiceObject.setItems)
+	    	.catch(function(err){
+		    	localServiceObject.doneItems=true;
+		    });
+	};
+	localServiceObject.loadCategories = function(callbackFunction){
+		localServiceObject.cbFunction = callbackFunction;
+		localServiceObject.doneCategory=false;
+		dBase.ref('/Category').once('value')
+			.then(localServiceObject.setCategories)
+	    	.catch(function(err){
+	    		localServiceObject.doneCategory=true;
+		    });
+	};
+	localServiceObject.loadItemDetails = function(itemNumber){
+		dBase.ref('/Items/' + itemNumber).once('value').then(localServiceObject.pushItem)
+	    .catch(localServiceObject.pushEmptyItem);
+	};
+	//localServiceObject.loadCategories();
+	// while(!localServiceObject.doneCategory){}
+	// localServiceObject.loadItems();
+	// while(!localServiceObject.doneItems){}
+	return localServiceObject;
+})
 .service("currentUser", function(){
 	var emailKey = '';
 	var email = '';
