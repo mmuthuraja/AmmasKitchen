@@ -1,205 +1,517 @@
 {
-  "Category" : [ {
-    "Id" : "C1",
-    "Name" : "Dessert",
-    "Position" : 4,
-    "SubCategory" : [ {
-      "Desc" : "All Hot and Soft Beverages are available",
-      "Id" : "SC1",
-      "Name" : "Beverages"
-    }, {
-      "Desc" : "Ask about our house special dessert of the day!",
-      "Id" : "SC2",
-      "Name" : "Dessert"
-    } ],
-    "SubCategoryCount" : 2
+  "Category" : [ null, null, null, {
+    "Id" : "CVC",
+    "Name" : "Veg Curry",
+    "Position" : 8
   }, {
-    "Id" : "C2",
-    "Name" : "Main Course",
-    "Position" : 3,
-    "SubCategory" : [ {
-      "Desc" : "Kid's Menu",
-      "Id" : "SC1",
-      "Name" : "Kid's Menu"
-    }, {
-      "Desc" : "Side Order",
-      "Id" : "SC2",
-      "Name" : "Side Order"
-    }, {
-      "Desc" : "All entrees are served with basmati rice.",
-      "Id" : "SC3",
-      "Name" : "Kurma"
-    }, {
-      "Desc" : "Chettinad cuisine may be the spiciest and most aromatic cuisine in south India. Features 22 varieties of spices and herbs.",
-      "Id" : "SC4",
-      "Name" : "Chettinadu"
-    }, {
-      "Desc" : "A spinach-based dish cooked with mustard, fenugreek and cream.",
-      "Id" : "SC5",
-      "Name" : "Saag"
-    }, {
-      "Desc" : "Featuring a delicious tangy cream sauce.",
-      "Id" : "SC6",
-      "Name" : "Butter Masala"
-    }, {
-      "Desc" : "Roasted and served in a flavorful creamy sauce.",
-      "Id" : "SC7",
-      "Name" : "Tikka Masala"
-    }, {
-      "Desc" : "Vindaloo is a popular dish in ocean side of Goa. Cooked with tangy spicy curry",
-      "Id" : "SC8",
-      "Name" : "Vindaloo Curry"
-    }, {
-      "Desc" : "Nilgiri Curry",
-      "Id" : "SC9",
-      "Name" : "Nilgiri Curry"
-    }, {
-      "Desc" : "There is a rising popularity of Kerala cuisine. It is aromatic, and gorgeously golden brown.",
-      "Id" : "SC10",
-      "Name" : "Thalassery"
-    }, {
-      "Desc" : "The meat is cooked with sorrel leaves known as gongura to get a tangy taste. Itï¿½s commonly made in the Andra region.",
-      "Id" : "SC11",
-      "Name" : "Gongura"
-    }, {
-      "Desc" : "The most popular cuisine in Tamilnadu. Features 18 varieties of ground spices.",
-      "Id" : "SC12",
-      "Name" : "Kaaraikudi"
-    }, {
-      "Desc" : "All entrees are served with basmati rice.",
-      "Id" : "SC13",
-      "Name" : "Vegetarian Homestyle Entrees"
-    }, {
-      "Desc" : "Soft Breads",
-      "Id" : "SC14",
-      "Name" : "Soft Breads"
-    } ],
-    "SubCategoryCount" : 14
+    "Id" : "CD",
+    "Name" : "Dosa",
+    "Position" : 1
   }, {
-    "Id" : "C3",
-    "Name" : "South Indian Specials",
-    "Position" : 2,
-    "SubCategory" : [ {
-      "Desc" : "WEEKDAY LUNCH SPECIALS - (Available Monday - Friday, 11am - 3pm) 10 Item Thali - A feast for one! Nutritious combination of flavors and textures featuring 10 different items: chapathi, basmati rice, sambar, rasam, sauteed vegetable of the day, mor kuzhambu, pickle, pappad, chefï¿½s vegetable curry or meat curry, and dessert of the day. Feel free to ask for extra rice. Sorry - no substitutions.",
-      "Id" : "SC1",
-      "Name" : "Amma Kitchen Specials (WEEKDAY)"
-    }, {
-      "Desc" : "WEEKEND LUNCH SPECIAL - (Available Saturday & Sunday, 11am - 3pm) Grand Thali (Same as the 10 Item Thali above but with 5 additional items)",
-      "Id" : "SC2",
-      "Name" : "Amma Kitchen Specials (WEEKEND)"
-    }, {
-      "Desc" : "Savory cakes made by steaming a batter consisting of fermented black lentil and rice. A traditional South Indian breakfast. Three cakes per order.",
-      "Id" : "SC3",
-      "Name" : "Idli"
-    }, {
-      "Desc" : "Two pieces. Made with fermented rice batter. (Please allow 25 - 30 minutes for preparation) Does not include stew.",
-      "Id" : "SC4",
-      "Name" : "Aappam"
-    }, {
-      "Desc" : "Made with fermented rice batter and beans. A thin rice crepe available in 18 different varieties.",
-      "Id" : "SC5",
-      "Name" : "Dosa"
-    }, {
-      "Desc" : "All Day / Everyday Specials",
-      "Id" : "SC6",
-      "Name" : "All Day Specials"
-    }, {
-      "Desc" : "Traditionally prepared, aromatic, blended with marinated spices and gently cooked with basmathi rice served with raitha.",
-      "Id" : "SC7",
-      "Name" : "Biryani"
-    }, {
-      "Desc" : "Served only with Idli, Dosa, Uthappam, Chapathi, Porotta and Appam",
-      "Id" : "SC8",
-      "Name" : "Chef's Special Stews"
-    }, {
-      "Desc" : "A delicacy popular in south Indian state of Tamilnadu. Multi-layered fluffy bread, egg, meat, and salna (a spicy sauce).",
-      "Id" : "SC9",
-      "Name" : "Kothu Parotta"
-    } ],
-    "SubCategoryCount" : 9
+    "Id" : "CSF",
+    "Name" : "Sea Food",
+    "Position" : 2
   }, {
-    "Id" : "C4",
-    "Name" : "Starters",
-    "Position" : 1,
-    "SubCategory" : [ {
-      "Desc" : "In the South Indian tradition, our soups are prepared from a base of tamarind, tomato, cumin, peppercorns, turmeric, and curry leaves. These lightly spiced soups are popular not only for their delicious flavor, but also for their health benefits.",
-      "Id" : "SC1",
-      "Name" : "Soups"
-    }, {
-      "Desc" : "These south Indian street snacks are also called tea shop bench snacks or beach snacks. They come with homemade chutneys on the side, and are served with banana leaves.",
-      "Id" : "SC2",
-      "Name" : "Veg Appetizer"
-    }, {
-      "Desc" : "Other Veg. Appetizers",
-      "Id" : "SC3",
-      "Name" : "Other Veg Appetizers"
-    }, {
-      "Desc" : "Non-Veg Appetizers",
-      "Id" : "SC4",
-      "Name" : "Non-Veg Appetizers"
-    } ],
-    "SubCategoryCount" : 4
+    "Id" : "CKP",
+    "Name" : "Kothu Parotta",
+    "Position" : 3
+  }, {
+    "Id" : "CNVA",
+    "Name" : "Non-Veg. Appetizer",
+    "Position" : 5
+  }, {
+    "Id" : "CVA",
+    "Name" : "Veg. Appetizer",
+    "Position" : 4
+  }, {
+    "Id" : "CNVC",
+    "Name" : "Non-Veg. Curry",
+    "Position" : 6
+  }, {
+    "Id" : "CB",
+    "Name" : "Biryani",
+    "Position" : 7
   } ],
   "Items" : {
-    "AK0002" : {
-      "CategoryId" : "C1",
+    "1G6J7W9185QPY" : {
+      "CategoryId" : "CNVC",
       "ChiefSpecial" : false,
-      "Desc" : "",
-      "Id" : "AK0002",
-      "Name" : "Amma's Homemade Vanilla Ice Cream",
-      "Price" : 4.75,
-      "Spicy" : "Normal",
-      "SubCategoryId" : "SC2"
+      "Desc" : "Chicken cooked with coconut gravy & south Indian spices.",
+      "Id" : "1G6J7W9185QPY",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F1G6J7W9185QPY.jpg?alt=media&token=a8b52a6a-2d14-478a-801a-1a877355c14f",
+      "Name" : "Chicken Korma",
+      "Price" : 8,
+      "Spicy" : "Normal"
     },
-    "AK0003" : {
-      "CategoryId" : "C1",
-      "ChiefSpecial" : true,
-      "Desc" : "",
-      "Id" : "AK0003",
-      "Name" : "Limca",
-      "Price" : 2,
-      "Spicy" : "Normal",
-      "SubCategoryId" : "SC2"
-    },
-    "AK0004" : {
-      "CategoryId" : "C2",
+    "1KG9P1CS2A9W6" : {
+      "CategoryId" : "CVA",
       "ChiefSpecial" : false,
-      "Desc" : "Thin whole wheat homemade soft bread.",
-      "Id" : "AK0004",
-      "Name" : "Whole Wheat Chapathi",
-      "Price" : 2.95,
-      "Spicy" : "Medium",
-      "SubCategoryId" : "SC14"
+      "Desc" : "baby corn fritters fried in spicy batter.",
+      "Id" : "1KG9P1CS2A9W6",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F1KG9P1CS2A9W6.jpg?alt=media&token=b2c3d78d-83cc-4d3f-8c27-12a2ed3e5fa6",
+      "Name" : "Baby Corn 65",
+      "Price" : 5,
+      "Spicy" : "Normal"
     },
-    "AK0005" : {
-      "CategoryId" : "C3",
-      "ChiefSpecial" : true,
-      "Desc" : "",
-      "Id" : "AK0005",
-      "Name" : "Vegetarian",
-      "Price" : 8.95,
-      "Spicy" : "Normal",
-      "SubCategoryId" : "SC1"
-    },
-    "AK0006" : {
-      "CategoryId" : "C4",
-      "ChiefSpecial" : true,
-      "Desc" : "Tomato, Chili, Pepper, and cumin in a tamarind juice base.",
-      "Id" : "AK0006",
-      "Name" : "Rasam",
-      "Price" : 3,
-      "Spicy" : "Hot",
-      "SubCategoryId" : "SC1"
-    },
-    "DUMMY" : {
-      "CategoryId" : 2,
+    "1PFVV9KT75C9T" : {
+      "CategoryId" : "CB",
       "ChiefSpecial" : false,
-      "Desc" : "",
-      "Id" : "DUMMY",
-      "Name" : "Idly",
-      "Price" : 4,
-      "Spicy" : "Normal",
-      "Text" : "2 Idlys will be served with Coconut Chutney and Sambar"
+      "Desc" : "Ambur Biryani is an Indian chicken & basmati rice recipe that is cooked on dum over slow heat marinated with fresh herbs, spices.",
+      "Id" : "1PFVV9KT75C9T",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F1PFVV9KT75C9T.jpg?alt=media&token=e728d948-8e70-4880-99b6-4e8eb105490c",
+      "Name" : "Ambur Chicken Biryani",
+      "Price" : 10,
+      "Spicy" : "Normal"
+    },
+    "1XMXG74D4YTH2" : {
+      "CategoryId" : "CD",
+      "ChiefSpecial" : false,
+      "Desc" : "Ground rice / lentil crepe rolled with cheese, served with chutney and sambhar",
+      "Id" : "1XMXG74D4YTH2",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F1XMXG74D4YTH2.jpg?alt=media&token=09183aeb-4a12-43c0-94be-77d2ff2e301e",
+      "Name" : "Cheese Dosa",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "3ER67PHHVQ8RP" : {
+      "CategoryId" : "CKP",
+      "ChiefSpecial" : false,
+      "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked with lamp, onions, tomatoes with spices.",
+      "Id" : "3ER67PHHVQ8RP",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F3ER67PHHVQ8RP.jpg?alt=media&token=69bbaf7f-97b2-4cb3-a423-911524c9fcf3",
+      "Name" : "Lamb Kothu",
+      "Price" : 10,
+      "Spicy" : "Normal"
+    },
+    "4DHZHTQ4GE6F0" : {
+      "CategoryId" : "CVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Loosened yellow lentil cooked with spices, tomato / spinach, green chilli, cumins & onions",
+      "Id" : "4DHZHTQ4GE6F0",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F4DHZHTQ4GE6F0.jpg?alt=media&token=7f8337ab-222d-4b3d-b5b6-01305d03ac07",
+      "Name" : "Dal Tadka / Fry",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "4G1B3V4RAV5N0" : {
+      "CategoryId" : "CNVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Chunks of chicken in clay oven & then cooked in a light creamy tomato sauce with bell peppers & onions.",
+      "Id" : "4G1B3V4RAV5N0",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F4G1B3V4RAV5N0.jpg?alt=media&token=4f75a32a-21d1-4b74-9262-3166c8cd6017",
+      "Name" : "Chicken Tikka Masala",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "622MKPPY26P8J" : {
+      "CategoryId" : "CNVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Cooked chicken with homemade spices & special Andhra style gravy.",
+      "Id" : "622MKPPY26P8J",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F622MKPPY26P8J.jpg?alt=media&token=79abb47b-b5b4-4ffe-88e0-6fbbd28883b8",
+      "Name" : "Andra chicken curry",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "7GTV46F67ZJM6" : {
+      "CategoryId" : "CVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Marinated and salted cottage cheese with bell peppers and onions finished with spicy creamy sauce. Gluten free and low carb. Served with rice, raitha and a pickle.",
+      "Id" : "7GTV46F67ZJM6",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F7GTV46F67ZJM6.jpg?alt=media&token=8b0798d0-76dc-4a39-8f8f-4e3f23ee1c80",
+      "Name" : "Paneer Tikka Masala",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "92MY25WAT4AXP" : {
+      "CategoryId" : "CSF",
+      "ChiefSpecial" : false,
+      "Desc" : "Dry fried Shrimp sauteeed in a onion, black pepper powder and chief special masala powder.",
+      "Id" : "92MY25WAT4AXP",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F92MY25WAT4AXP.jpg?alt=media&token=0bcb3685-c202-440f-b6c1-53d5f64c5f19",
+      "Name" : "Shrimp Pepper Fry",
+      "Price" : 9,
+      "Spicy" : "Normal"
+    },
+    "9KV7P57CACMA8" : {
+      "CategoryId" : "CD",
+      "ChiefSpecial" : false,
+      "Desc" : "Crispy, savory pancake-crepe made from fermented rice and black lentils batter with potato filling.",
+      "Id" : "9KV7P57CACMA8",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2F9KV7P57CACMA8.jpg?alt=media&token=db369ae2-ee0d-4cc4-99ec-9e75106b7fef",
+      "Name" : "Masala Dosa",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "A1Y957QZW12J0" : {
+      "CategoryId" : "CSF",
+      "ChiefSpecial" : false,
+      "Desc" : "Fish curry cooked in Kerala style with special recipe.",
+      "Id" : "A1Y957QZW12J0",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FA1Y957QZW12J0.jpg?alt=media&token=cb4f224e-5f92-4c1e-b10a-f99a4cbe10fe",
+      "Name" : "Malabar Fish Curry",
+      "Price" : 10,
+      "Spicy" : "Normal"
+    },
+    "BXDGGFEP43EXC" : {
+      "CategoryId" : "CNVA",
+      "ChiefSpecial" : true,
+      "Desc" : "Boneless chicken sauteeed in a chef speciality 555 sause with red chilly sauce.",
+      "Id" : "BXDGGFEP43EXC",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FA1Y957QZW12J0.jpg?alt=media&token=cb4f224e-5f92-4c1e-b10a-f99a4cbe10fe",
+      "Name" : "Chicken 555",
+      "Price" : 6,
+      "Spicy" : "Normal"
+    },
+    "CDV6MDPXZ6MT4" : {
+      "CategoryId" : "CB",
+      "ChiefSpecial" : false,
+      "Desc" : "Basmati rice cooked with Chettinad style chicken and flavored with cloves, cinnamon, cardoamon, Bay leaf, coriander, mint ginger, garlic and onions ",
+      "Id" : "CDV6MDPXZ6MT4",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FCDV6MDPXZ6MT4.jpg?alt=media&token=cc6decca-68ee-4f2e-8275-cbe503beff0f",
+      "Name" : "Chettinadu Chicken Biryani",
+      "Price" : 10,
+      "Spicy" : "Normal"
+    },
+    "CH3NFBEMAC5JW" : {
+      "CategoryId" : "CVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Peeled whole garlic cooked in chettinad style",
+      "Id" : "CH3NFBEMAC5JW",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FCH3NFBEMAC5JW.jpg?alt=media&token=e70ac802-5cac-4382-aece-84c6d15d0ffc",
+      "Name" : "Kara Kulambu",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "CK4HV9NKQWZKP" : {
+      "CategoryId" : "CNVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Quail marinated with selected blend of Chettinad spices cooked dry",
+      "Id" : "CK4HV9NKQWZKP",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FCK4HV9NKQWZKP.jpg?alt=media&token=2c74cd5a-4409-446e-bf6e-398ce2184f41",
+      "Name" : "Quail Fry",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "D6XBN1J7VEJKW" : {
+      "CategoryId" : "CKP",
+      "ChiefSpecial" : false,
+      "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked onions, tomatoes with spices.",
+      "Id" : "D6XBN1J7VEJKW",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FD6XBN1J7VEJKW.jpg?alt=media&token=027195c5-0163-467d-b8d2-821affbbcc52",
+      "Name" : "kothu Parotta",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "E7DV8NNPSJ6TG" : {
+      "CategoryId" : "CD",
+      "ChiefSpecial" : false,
+      "Desc" : "Crepe rolled with cheese, spicy sauce and potato masala.",
+      "Id" : "E7DV8NNPSJ6TG",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FE7DV8NNPSJ6TG.jpg?alt=media&token=e46fa45d-d4cc-4ec2-b2db-4cbdb3aafb4a",
+      "Name" : "Pondichery Masala Dosa",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "EXBAXYJ3T16SG" : {
+      "CategoryId" : "CNVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Boneless cubes of chicken marinated with Indian spices and deep friend. A popular Indian bar room snack",
+      "Id" : "EXBAXYJ3T16SG",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FEXBAXYJ3T16SG.jpg?alt=media&token=e1baf83f-4938-4b87-a6dd-114dac2832e6",
+      "Name" : "Chicken 65",
+      "Price" : 6,
+      "Spicy" : "Normal"
+    },
+    "FRSFKW1P498YG" : {
+      "CategoryId" : "CKP",
+      "ChiefSpecial" : false,
+      "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked with chicken, onions, tomatoes with spices.",
+      "Id" : "FRSFKW1P498YG",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FFRSFKW1P498YG.jpg?alt=media&token=77135e65-ce2b-48f1-add2-0bd821997d93",
+      "Name" : "Chicken Kothu Parotta",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "FXMRM43HYAV32" : {
+      "CategoryId" : "CVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Authentic spicy curry cooked with mixed vegetables traditional South Indian Karaikudi grounded masala.",
+      "Id" : "FXMRM43HYAV32",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FFXMRM43HYAV32.jpg?alt=media&token=84fece57-4b6a-40c1-afe3-c2dc01abca38",
+      "Name" : "Veg Chettinadu",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "GMXS5DXFBS274" : {
+      "CategoryId" : "CVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Andra style sphere allpurpose flour vada with little seasoning spices",
+      "Id" : "GMXS5DXFBS274",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FGMXS5DXFBS274.jpg?alt=media&token=3e59a489-fb56-4ce7-bbe8-0618c7aafd9e",
+      "Name" : "Punugalu",
+      "Price" : 5,
+      "Spicy" : "Normal"
+    },
+    "GQ9GHG8PGGXAE" : {
+      "CategoryId" : "CNVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Dry fried boneless mutton sauteeed in a onion, black pepper powder and chief special masala powder.",
+      "Id" : "GQ9GHG8PGGXAE",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FGQ9GHG8PGGXAE.jpg?alt=media&token=e0e4c963-8fc0-4904-b74a-1b508dd79c7b",
+      "Name" : "Mutton Pepper Fry / Sukka",
+      "Price" : 12,
+      "Spicy" : "Normal"
+    },
+    "J3DG63F7NZT4P" : {
+      "CategoryId" : "CSF",
+      "ChiefSpecial" : false,
+      "Desc" : "Shrimp cooked with chettinad spices",
+      "Id" : "J3DG63F7NZT4P",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FJ3DG63F7NZT4P.jpg?alt=media&token=e30fe7e9-128e-4dbc-84f2-3007175582ac",
+      "Name" : "Shrimp Masala",
+      "Price" : 10,
+      "Spicy" : "Normal"
+    },
+    "J9MMW20S83WQW" : {
+      "CategoryId" : "CNVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Dry fried boneless chicken sauteeed in a onion, black pepper powder and chief special masala powder.",
+      "Id" : "J9MMW20S83WQW",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FJ9MMW20S83WQW.jpg?alt=media&token=38a6ba7b-49db-4874-bd93-42be53b644b7",
+      "Name" : "Chicken Pepper Fry / Sukka",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "JWKXM39C98AG2" : {
+      "CategoryId" : "CVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Mixed vegetables cooked with cottage cheese, cashews, raisins, turmeric & fenugreek leaves in a rich creamy gourmet sauce.",
+      "Id" : "JWKXM39C98AG2",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FJWKXM39C98AG2.jpg?alt=media&token=ff8d9e23-6940-471f-b4a4-023111a7449b",
+      "Name" : "Navarthna Korma",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "KDH3ZZQKDNX04" : {
+      "CategoryId" : "CNVC",
+      "ChiefSpecial" : false,
+      "Desc" : "South Indian style cooked Mutton with authentic chettinad masala gravy.",
+      "Id" : "KDH3ZZQKDNX04",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FKDH3ZZQKDNX04.jpg?alt=media&token=02cf9ab3-29d3-48a8-96f2-0e91c67165be",
+      "Name" : "Mutton Kuzhambu",
+      "Price" : 12,
+      "Spicy" : "Normal"
+    },
+    "MCE033MSTX7C0" : {
+      "CategoryId" : "CVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Indian cottage cheese (Paneer) stir-fried in Indian sauce with onions, peppers and chilies",
+      "Id" : "MCE033MSTX7C0",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FMCE033MSTX7C0.jpg?alt=media&token=b4404800-5113-4159-a74b-05a56fcbfb37",
+      "Name" : "AK Paneer Fry",
+      "Price" : 6,
+      "Spicy" : "Normal"
+    },
+    "MP4K8M8S50658" : {
+      "CategoryId" : "CKP",
+      "ChiefSpecial" : false,
+      "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked with eggs, onions, tomatoes with spices.",
+      "Id" : "MP4K8M8S50658",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FMP4K8M8S50658.jpg?alt=media&token=2be38a32-5909-4e90-abd3-aa4a93dadc1e",
+      "Name" : "Egg kothu Parotta",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "N6H2W2K2MCWSJ" : {
+      "CategoryId" : "CVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Stemed rice cake sauted in lintle grinded spices.",
+      "Id" : "N6H2W2K2MCWSJ",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FN6H2W2K2MCWSJ.jpg?alt=media&token=77eb0d66-9e35-4c21-9c1c-ccea2d96abfa",
+      "Name" : "Podi IdIy",
+      "Price" : 5,
+      "Spicy" : "Normal"
+    },
+    "Q98Y2BNDSNY6C" : {
+      "CategoryId" : "CSF",
+      "ChiefSpecial" : false,
+      "Desc" : "Boneless fillets cleaned, de-skinned, deveined, cut into slices, slightly batter coated & deep fried.",
+      "Id" : "Q98Y2BNDSNY6C",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FQ98Y2BNDSNY6C.jpg?alt=media&token=a6a46287-82b3-4328-837b-9a78f3d06749",
+      "Name" : "Madras Fish Curry",
+      "Price" : 10,
+      "Spicy" : "Normal"
+    },
+    "QG7ETZKRDBAWR" : {
+      "CategoryId" : "CKP",
+      "ChiefSpecial" : false,
+      "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked with chettinad style chicken masala with onions, tomatoes and spices",
+      "Id" : "QG7ETZKRDBAWR",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FQG7ETZKRDBAWR.jpg?alt=media&token=cb7d2163-22e4-4ef0-a552-9b40ebbfc9df",
+      "Name" : "Chettinad Chicken Kothu",
+      "Price" : 9,
+      "Spicy" : "Normal"
+    },
+    "QX1JKFSRY7JPM" : {
+      "CategoryId" : "CB",
+      "ChiefSpecial" : false,
+      "Desc" : "Dindukal thalappakatti style biryani with basmati rice flavored with cloves, cinnamon, cardoamon, Bay leaf, coriander, mint ginger, garlic and onions with EGG",
+      "Id" : "QX1JKFSRY7JPM",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FQX1JKFSRY7JPM.jpg?alt=media&token=2b6bb9d5-7e84-45a1-872d-368feda4687f",
+      "Name" : "Chicken Thalappakatti",
+      "Price" : 10,
+      "Spicy" : "Normal"
+    },
+    "R4DMT7ZR00F12" : {
+      "CategoryId" : "CD",
+      "ChiefSpecial" : false,
+      "Desc" : "Crepe rolled with cheese, spicy sauce and potato masala.",
+      "Id" : "R4DMT7ZR00F12",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FR4DMT7ZR00F12.jpg?alt=media&token=9ebd70ae-e09e-4adc-a9d6-a13899ddd3c2",
+      "Name" : "Andra Spicy Dosa",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "RT0S78DDB1XVM" : {
+      "CategoryId" : "CVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Homemade cheese cooked with fresh spinach spies and cream.",
+      "Id" : "RT0S78DDB1XVM",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FRT0S78DDB1XVM.jpg?alt=media&token=f23e9780-84d1-43b4-91bb-1e5c8cd6dc4d",
+      "Name" : "Palak Paneer / Veg",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "RV1W4M52VCNRY" : {
+      "CategoryId" : "CSF",
+      "ChiefSpecial" : false,
+      "Desc" : "Marinated special shrimp deep friend and sauteed with spices.",
+      "Id" : "RV1W4M52VCNRY",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FRV1W4M52VCNRY.jpg?alt=media&token=2c0e20d2-aee8-4e3e-b902-e4cc271bbc80",
+      "Name" : "Shrimp 65",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "T8FN91FYZTH64" : {
+      "CategoryId" : "CVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Cauliflower fritters fried in spicy batter.",
+      "Id" : "T8FN91FYZTH64",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FT8FN91FYZTH64.jpg?alt=media&token=790b94dd-79da-417c-a788-2e79e686d10b",
+      "Name" : "Gobi 65",
+      "Price" : 5,
+      "Spicy" : "Medium"
+    },
+    "TNTQ1CQ35HF42" : {
+      "CategoryId" : "CVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Stemed rice cake seasoned with pepper, cumin seeds and herbs.",
+      "Id" : "TNTQ1CQ35HF42",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FT8FN91FYZTH64.jpg?alt=media&token=790b94dd-79da-417c-a788-2e79e686d10b",
+      "Name" : "AK Spicy IdIy",
+      "Price" : 5,
+      "Spicy" : "Normal"
+    },
+    "TSKP2W05TAW08" : {
+      "CategoryId" : "CSF",
+      "ChiefSpecial" : false,
+      "Desc" : "Boneless fish coated with spices and deep fried (6 pcs).",
+      "Id" : "TSKP2W05TAW08",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FTSKP2W05TAW08.jpg?alt=media&token=af9862d4-d3a4-4ede-87bc-d0cbe1beac6c",
+      "Name" : "Fish Fry (6 Pcs)",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "TVPT1K0466H0A" : {
+      "CategoryId" : "CD",
+      "ChiefSpecial" : false,
+      "Desc" : "A fermented crepe or pancake made from rice served with chutney & sambar",
+      "Id" : "TVPT1K0466H0A",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FTVPT1K0466H0A.jpg?alt=media&token=ce7ca95d-9eac-45f3-a125-c35732c836d5",
+      "Name" : "Plain Dosa",
+      "Price" : 5,
+      "Spicy" : "Normal"
+    },
+    "VBP68QKXRC0VG" : {
+      "CategoryId" : "CB",
+      "ChiefSpecial" : false,
+      "Desc" : "Basmati rice flavored with cloves, cinnamon, cardoamon, Bay leaf, coriander, mint ginger, garlic and onions with EGG",
+      "Id" : "VBP68QKXRC0VG",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FVBP68QKXRC0VG.jpg?alt=media&token=a951ee5e-30d9-427f-b915-449c2ddfefea",
+      "Name" : "Egg Biryani ( 2 pcs )",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "VDTT6Q39M7R6J" : {
+      "CategoryId" : "CNVA",
+      "ChiefSpecial" : false,
+      "Desc" : "Egg booked on pan on one side with powders of black pepper, and cummin",
+      "Id" : "VDTT6Q39M7R6J",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FVDTT6Q39M7R6J.jpg?alt=media&token=83fafdea-02da-4cac-bff9-6c22dd13abd0",
+      "Name" : "Half Boil Egg / Kalaki",
+      "Price" : 5,
+      "Spicy" : "Normal"
+    },
+    "VMB5FP181SGQ2" : {
+      "CategoryId" : "CNVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Juicy goat pieces cooked with spices.",
+      "Id" : "VMB5FP181SGQ2",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FVMB5FP181SGQ2.jpg?alt=media&token=c8e3d5a6-efc8-4c9a-a656-9a4476d83a30",
+      "Name" : "Mutton Muhali",
+      "Price" : 12,
+      "Spicy" : "Normal"
+    },
+    "VZ8WFF5VBHM7M" : {
+      "CategoryId" : "CSF",
+      "ChiefSpecial" : false,
+      "Desc" : "Kerala style fish curry with Coconut milk.",
+      "Id" : "VZ8WFF5VBHM7M",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FVZ8WFF5VBHM7M.jpg?alt=media&token=f9dd908a-cd85-4dbe-a98d-ed36f80d8a38",
+      "Name" : "Fish Moilee",
+      "Price" : 10,
+      "Spicy" : "Hot"
+    },
+    "WD56J3DPJGZ5R" : {
+      "CategoryId" : "CNVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Authentic spicy curry cooked with traditional South Indian Karaikudi grounded masala.",
+      "Id" : "WD56J3DPJGZ5R",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FWD56J3DPJGZ5R.jpg?alt=media&token=564ed1c3-1ede-49ee-ab28-55a6c591d4fa",
+      "Name" : "Chicken Chettinadu",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "XF0NY3TEK36FW" : {
+      "CategoryId" : "CVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Sundakkai vathal cooked with chettinad style spices.",
+      "Id" : "XF0NY3TEK36FW",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FXYHQJRWZ1NZHR.jpg?alt=media&token=bc99055e-07eb-481f-8772-284c51a03640",
+      "Name" : "Vatha Kulambu",
+      "Price" : 7,
+      "Spicy" : "Normal"
+    },
+    "YKMB5C2R5QYSY" : {
+      "CategoryId" : "CNVC",
+      "ChiefSpecial" : false,
+      "Desc" : "Chunks of chicken sauteed with garlic and tomatoes",
+      "Id" : "YKMB5C2R5QYSY",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FYKMB5C2R5QYSY.jpg?alt=media&token=a05d1a6e-3242-4a12-af8b-87e05f1fcc4f",
+      "Name" : "Kadai Chicken",
+      "Price" : 8,
+      "Spicy" : "Normal"
+    },
+    "ZF9571HNE5TZC" : {
+      "CategoryId" : "CNVC",
+      "ChiefSpecial" : false,
+      "Desc" : "A homemade mouth watering curry made with boiled eggs & onion gravy.",
+      "Id" : "ZF9571HNE5TZC",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FZF9571HNE5TZC.jpg?alt=media&token=2bf9bf59-f090-4709-a3f1-dcf8e7a33abc",
+      "Name" : "Egg Curry / Chettinadu",
+      "Price" : 7,
+      "Spicy" : "No Spicy"
     }
   },
   "Locations" : [ {
@@ -313,15 +625,19 @@
     } ]
   },
   "TodayMenuItem" : [ {
-    "Id" : "AK0002"
+    "Id" : "J9MMW20S83WQW"
   }, {
-    "Id" : "AK0003"
+    "Id" : "QX1JKFSRY7JPM"
   }, {
-    "Id" : "AK0004"
+    "Id" : "9KV7P57CACMA8"
   }, {
-    "Id" : "AK0005"
+    "Id" : "RT0S78DDB1XVM"
   }, {
-    "Id" : "AK0006"
+    "Id" : "E7DV8NNPSJ6TG"
+  }, {
+    "Id" : "TVPT1K0466H0A"
+  }, {
+    "Id" : "RV1W4M52VCNRY"
   } ],
   "Users" : {
     "muthuajaryahoocom" : {

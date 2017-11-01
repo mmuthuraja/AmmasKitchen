@@ -19,7 +19,7 @@
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <link href="css/checkbox.css" rel="stylesheet">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css" >
 
@@ -60,8 +60,8 @@
   firebase.initializeApp(config);
     
   var dBase = firebase.database();
+  var imgStorage = firebase.storage().ref().child("images");
   
-    
 </script>
   </head>
 
@@ -79,6 +79,5 @@
             </ion-title>
           </ion-toolbar>
       </ion-footer-bar>
-
   </body>
 </html>

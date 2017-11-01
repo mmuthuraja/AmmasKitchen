@@ -20,25 +20,31 @@
 
       <ion-list >
         <ion-item menu-close href="#/app/home" class="menuionitem" >
-          Home
+          <img src="img/icons/home.png" style="width:22px;height:22px;">&nbsp; Home
         </ion-item>
         <ion-item menu-close href="#/app/todaysmenu"  class="menuionitem">
-          Today's Menu
+          <img src="img/icons/todaysmenu.png" style="width:22px;height:22px;">&nbsp; Today's Menu
         </ion-item>
         <ion-item menu-close href="#/app/locations"  class="menuionitem">
-          Locations
+          <img src="img/icons/location.png" style="width:22px;height:22px;">&nbsp; Locations
         </ion-item>
         <ion-item menu-close href="#/app/playlists" class="menuionitem">
-          Order Status / History
+          <img src="img/icons/orders.png" style="width:22px;height:22px;">&nbsp; Order Status / History
         </ion-item>
         <ion-item menu-close href="#/app/aboutus"  class="menuionitem">
-         About Us
+         <img src="img/icons/aboutus.png" style="width:22px;height:22px;">&nbsp; About Us
+        </ion-item>
+        <ion-item menu-close href="#/app/settings" class="menuionitem" ng-show="isUserAdmin()">
+          <img src="img/icons/settings.png" style="width:22px;height:22px;">&nbsp; Settings
+        </ion-item>
+        <ion-item menu-close href="" class="menuionitem" ng-show="isUserAdmin()">
+          <img src="img/icons/users.png" style="width:22px;height:22px;">&nbsp; Users
         </ion-item>
         <ion-item menu-close href="#/app/login"  class="menuionitem" ng-show="!hasUserLoggedIn()">
-          Login / Sign up
+          <img src="img/icons/login.png" style="width:22px;height:22px;">&nbsp; Login / Sign up
         </ion-item>
         <ion-item menu-close ng-click="signOut()"  class="menuionitem" ng-show="hasUserLoggedIn()">
-          Logout
+          <img src="img/icons/logout.png" style="width:22px;height:22px;">&nbsp; Logout
         </ion-item>
       </ion-list>
     </ion-content>

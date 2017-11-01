@@ -61,14 +61,13 @@ angular.module('starter', ['ionic', 'ionic-toast', 'starter.controllers'])
         }
       }
     })
-    .state('app.playlists', {
-      url: '/playlists',
+    .state('app.settings', {
+      url: '/settings',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
-          controller: 'PlaylistsCtrl',
+          templateUrl: 'templates/settings.html',
+          controller: 'settingsCtrl',
             service:'cartService'
-            
         }
       }
     })
@@ -82,7 +81,6 @@ angular.module('starter', ['ionic', 'ionic-toast', 'starter.controllers'])
       }
     }
   })
-  
    .state('app.todaysmenu', {
     url: '/todaysmenu',
       views:{
@@ -92,7 +90,6 @@ angular.module('starter', ['ionic', 'ionic-toast', 'starter.controllers'])
         }
       }
   })
-   
    .state('app.login', {
     url: '/login',
       views:{

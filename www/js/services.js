@@ -92,6 +92,18 @@ angular.module('starter')
 		}
 	};
 })
+.service("spinningService", function($ionicLoading){
+	return {
+		show: function(){
+			$ionicLoading.show({
+				template: '<p>Processing...</p><ion-spinner></ion-spinner>'
+			});
+		},
+		hide: function(){
+			$ionicLoading.hide();
+		}
+	};
+})
 .service("stringHandler",function(){
 	return {
 		replaceSymbol: function(source, symbols, replaceWith){
@@ -103,6 +115,86 @@ angular.module('starter')
 			return dummy;
 		}
 	}
+})
+.service("todayMenuSettings", function(){
+	var categories = [];
+	var items = [];
+	var allItems = [];
+	var todaysMenuItems = [];
+	var localServiceObject = {};
+	localServiceObject.doneCategory=false;
+	localServiceObject.cbf4Categories = null;
+	localServiceObject.cbf4Items = null;
+	localServiceObject.cbf4TodaysMenuItems = null;
+	localServiceObject.selectedCategoryId = "";
+	localServiceObject.getCategories = function(){
+		return categories;
+	};
+	localServiceObject.getItems = function(){
+		return items;
+	};
+	localServiceObject.getTodaysMenuItems = function(){
+		return todaysMenuItems;
+	};
+	localServiceObject.setCategories = function(snapshot){
+		categories = [];
+		for(index in snapshot.val()){
+			var catInfo = { "Id": snapshot.val()[index].Id, 
+							"Name": snapshot.val()[index].Name, 
+							"Index": snapshot.val()[index].Position };
+			categories.push(catInfo);
+		}
+		localServiceObject.doneCategory=true;
+		localServiceObject.cbf4Categories();
+	};
+	localServiceObject.loadCategories = function(callbackFunction){
+		localServiceObject.cbf4Categories = callbackFunction;
+		localServiceObject.doneCategory=false;
+		dBase.ref('/Category').once('value')
+			.then(localServiceObject.setCategories)
+	    	.catch(function(err){
+	    		localServiceObject.doneCategory=true;
+		    });
+	};
+	localServiceObject.setItems = function(snapshot){
+		if(allItems.length==0)
+			allItems = snapshot.val();
+		localServiceObject.populateItems(allItems);
+	};
+	localServiceObject.populateItems = function(fullItems){
+		items = [];
+		for(index in fullItems){
+			var itm = fullItems[index];
+			if(itm.CategoryId==localServiceObject.selectedCategoryId)
+				items.push(itm);
+		}
+		localServiceObject.cbf4Items(items);
+	};
+	localServiceObject.loadItems = function(catId, cbf4Items){
+		localServiceObject.selectedCategoryId = catId;
+		localServiceObject.cbf4Items = cbf4Items;
+		if(allItems.length==0)
+			dBase.ref('/Items').once('value')
+				.then(localServiceObject.setItems)
+	    		.catch(function(err){
+			    	//unable to laod
+			    });
+		else
+			localServiceObject.populateItems(allItems);
+	};
+	localServiceObject.refreshTodaysItems = function(snapshot){
+		todaysMenuItems = snapshot.val();
+		localServiceObject.cbf4TodaysMenuItems(todaysMenuItems);
+	};
+	localServiceObject.loadTodaysMenuItems = function(cbf4TodaysMenuItems){
+		localServiceObject.cbf4TodaysMenuItems = cbf4TodaysMenuItems;
+		dBase.ref('/TodayMenuItem').once('value')
+			.then(localServiceObject.refreshTodaysItems)
+	    	.catch(function(err){
+		    	localServiceObject.doneItems=true;
+		    });	
+	};
+	return localServiceObject;
 })
 .service("todaysMenu", function	(){
 	var items = [];
@@ -153,7 +245,8 @@ angular.module('starter')
 				"Id": snapshot.val().Id,
 				"Name": snapshot.val().Name,
 				"Price": snapshot.val().Price,
-				"Spicy": snapshot.val().Spicy
+				"Spicy": snapshot.val().Spicy,
+				"ImageUrl": snapshot.val().ImageUrl
 			};
 		items.push(item);
 		localServiceObject.cbFunction();
@@ -167,7 +260,8 @@ angular.module('starter')
 				"Id": "NULL",
 				"Name": "DummyDummy",
 				"Price": "0.00",
-				"Spicy": "Normal"
+				"Spicy": "Normal",
+				"ImageUrl": "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FDummyFood.jpg?alt=media&token=4fb37e6f-d559-4599-8579-c5394e3a2461"
 			};
 		items.push(item);
 		localServiceObject.cbFunction();
