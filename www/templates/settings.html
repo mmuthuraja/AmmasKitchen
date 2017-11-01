@@ -1,0 +1,44 @@
+<ion-view view-title="Locations"  style="background-image:url('../img/bg3.png')">
+  <ion-content>
+    <div class="tabs-striped tabs-top tabs-color-assertive" style="margin-top:-50px">
+      <div class="tabs"> 
+       <a class="{{ (setting.Code==currentSetting)?'tab-item active':'tab-item' }}" ng-repeat="setting in settings" ng-click="setSelectedSetting(setting.Code);">{{setting.Name}}</a>
+      </div>
+    </div><br><br><br><br>
+  <span class = "card" style="width:80%;">
+    <ion-scroll direction="y" >
+      <span ng-show="canShowSettings('C')">
+        <div class="card" style="height:30px;text-align:center;font-size:20px;">Manage Categories</div>
+      </span>
+      <span ng-show="canShowSettings('TM')" style="width:100%">
+        <div style="height:30px;text-align:center;font-size:20px;color:darkgreen">Manage Today's Menu</div>
+        <div class = "list">
+           <label class = "item item-input item-select item-light">
+              <div class = "input-label">
+                 Select Category
+              </div>
+              <select name="repeatSelect" id="repeatSelect" ng-model="data.tempCategory" ng-change="refreshSelectedCategoryItems(data.tempCategory)">
+              <option ng-repeat="cat in Categories" value="{{cat.Id}}" "{{(SelectedCategory.Id==cat.Id)?'selected':''}}">{{cat.Name}}</option>
+              </select>
+           </label>
+        </div>
+        <ion-list ng-show="(Items.length>0)">
+          <div style="background-color:#222326;height:30px;font-size:20px;color:white;"> &nbsp; {{SelectedCategory.Name}}</div>
+            <span ng-repeat="itm in Items">
+              <ion-checkbox style="background-color:#f4eade" ng-model="itm.Checked" ng-checked="itm.Checked" ><img src="{{itm.ImageUrl}}" style="width:50px;height:50px;border:2px solid black">&nbsp;{{itm.Name}}</ion-checkbox>
+            </span>
+        </ion-list>
+        <center><br>
+          <button  class="btn btn-primary" type="button"  ng-click="ModifyItems()">Apply Selection</button>
+        </center>
+      </span>
+      <span ng-show="canShowSettings('I')">
+        <div class="card" style="height:30px;text-align:center;font-size:20px;">Manage Items</div>
+      </span>
+      <span ng-show="canShowSettings('O')">
+        <div class="card" style="height:30px;text-align:center;font-size:20px;">Manage Other Settings</div>
+      </span>
+    </ion-scroll>
+  </span>
+   </ion-content>
+</ion-view>
