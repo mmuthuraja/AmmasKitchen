@@ -121,15 +121,16 @@ angular.module('starter.controllers',[])
     // adding the ones which have selected to todays menu
     for(var itmIndex in $scope.Items)
       if($scope.Items[itmIndex].Checked)
-        $scope.todaysMenuItems.push($scope.Items[itmIndex]);
+        $scope.todaysMenuItems.push({Id:$scope.Items[itmIndex].Id});
+    
     dBase.ref('/TodayMenuItem').set($scope.todaysMenuItems)
       .then(function(){
+        todayMenuSettings.loadTodaysMenuItems(refreshTodaysMenuItems);
         spinningService.hide();
       })
-      .catch(function(err){
+      .catch(function(error){
         spinningService.hide();
       });
-    
   };
   spinningService.show();
   todayMenuSettings.loadTodaysMenuItems(refreshTodaysMenuItems);
@@ -170,6 +171,9 @@ angular.module('starter.controllers',[])
     $scope.isMediumSpicy = function(spicyCode){
       return (spicyCode=="Medium" || spicyCode=="Hot");
     }
+    $scope.canShowCategory = function(catName){
+      return (catName!=""  || catName==undefined || catName=="undefined" || catName==null);
+    }
     $scope.isHotSpicy = function(spicyCode){
       return (spicyCode=="Hot");
     }
@@ -194,6 +198,7 @@ angular.module('starter.controllers',[])
               return item1.Category.Index - item2.Category.Index;
           });
           for(itemIndex in $scope.itemsList){
+            if($scope.itemsList[itemIndex].Id.toUpperCase()=="DUMMY") continue;
             if(!isCategoryExist($scope.itemsList[itemIndex].Category.Id)){
               $scope.itemsCategory.push($scope.itemsList[itemIndex].Category);
             }
