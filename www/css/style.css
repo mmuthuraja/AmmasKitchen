@@ -1,4 +1,7 @@
 /* Empty. Add your own CSS if you like */
+.bgImage{
+  background: url('https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fbg3.png?alt=media&token=e042b5e5-54f4-432a-ac0f-505b6bf9be3d');
+}
 .footerBg {
   background-color: #8BC34A;
   text-align: center;
@@ -246,3 +249,20 @@
   font-size: 15px;
   color:#013659;
 }
+
+/* ACCORDION STYLES */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+/* END OF ACCORDION STYLES */
