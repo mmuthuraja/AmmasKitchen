@@ -1,4 +1,4 @@
-<ion-view view-title="Locations"  style="background-image:url('../img/bg3.png')">
+<ion-view view-title="Locations"   class="bgImage">
   <ion-content>
     <div class="tabs-striped tabs-top tabs-color-assertive" style="margin-top:-50px">
       <div class="tabs"> 
@@ -8,7 +8,47 @@
   <span class = "card" style="width:80%;">
     <ion-scroll direction="y" >
       <span ng-show="canShowSettings('C')">
-        <div class="card" style="height:30px;text-align:center;font-size:20px;">Manage Categories</div>
+        <div class="card" >
+          <table style="width:100%">
+            <tr><td colspan="2" style="height:30px;text-align:center;font-size:20px;font-family:verdana;background-color:#EDA323;">
+                <table style="width:100%"><tr><td style="text-align:right;vertical-align:middle;"><img src="https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FItemsCategory.gif?alt=media&token=98685b64-b5aa-4107-8d70-f086b8bd5453" style="width:100px; height:100px;"></td><td style="width:70%;text-align:center;vertical-align:middle;word-wrap: break-word;">Manage Food Items Categories</td></tr></table></td>
+             </tr>
+            <tr style="text-align:center;vertical-align:middle">
+            <td colspan="2" style="text-align:center;vertical-align:middle;background-color:#EAC27E;">
+              <table style="width:100%">
+                <tr style="text-align:center;vertical-align:middle">
+                  <td style="width:10%;padding: 3px 3px 3px 3px;" ng-click="toggleDeleteOption()">
+                    <p ng-class="(showDeleteForCategory) ? 'deleteOn' : 'deleteOff'" > <i class="icon" ng-class="(showDeleteForCategory) ? 'ion-close-circled' : 'ion-ios-close-outline'" ></i></p>
+                  </td>
+                  <td style="width:80%;font-weight:bolder;"> Categories </td>
+                  <td style="width:10%;padding: 3px 3px 3px 3px;" ng-click="toggleReorderOption()">
+                    <p ng-class="(showReorderForCategory) ? 'reorderOn' : 'reorderOff'"> <i class="icon" ng-class="(showReorderForCategory) ? 'fa fa-arrows-v' : 'fa fa-arrows-v'" style="color:#1ea4e8;" ></i></p>
+                  </td>
+                </tr>
+              </table>              
+            </td>
+            </tr>
+            <tr style="background-color:#e4e5e0">
+              <td style="margin-left:10px;">
+                <label class="item item-input"  style="background-color:#e4e5e0">
+                  <input type="text" placeholder="Category Name" ng-model="categoryData.name" value=""  required>
+                </label>
+              </td>
+              <td style="padding: 3px 3px 3px 3px;text-align:center;margin-right:10px;" ng-click="onAddCategory()"> 
+                <p style="background-color:white;border:1px solid black; border-radius:3px;"> <i class="icon" ng-class="(true) ? 'ion-plus-circled' : ''"></i> Add</p>
+              </td>
+            </tr>
+          </table>
+          <ion-list  show-delete="showDeleteForCategory" show-reorder="showReorderForCategory">
+              <ion-item ng-repeat="cat in CategoriesSettings" item="cat" class="item-remove-animate">
+                &nbsp; {{cat.Name}}
+                <ion-option-button class="button-positive" ng-show="canShowEdit()" ng-click="edit(item)"><i class="icon" ng-class="(true)?'ion-edit':''"></i></ion-option-button>
+                <ion-delete-button class="ion-minus-circled" ng-click="onCategoryDelete(cat)"></ion-delete-button>
+                <ion-reorder-button on-reorder="onCategoryReordered(cat, $fromIndex, $toIndex)">
+                <i class="fa fa-arrows-v" style="font-size:50%;color:#1ea4e8;" aria-hidden=true></i></ion-reorder-button>
+              </ion-item>
+          </ion-list>
+        </div>
       </span>
       <span ng-show="canShowSettings('TM')" style="width:100%">
         <div style="height:30px;text-align:center;font-size:20px;color:darkgreen">Manage Today's Menu</div>

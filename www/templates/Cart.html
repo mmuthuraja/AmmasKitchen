@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>How to delete properties of an array.</p>
+
+<p id="demo"></p>
+
+<script>
+function sample() { 
+	var cart = {
+    	"ItemsCount":0,
+    	"Items":[{"Id":"Dummy", "Quantity":0, "Discount":0, "UnitPrice":0, "Total":0}]
+    };
+	return {
+    
+    	getCart: function(){return cart;},
+    isItemExist: function(code){
+			var exist = false;
+			for (i in cart.Items) {
+    			if(cart.Items[i].Id === code){
+    				exist = true;
+    				break;
+    			}
+			}
+			return exist;
+		},
+		addItem2Cart: function(code, qty, disc, price){
+        	cart.ItemsCount += qty;
+			var total = (qty * price) - ((qty*price) * (disc/100) );
+			cart["Items"].push({"Id": code, "Quantity":qty, "Discount":disc, "UnitPrice":price, "Total":total})
+		},
+        
+		updateItemQuantity: function(code, qty){
+			for (i in cart.Items) {
+    			if(cart.Items[i].Id === code){
+    				cart.ItemsCount += qty;
+    				cart.Items[i].Quantity += qty;
+    				if(cart.Items[i].Quantity==0 || qty==0) // if item qty is zero, then remove it from cart.
+                    {
+                    	cart.ItemsCount -= cart.Items[i].Quantity;
+    					delete cart.Items[i];
+                    }
+    				else
+	    				cart.Items[i].Total = (cart.Items[i].Quantity * cart.Items[i].UnitPrice) - ((cart.Items[i].Quantity*cart.Items[i].UnitPrice) * (cart.Items[i].Discount/100) );
+    				break;
+    			}
+			}
+		},
+		addItemQuantity: function(code){ 
+			this.updateItemQuantity(code, 1);
+		},
+		reduceItemQuantity : function(code, qty){
+			this.updateItemQuantity(code, -1);	
+		}
+    };
+}
+
+var cartObject = sample();
+
+cartObject.addItem2Cart("Sample",1,0,10);
+cartObject.addItem2Cart("Sample1",2,0,10);
+cartObject.addItem2Cart("Sample2",4,0,10);
+cartObject.addItemQuantity("Sample");
+cartObject.reduceItemQuantity("Sample1");
+cartObject.updateItemQuantity("Sample2",0);
+cartObject.updateItemQuantity("Sample1",10);
+
+document.getElementById("demo").innerHTML = cartObject.getCart().ItemsCount;
+
+</script>
+
+</body>
+</html>

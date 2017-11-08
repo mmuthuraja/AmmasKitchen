@@ -1,10 +1,47 @@
-<ion-view view-title="Amma's Kitchen" style="background-image:url('../img/bg3.png')">
+<ion-view view-title="Amma's Kitchen"  class="bgImage">
   <ion-content>
       <div>
       <center><img src="img/todaysmenu.png" style="width:80%"</center>
       </div>
     <div><br>
     <ion-list>
+      <div ng-repeat="cat in itemsCategory">
+        <ion-item class="item-stable" style="width:100%;background-color:#728968;color:#efdd9b;"
+                  ng-click="toggleGroup(cat)"
+                  ng-class="{active: isGroupShown(cat)}">
+                  <table style="width:100%;"><tr style="width:100%;"><td style="width:95%;">&nbsp; {{cat.Name}}</td><td style="align:right;"><i class="icon" ng-class="isGroupShown(cat) ? 'ion-android-arrow-dropup-circle' : 'ion-android-arrow-dropdown-circle'"></i></td></tr></table>
+        </ion-item> 
+        <ion-item class="item-text-wrap item-accordion item-thumbnail-left "
+                  ng-repeat="item in cat.Items"
+                  ng-show="isGroupShown(cat)" menu-close style="background-color:#DFE5B5;border-top:1px solid lightgray;" >
+                  <img src="{{item.ImageUrl}}" style="width:50px;height:50px;border:2px solid black;" >
+                  <table style="margin-left:-30px;width:100%;">
+                      <tr>
+                          <td style="word-wrap: break-word;">
+                              <h2 style="font-weight:bold;">{{item.Name}}</h2>
+                              <p style="word-wrap: break-word;">{{item.Desc}}</p>
+                              <p ng-show="isEmptyDesc(item.Desc)"> - No detailed description - </p>
+                              <h4>
+                                <img src="img/spicy.png" style="width:20px;" ng-show="isNormalSpicy(item.Spicy)">
+                                <img src="img/spicy.png" style="width:20px;" ng-show="isMediumSpicy(item.Spicy)">
+                                <img src="img/spicy.png" style="width:20px;" ng-show="isHotSpicy(item.Spicy)">
+                                &nbsp; &nbsp; 
+                                <span ng-show="item.ChiefSpecial"><img src="img/ChefSpecial.png" style="width:20px;"> Chef Special &nbsp; &nbsp;</span>
+                              </h4>
+                          </td>
+                          <td align="right" style="text-align:center; width:30%; vertical-align:top;" nowrap="true">
+                              <div class="price">{{item.Price | currency:"$ "}}</div>
+                              <img src="img/add2Cart.png" style="width:35px;margin-top:5px;" ng-hide="hasAdded2Cart(item.Id)">
+                              <img src="img/added2Cart1.png" style="width:35px;margin-top:5px;" ng-show="hasAdded2Cart(item.Id)">
+                          </td>
+                      </tr>
+                  </table>
+        </ion-item>
+      </div>
+    </ion-list>
+
+
+   <!--  <ion-list>
       <span ng-repeat="cat in itemsCategory">
         <div class="item item-divider">{{cat.Name}}</div>
         <span ng-repeat="item in itemsList">
@@ -34,7 +71,7 @@
             </ion-item>
         </span>
       </span>
-    </ion-list>
+    </ion-list> -->
         <center><img src="img/todaysmenuend.png" style="width:80%"</center>
       </div>
   </ion-content>

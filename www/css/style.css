@@ -250,10 +250,33 @@
   color:#013659;
 }
 
+/* DELETE/REORDER ICON OPTION */
+.deleteOn {
+  background-color:#EF473A;
+  border:1px solid black;
+  border-radius:3px;
+}
+.deleteOff{
+  background-color:white;
+  border:1px solid black;
+  border-radius:3px;
+}
+.reorderOn{
+  background-color:#1ea4e8;
+  border:1px solid black;
+  border-radius:3px;
+}
+.reorderOff{
+  background-color:white;
+  border:1px solid black;
+  border-radius:3px;
+}
+/* End of DELETE/REORDER ICON OPTION*/
+
 /* ACCORDION STYLES */
 .list .item.item-accordion {
-  line-height: 38px;
-  padding-top: 0;
+  /*line-height: 38px;*/
+  padding-top: 10px;
   padding-bottom: 0;
   transition: 0.09s all linear;
 }

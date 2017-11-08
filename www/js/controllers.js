@@ -21,7 +21,7 @@ angular.module('starter.controllers',[])
       spinningService.hide();
     };
 })
-.controller('settingsCtrl',function($scope, todayMenuSettings, spinningService){
+.controller('settingsCtrl',function($scope, todayMenuSettings, categorySettings, spinningService){
   /***** for settings -- START **************/
   $scope.settings = [{"Name":"Today's Menu", "Code":"TM" },
                      {"Name":"Items","Code":"I"},
@@ -35,6 +35,54 @@ angular.module('starter.controllers',[])
     return ($scope.currentSetting==code);
   };
   /***** for settings -- END **************/
+
+  /***** for Category Menu settings -- START **************/
+  $scope.showDeleteForCategory = false;
+  $scope.showReorderForCategory = false;
+  $scope.isInEditMode = false;
+  $scope.CategoriesSettings = [];
+  $scope.canShowEdit = function(){
+    if($scope.showDeleteForCategory || $scope.showReorderForCategory)
+      return false;
+    else
+      return true;
+  };
+  $scope.toggleDeleteOption = function(){
+    $scope.showReorderForCategory = false;
+    $scope.showDeleteForCategory = !$scope.showDeleteForCategory;
+  }
+  $scope.toggleReorderOption = function(){
+    $scope.showDeleteForCategory = false;
+    $scope.showReorderForCategory = !$scope.showReorderForCategory;
+  }
+  function loadCategoriesForSettings(){
+    $scope.CategoriesSettings = categorySettings.getCategories();
+    $scope.CategoriesSettings.sort(function(catOne, catTwo){
+        return catOne.Position - catTwo.Position;
+    });
+  }
+  $scope.onCategoryDeleted = function(cat){
+
+  };
+  $scope.onCategoryReordered = function(cat, fromIndex, toIndex){
+
+  };
+  $scope.onCategoryReorder = function(index, obj, evt){
+    spinningService.show();
+    var otherObj = $scope.CategoriesSettings[index];
+    var otherIndex = $scope.CategoriesSettings.indexOf(obj);
+    $scope.CategoriesSettings[index] =  obj;
+    $scope.CategoriesSettings[otherIndex] = otherObj;
+    dBase.ref('/Category').set($scope.CategoriesSettings)
+    .then(function(){
+      spinningService.hide();
+    })
+    .catch(function(error){
+      spinningService.hide();
+    });
+  };
+  categorySettings.loadCategories(loadCategoriesForSettings);
+  /***** for Category Menu settings -- END **************/
 
   /***** for todays Menu settings -- START **************/
   $scope.todaysMenuChoices = [];
@@ -156,11 +204,17 @@ angular.module('starter.controllers',[])
     $scope.totalTodaysItems =-1;
     $scope.itemsCategory = [];
     $scope.itemsList = [];
+    $scope.toggleGroup = function(cat){
+      cat.Show = !cat.Show;
+    }
+    $scope.isGroupShown = function(cat){
+      return cat.Show;
+    }
     $scope.hasAdded2Cart = function (itemId){
       return false;
     };
     $scope.sameCategory = function(catId, itemCatId){
-      return catId==itemCatId;
+      return catId==itemCatId ;
     };
     $scope.isEmptyDesc = function(desc){
       return (desc=="" || desc == "undefined" || desc ==null);
@@ -200,7 +254,14 @@ angular.module('starter.controllers',[])
           for(itemIndex in $scope.itemsList){
             if($scope.itemsList[itemIndex].Id.toUpperCase()=="DUMMY") continue;
             if(!isCategoryExist($scope.itemsList[itemIndex].Category.Id)){
-              $scope.itemsCategory.push($scope.itemsList[itemIndex].Category);
+              var catId = $scope.itemsList[itemIndex].Category.Id;
+              var tempCategory = $scope.itemsList[itemIndex].Category;
+              for(subItemIndex in $scope.itemsList){
+                var tempItem = $scope.itemsList[subItemIndex];
+                if(tempItem.CategoryId==tempCategory.Id)
+                  tempCategory.Items.push(tempItem);                
+              }
+              $scope.itemsCategory.push(tempCategory);
             }
           }
         }

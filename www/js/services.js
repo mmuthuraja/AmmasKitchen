@@ -116,6 +116,32 @@ angular.module('starter')
 		}
 	}
 })
+.service("categorySettings", function(){
+	var categories = [];
+	var localServiceObject = {};
+	var cbf4Categories = null;
+	localServiceObject.setCategories = function(snapshot){
+		categories = [];
+		for(index in snapshot.val()){
+			var catInfo = { "Id": snapshot.val()[index].Id, 
+							"Name": snapshot.val()[index].Name, 
+							"Position": snapshot.val()[index].Position };
+			categories.push(catInfo);
+		}
+		localServiceObject.cbf4Categories();
+	};
+	localServiceObject.loadCategories = function(callbackFunction){
+		localServiceObject.cbf4Categories = callbackFunction;
+		dBase.ref('/Category').once('value')
+			.then(localServiceObject.setCategories)
+	    	.catch(function(err){
+		    });
+	};
+	localServiceObject.getCategories = function(){
+		return categories;
+	}
+	return localServiceObject;
+})
 .service("todayMenuSettings", function(){
 	var categories = [];
 	var items = [];
@@ -196,6 +222,7 @@ angular.module('starter')
 	};
 	return localServiceObject;
 })
+
 .service("todaysMenu", function	(){
 	var items = [];
 	var categories = [];
@@ -220,7 +247,11 @@ angular.module('starter')
 	localServiceObject.setCategories = function(snapshot){
 		categories = [];
 		for(index in snapshot.val()){
-			var catInfo = { "Id": snapshot.val()[index].Id, "Name": snapshot.val()[index].Name, "Index": snapshot.val()[index].Position };
+			var catInfo = { "Id": snapshot.val()[index].Id, 
+							"Name": snapshot.val()[index].Name, 
+							"Position": snapshot.val()[index].Position, 
+							"Show":false,
+							"Items" : []};
 			categories.push(catInfo);
 		}
 		localServiceObject.doneCategory=true;
