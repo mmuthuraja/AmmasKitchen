@@ -1,0 +1,33 @@
+steps by step
+
+1. make environtment variable PATH
+--Home PC Path----
+path=%path%;path=%path%;C:\Program Files (x86)\Java\jdk1.6.0\bin;
+path=%path%;C:\Program Files (x86)\Android\android-sdk\build-tools\19.1.0;
+--Office PC path----
+path=%path%;C:\Program Files\Java\jdk1.8.0_111\bin;
+path=%path%;C:\Users\MPillai\AppData\Local\Android\Sdk\build-tools\19.1.0;
+
+2. Add/build the platform android/ios
+ionic platform add android
+ionic build android
+
+3. Create a keystore (to create a new keystore)
+open command prompt/nodejs prompt and specify the below command with necessary details.
+keytool -genkey -alias mydomain -keyalg RSA -keystore KeyStore.jks -keysize 2048
+
+
+4. perform this command line code (to assign keystore to apk)
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore C:\NJABMIONIC\platforms\android\build\outputs\apk\njabm-release-key.keystore C:\NJABMIONIC\platforms\android\build\outputs\apk\android-release-unsigned.apk njabm_alias
+
+5. perform this command line code (to verify the certificate)
+jarsigner -verify -verbose -certs android-release-unsigned.apk 
+
+6. peform this command line code (to make final release apk)
+zipalign -v 4 C:\NJABMIONIC\platforms\android\build\outputs\apk\android-release-unsigned.apk NJABM.apk
+
+
+<a style="width:100%;text-decoration:none;color:black;" href="http://maps.google.com/maps?q={{event.Pooja_Address}}&navigate=yes"></a>
+
+
+map API key:AIzaSyByPdB5w2-jrowFAJl_ujdLvX8W66v1_ms
