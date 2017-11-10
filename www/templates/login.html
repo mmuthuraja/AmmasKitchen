@@ -1,9 +1,9 @@
-<ion-view view-title="Login"  class="bgImage">
+<ion-view view-title="Login" >
   <ion-content>
       <div class="list">
         <center>
           <div style="height:100%;margin-top:20px;margin-bottom:30px;">
-            <img src="img/logo-trans.png" style="width:90%;"/>
+            <img ng-src="{{getImageUrl('AmmaKitchenTitleTrans')}}" style="width:90%;"/>
           </div>
         </center>
       </div>
@@ -34,10 +34,10 @@
           <table style="width:100%">
               <tr>
                 <td style="vertical-align:middle;">
-                  <button ng-click="showPanel('reset')" type="button"  style="width:100%;"><img src="img/forgotpassword.png" style="width:32px;height:32px;" /> Forgot password?</button>
+                  <button ng-click="showPanel('reset')" type="button"  style="width:100%;"><img ng-src="{{getImageUrl('ForgotPassword')}}" style="width:32px;height:32px;" /> Forgot password?</button>
                 </td>
                 <td style="text-align:right;vertical-align:middle;">
-                  <button ng-click="showPanel('register')" style="width:100%;" type="button" ><img src="img/newuser.png" style="width:30px;height:30px;" /> Sign Up</button>
+                  <button ng-click="showPanel('register')" style="width:100%;" type="button" ><img ng-src="{{getImageUrl('NewUser')}}" style="width:30px;height:30px;" /> Sign Up</button>
                 </td>
               </tr>
              <!--  <tr><td colspan="2"><center>Err: {{errorMessage}}</center></td></tr> -->

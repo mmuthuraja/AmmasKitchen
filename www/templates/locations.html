@@ -1,4 +1,4 @@
-<ion-view view-title="Locations"   class="bgImage">
+<ion-view view-title="Locations" >
   <ion-content>
     <div class="tabs-striped tabs-top tabs-color-assertive" style="margin-top:-50px">
       <div class="tabs"> 
@@ -8,14 +8,14 @@
   <span class = "card" style="width:80%;">
 
     <div class = "item item-avatar" style="background-color:#fcf3e5">
-      <img src = "img/location.png">
+      <img ng-src="{{getImageUrl('LocationIcon')}}">
       <h2>Amma's Kitchen</h2>
       <h3 style="word-wrap: break-word;"><a href="https://maps.google.com/?q={{selectedLocation.Address}}">{{selectedLocation.Address}}</a></h3>
     </div>
     <div id="map"  data-tap-disabled="true"  class="mapview"></div>
     <ion-scroll direction="y" >
     <div class = "item item-body item-text-wrap" style="background-color:transparent">
-       Contact us: <img src="img/call.png" style="width:25px;height:19px;">
+       Contact us: <img ng-src="getImageUlr('CallIcon')" style="width:25px;height:19px;">
       <a href="tel:{{selectedLocation.Contact}}">{{selectedLocation.Contact}}</a> 
       <table style="width:100%;font-size:12px;">
           <tr><td>&nbsp;</td><td>&nbsp;<td><td>&nbsp;</td></tr>

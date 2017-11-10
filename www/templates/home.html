@@ -1,9 +1,9 @@
-<ion-view view-title="Welcome {{welcomeName}}"  class="bgImage">
+<ion-view view-title="Welcome {{welcomeName}}">
   <ion-content>
       <div class="list" >
         <center>
         <div style="height:100%;margin-top:70px;margin-bottom:70px;">
-            <img src="img/logo-trans.png" style="width:90%;"/>
+            <img ng-src="{{getImageUrl('AmmaKitchenTitleTrans')}}" style="width:90%;"/>
         </div>
          <div style="background-color:#F5BFA4;font-weight:bold;height:25px;vertical-align:middle;" >Restaurant <font color="red">CLOSED</font> Now!
          </div>
@@ -11,7 +11,7 @@
       </div>
       <ion-list>
           <ion-item class="item item-thumbnail-left " menu-close   href="#/app/todaysmenu" style="background-color:#F4E4D5;">
-              <img src="img/todaymenu.png" style="width:45px; height:50px;"><center>
+              <img ng-src="{{getImageUrl('TodayMenuHomeIcon')}}" style="width:45px; height:50px;"><center>
               <table style="margin-left:-30px;width:100%;">
                   <tr>
                     <td>
@@ -19,13 +19,13 @@
                         <p>All Aavailable items for the day <br>
                             our Amma's Kitchen</p>
                      </td>
-                      <td style="text-align:right;vertical-align:middle">&nbsp; &nbsp; &nbsp;<img src="img\icons\rightarrowcircle.svg" style="width:25px; height:25px;">
+                      <td style="text-align:right;vertical-align:middle">&nbsp; &nbsp; &nbsp;<img  ng-src="{{getImageUrl('RightArrowCircleIcon')}}" style="width:25px; height:25px;">
                       </td>
                   </tr>
               </table></center>
           </ion-item>
           <ion-item class="item item-thumbnail-left " menu-close  style="background-color:#F4E4D5;">
-              <img src="img/orderhistory.png" style="width:45px; height:50px;"><center>
+              <img ng-src="{{getImageUrl('OrderHistoryIcon')}}"  style="width:45px; height:50px;"><center>
               <table style="margin-left:-30px;width:100%;">
                   <tr>
                     <td >
@@ -33,7 +33,7 @@
                         <p>You can view all your previous <br>
                             orders and its status.</p>
                      </td>
-                    <td style="text-align:right;vertical-align:middle">&nbsp; <img src="img\icons\rightarrowcircle.svg" style="width:25px; height:25px;">
+                    <td style="text-align:right;vertical-align:middle">&nbsp; <img ng-src="{{getImageUrl('RightArrowCircleIcon')}}" style="width:25px; height:25px;">
                       </td>
                     </td>
                   </tr>

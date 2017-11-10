@@ -1,6 +1,11 @@
 angular.module('starter.controllers',[])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$state, spinningService, currentUser,ionicToast, pageService) {
+.controller('AppCtrl', function($scope, $ionicPopup, $ionicModal, $timeout,$state, spinningService, currentUser,ionicToast, pageService,
+                                  imageUrlService){
+    
+    $scope.getImageUrl = function(imagename){
+      return imageUrlService.getImageUrl(imagename);
+    };
     $scope.hasUserLoggedIn = function(){
       return currentUser.hasUserLoggedIn();
     };
@@ -21,7 +26,12 @@ angular.module('starter.controllers',[])
       spinningService.hide();
     };
 })
-.controller('settingsCtrl',function($scope, todayMenuSettings, categorySettings, spinningService){
+.controller('settingsCtrl',function($scope, $ionicPopup, $ionicListDelegate, todayMenuSettings, categorySettings, spinningService, popupService,
+                                  imageUrlService){
+    
+    $scope.getImageUrl = function(imagename){
+      return imageUrlService.getImageUrl(imagename);
+    }
   /***** for settings -- START **************/
   $scope.settings = [{"Name":"Today's Menu", "Code":"TM" },
                      {"Name":"Items","Code":"I"},
@@ -34,6 +44,12 @@ angular.module('starter.controllers',[])
   $scope.canShowSettings=function(code){
     return ($scope.currentSetting==code);
   };
+  function reloadAllSettings(){
+    spinningService.show();
+    categorySettings.loadCategories(loadCategoriesForSettings);
+    todayMenuSettings.loadTodaysMenuItems(refreshTodaysMenuItems);
+    todayMenuSettings.loadCategories(refreshCategories);
+  };
   /***** for settings -- END **************/
 
   /***** for Category Menu settings -- START **************/
@@ -41,6 +57,14 @@ angular.module('starter.controllers',[])
   $scope.showReorderForCategory = false;
   $scope.isInEditMode = false;
   $scope.CategoriesSettings = [];
+  $scope.NewCategoryData = init_clone_Cat();
+  $scope.EditCategoryData = init_clone_Cat();
+  function init_clone_Cat(cat){
+    if(cat)
+      return {Id: cat.Id,Name:cat.Name, Position:cat.Position};
+    else
+      return {Id: "",Name:"",Position: 0};
+  }
   $scope.canShowEdit = function(){
     if($scope.showDeleteForCategory || $scope.showReorderForCategory)
       return false;
@@ -61,27 +85,100 @@ angular.module('starter.controllers',[])
         return catOne.Position - catTwo.Position;
     });
   }
+  $scope.onCategoryAdded = function(){
+    spinningService.show();
+    $scope.NewCategoryData.Position = $scope.CategoriesSettings.length;
+    $scope.NewCategoryData.Id = Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5).toUpperCase() + "_" + $scope.NewCategoryData.Name.toUpperCase().replace(" ","");
+    if(!isCategoryExistAlready($scope.NewCategoryData.Name)){
+      $scope.CategoriesSettings.push($scope.NewCategoryData);
+      updateCategorySet();
+    }
+    else{
+      spinningService.hide();
+      popupService.showAlert("Duplicate found!","This category exists already!<br><b>"+$scope.NewCategoryData.Name+"</b>")
+      .then(function(res){
+        if(res){
+          $scope.NewCategoryData = {Id: "",Name:"",Position: 0};
+        }
+      });
+    }
+  }
   $scope.onCategoryDeleted = function(cat){
-
+    popupService.showConfirm("Delete Category", "Do you really want to delete [<b>"+cat.Name+"</b>] ? <br><br>Deleting this category result in loosing all items associated with this.")
+    .then(function(res){
+      if(res){
+        var catIndex = $scope.CategoriesSettings.indexOf(cat);
+        $scope.CategoriesSettings.splice(catIndex, 1);
+        updateCategorySet();
+      }
+    });
+      
   };
   $scope.onCategoryReordered = function(cat, fromIndex, toIndex){
-
-  };
-  $scope.onCategoryReorder = function(index, obj, evt){
     spinningService.show();
-    var otherObj = $scope.CategoriesSettings[index];
-    var otherIndex = $scope.CategoriesSettings.indexOf(obj);
-    $scope.CategoriesSettings[index] =  obj;
-    $scope.CategoriesSettings[otherIndex] = otherObj;
-    dBase.ref('/Category').set($scope.CategoriesSettings)
+    $scope.CategoriesSettings.splice(fromIndex, 1);
+    $scope.CategoriesSettings.splice(toIndex, 0, cat);
+    updateCategorySet();
+  };
+  $scope.onCategoryEdit = function(cat){
+    $ionicListDelegate.closeOptionButtons();
+    $scope.temp = {catName : cat.Name};
+    $scope.EditCategoryData = cat;
+    popupService.showPopup($scope, "Edit Category", 
+        "<input type='text' ng-model='temp.catName'>", 
+        "Category Name:", 
+        [{text:'Cancel'},
+         {text:'<b>Change</b>',
+          type: 'button-positive',
+          onTap: function(e){
+              if(!$scope.temp.catName){
+                e.preventDetault();
+              }else {
+                $scope.EditCategoryData.Name = $scope.temp.catName;
+                return $scope.temp.catName;
+              }
+            }
+        }])
+    .then(onCategoryEdited);
+  }
+  function onCategoryEdited(res){
+    if(res){
+      updateCategorySet();
+    }    
+  }
+  function updateCategorySet(){
+    var tempCategoriesList = [];
+    for(index in $scope.CategoriesSettings){
+      $scope.CategoriesSettings[index].Position = parseInt(parseInt(index) + 1);
+      tempCategoriesList.push({
+          Id: $scope.CategoriesSettings[index].Id,
+          Name: $scope.CategoriesSettings[index].Name,
+          Position: $scope.CategoriesSettings[index].Position
+        });
+    }
+    dBase.ref('/Category').set(tempCategoriesList)
     .then(function(){
       spinningService.hide();
+      reloadAllSettings();
     })
     .catch(function(error){
       spinningService.hide();
+      reloadAllSettings();
     });
-  };
-  categorySettings.loadCategories(loadCategoriesForSettings);
+  }
+  function isCategoryExistAlready(catName){
+    var isFoundAlready = false;
+    for(index in $scope.CategoriesSettings)
+    {
+      var tempCat = $scope.CategoriesSettings[index];
+      if(tempCat.Name.replace(" ","").toUpperCase()==catName.toUpperCase().replace(" ","")){
+        isFoundAlready=true;
+        break;
+      }
+    }
+    return isFoundAlready;
+  }
+  //categorySettings.loadCategories(loadCategoriesForSettings);
   /***** for Category Menu settings -- END **************/
 
   /***** for todays Menu settings -- START **************/
@@ -175,20 +272,33 @@ angular.module('starter.controllers',[])
       .then(function(){
         todayMenuSettings.loadTodaysMenuItems(refreshTodaysMenuItems);
         spinningService.hide();
+        reloadAllSettings();
       })
       .catch(function(error){
         spinningService.hide();
+        reloadAllSettings();
       });
   };
-  spinningService.show();
-  todayMenuSettings.loadTodaysMenuItems(refreshTodaysMenuItems);
-  todayMenuSettings.loadCategories(refreshCategories);
+  // spinningService.show();
+  // todayMenuSettings.loadTodaysMenuItems(refreshTodaysMenuItems);
+  // todayMenuSettings.loadCategories(refreshCategories);
   /***** for todays Menu settings -- END **************/
-  
+  reloadAllSettings();
 })
-.controller('aboutusCtrl',function($scope){})
+.controller('aboutusCtrl',function($scope,
+                                  imageUrlService){
+    
+    $scope.getImageUrl = function(imagename){
+      return imageUrlService.getImageUrl(imagename);
+    }
+})
 
-.controller('PlaylistsCtrl', function($scope) {
+.controller('PlaylistsCtrl', function($scope,
+                                  imageUrlService){
+    
+    $scope.getImageUrl = function(imagename){
+      return imageUrlService.getImageUrl(imagename);
+    }
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -200,7 +310,12 @@ angular.module('starter.controllers',[])
   //test
 })
 
-.controller('todaysmenuCtrl',function($scope, todaysMenu, spinningService){
+.controller('todaysmenuCtrl',function($scope, $ionicPopup, todaysMenu, spinningService, popupService,
+                                  imageUrlService){
+    
+    $scope.getImageUrl = function(imagename){
+      return imageUrlService.getImageUrl(imagename);
+    }
     $scope.totalTodaysItems =-1;
     $scope.itemsCategory = [];
     $scope.itemsList = [];
@@ -231,6 +346,14 @@ angular.module('starter.controllers',[])
     $scope.isHotSpicy = function(spicyCode){
       return (spicyCode=="Hot");
     }
+    $scope.showImage = function(itemName,imageUrl,itemCategory){
+      var imagePopup = popupService.showPopup($scope, itemName, 
+        "<center><img src='"+imageUrl+"' style='border:1px solid gray;width:90%;height:90%'></center>", 
+        "<center style='font-weight:smaller'>("+itemCategory+")</center>", 
+        [{text:'Close'}])
+      .then(function(res){});
+      popupService.registerForAutoCloseOnTap(imagePopup);
+    };
     function isCategoryExist(categoryId){
       var exists = false;
       for(catIndex in $scope.itemsCategory)
@@ -270,7 +393,12 @@ angular.module('starter.controllers',[])
     };
     refreshItems();
 })
-.controller('locationsCtrl', function($scope){
+.controller('locationsCtrl', function($scope,
+                                  imageUrlService){
+    
+    $scope.getImageUrl = function(imagename){
+      return imageUrlService.getImageUrl(imagename);
+    }
     $scope.Locations = [];
     $scope.selectedLocation = {};
     $scope.locName="";
@@ -325,17 +453,27 @@ angular.module('starter.controllers',[])
   $scope.setSelectedLocation($scope.selectedLocation);
 })
 
-.controller('homeCtrl', function($scope, currentUser) {
+.controller('homeCtrl', function($scope, currentUser,
+                                  imageUrlService){
+    
+    $scope.getImageUrl = function(imagename){
+      return imageUrlService.getImageUrl(imagename);
+    }
   $scope.welcomeName = currentUser.getUserData().callName;
 })
 
 .controller('loginCtrl',function($scope, $location, currentUser, 
                                   $state,ionicToast,stringHandler,
-                                  pageService, spinningService){
+                                  pageService, spinningService,
+                                  imageUrlService){
+
+    $scope.getImageUrl = function(imagename){
+      return imageUrlService.getImageUrl(imagename);
+    }
     $scope.hasAlert = false;
     $scope.loginData = {
         emailId: "muthuajar@yahoo.com", 
-        password: "testuser"
+        password: "password123"
       };
     $scope.userInfo = {
       emailId: "",

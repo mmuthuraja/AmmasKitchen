@@ -1,4 +1,4 @@
-<ion-view view-title="Locations"   class="bgImage">
+<ion-view view-title="Locations" >
   <ion-content>
     <div class="tabs-striped tabs-top tabs-color-assertive" style="margin-top:-50px">
       <div class="tabs"> 
@@ -11,7 +11,7 @@
         <div class="card" >
           <table style="width:100%">
             <tr><td colspan="2" style="height:30px;text-align:center;font-size:20px;font-family:verdana;background-color:#EDA323;">
-                <table style="width:100%"><tr><td style="text-align:right;vertical-align:middle;"><img src="https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FItemsCategory.gif?alt=media&token=98685b64-b5aa-4107-8d70-f086b8bd5453" style="width:100px; height:100px;"></td><td style="width:70%;text-align:center;vertical-align:middle;word-wrap: break-word;">Manage Food Items Categories</td></tr></table></td>
+                <table style="width:100%"><tr><td style="text-align:right;vertical-align:middle;"><img ng-src="{{getImageUrl('ItemCategoryTrans')}}" style="width:100px; height:100px;"></td><td style="width:70%;text-align:center;vertical-align:middle;word-wrap: break-word;">Manage Food Items Categories</td></tr></table></td>
              </tr>
             <tr style="text-align:center;vertical-align:middle">
             <td colspan="2" style="text-align:center;vertical-align:middle;background-color:#EAC27E;">
@@ -22,7 +22,7 @@
                   </td>
                   <td style="width:80%;font-weight:bolder;"> Categories </td>
                   <td style="width:10%;padding: 3px 3px 3px 3px;" ng-click="toggleReorderOption()">
-                    <p ng-class="(showReorderForCategory) ? 'reorderOn' : 'reorderOff'"> <i class="icon" ng-class="(showReorderForCategory) ? 'fa fa-arrows-v' : 'fa fa-arrows-v'" style="color:#1ea4e8;" ></i></p>
+                    <p ng-class="(showReorderForCategory) ? 'reorderOn' : 'reorderOff'"> <i class="icon" ng-class="(showReorderForCategory) ? 'fa fa-arrows-v' : 'fa fa-arrows-v'"></i></p>
                   </td>
                 </tr>
               </table>              
@@ -31,10 +31,10 @@
             <tr style="background-color:#e4e5e0">
               <td style="margin-left:10px;">
                 <label class="item item-input"  style="background-color:#e4e5e0">
-                  <input type="text" placeholder="Category Name" ng-model="categoryData.name" value=""  required>
+                  <input type="text" placeholder="Category Name" ng-model="NewCategoryData.Name" value=""  required>
                 </label>
               </td>
-              <td style="padding: 3px 3px 3px 3px;text-align:center;margin-right:10px;" ng-click="onAddCategory()"> 
+              <td style="padding: 3px 3px 3px 3px;text-align:center;margin-right:10px;" ng-click="onCategoryAdded()"> 
                 <p style="background-color:white;border:1px solid black; border-radius:3px;"> <i class="icon" ng-class="(true) ? 'ion-plus-circled' : ''"></i> Add</p>
               </td>
             </tr>
@@ -42,38 +42,54 @@
           <ion-list  show-delete="showDeleteForCategory" show-reorder="showReorderForCategory">
               <ion-item ng-repeat="cat in CategoriesSettings" item="cat" class="item-remove-animate">
                 &nbsp; {{cat.Name}}
-                <ion-option-button class="button-positive" ng-show="canShowEdit()" ng-click="edit(item)"><i class="icon" ng-class="(true)?'ion-edit':''"></i></ion-option-button>
-                <ion-delete-button class="ion-minus-circled" ng-click="onCategoryDelete(cat)"></ion-delete-button>
+                <ion-option-button class="button-positive" ng-show="canShowEdit()" ng-click="onCategoryEdit(cat)"><i class="icon" ng-class="(true)?'ion-edit':''"></i></ion-option-button>
+                <ion-delete-button class="ion-minus-circled" ng-click="onCategoryDeleted(cat)"></ion-delete-button>
                 <ion-reorder-button on-reorder="onCategoryReordered(cat, $fromIndex, $toIndex)">
                 <i class="fa fa-arrows-v" style="font-size:50%;color:#1ea4e8;" aria-hidden=true></i></ion-reorder-button>
               </ion-item>
           </ion-list>
         </div>
       </span>
-      <span ng-show="canShowSettings('TM')" style="width:100%">
-        <div style="height:30px;text-align:center;font-size:20px;color:darkgreen">Manage Today's Menu</div>
-        <div class = "list">
-           <label class = "item item-input item-select item-light">
-              <div class = "input-label">
-                 Select Category
-              </div>
-              <select name="repeatSelect" id="repeatSelect" ng-model="data.tempCategory" ng-change="refreshSelectedCategoryItems(data.tempCategory)">
-              <option ng-repeat="cat in Categories" value="{{cat.Id}}" "{{(SelectedCategory.Id==cat.Id)?'selected':''}}">{{cat.Name}}</option>
-              </select>
-           </label>
+      <span ng-show="canShowSettings('TM')">
+        <div class="card" style="background-color:#EAC27E;">
+          <table style="width:100%">
+            <tr><td colspan="2" style="padding-top:5px;padding-bottom:5px;height:30px;text-align:center;font-size:20px;font-family:verdana;background-color:#EDA323;">
+                <table style="width:100%"><tr><td style="text-align:right;vertical-align:middle;"><img ng-src="{{getImageUrl('EditTodaysMenuTrans')}}"  style="width:100px; height:100px;"></td><td style="width:70%;text-align:center;vertical-align:middle;word-wrap: break-word;">Manage Today's Menu Items</td></tr></table></td>
+             </tr>
+            <tr style="text-align:center;vertical-align:middle">
+              <td colspan="2" style="text-align:center;vertical-align:middle;background-color:#EAC27E; padding-top:10px;padding-bottom:10px;">
+                <table style="width:100%">
+                  <tr style="text-align:left;vertical-align:middle">
+                    <td style="width:30%;padding-left:10px;font-weight:bolder;"> Categories </td>
+                    <td style="width:70%;padding: 3px 3px 3px 3px;" >
+                       <select name="repeatSelect" id="repeatSelect" ng-model="data.tempCategory" ng-change="refreshSelectedCategoryItems(data.tempCategory)" style="width:100%">
+                <option ng-repeat="cat in Categories" value="{{cat.Id}}" ng-selected="(SelectedCategory.Position==1)">{{cat.Name}}</option>
+                </select>
+                    </td>
+                  </tr>
+                </table>              
+              </td>
+            </tr>
+          </table>
+          <ion-list ng-show="(Items.length>0)">
+            <div style="background-color:#222326;height:30px;font-size:20px;color:white;"> &nbsp; {{SelectedCategory.Name}}</div>
+              <span ng-repeat="itm in Items">
+                <ion-checkbox style="background-color:#f4eade" ng-model="itm.Checked" ng-checked="itm.Checked" ><img src="{{itm.ImageUrl}}" style="width:50px;height:50px;border:2px solid black">&nbsp;{{itm.Name}}</ion-checkbox>
+              </span>
+          </ion-list>
+          <center><br>
+            <button  class="btn btn-primary" type="button"  ng-click="ModifyItems()">Apply Selection</button><br><br>
+          </center>
         </div>
-        <ion-list ng-show="(Items.length>0)">
-          <div style="background-color:#222326;height:30px;font-size:20px;color:white;"> &nbsp; {{SelectedCategory.Name}}</div>
-            <span ng-repeat="itm in Items">
-              <ion-checkbox style="background-color:#f4eade" ng-model="itm.Checked" ng-checked="itm.Checked" ><img src="{{itm.ImageUrl}}" style="width:50px;height:50px;border:2px solid black">&nbsp;{{itm.Name}}</ion-checkbox>
-            </span>
-        </ion-list>
-        <center><br>
-          <button  class="btn btn-primary" type="button"  ng-click="ModifyItems()">Apply Selection</button>
-        </center>
       </span>
       <span ng-show="canShowSettings('I')">
-        <div class="card" style="height:30px;text-align:center;font-size:20px;">Manage Items</div>
+       <div class="card" style="background-color:#EAC27E;">
+          <table style="width:100%">
+            <tr><td colspan="2" style="padding-top:5px;padding-bottom:5px;height:30px;text-align:center;font-size:20px;font-family:verdana;background-color:#EDA323;">
+                <table style="width:100%"><tr><td style="text-align:right;vertical-align:middle;"><img ng-src="{{getImageUrl('EditFoodItemIcon')}}"  style="width:100px; height:100px;"></td><td style="width:70%;text-align:center;vertical-align:middle;word-wrap: break-word;">Manage Items</td></tr></table></td>
+             </tr>
+          </table>
+        </div>
       </span>
       <span ng-show="canShowSettings('O')">
         <div class="card" style="height:30px;text-align:center;font-size:20px;">Manage Other Settings</div>

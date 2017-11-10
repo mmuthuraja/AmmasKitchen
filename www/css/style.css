@@ -2,6 +2,9 @@
 .bgImage{
   background: url('https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fbg3.png?alt=media&token=e042b5e5-54f4-432a-ac0f-505b6bf9be3d');
 }
+.scroll-content{
+  background: url('https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fbg3.png?alt=media&token=e042b5e5-54f4-432a-ac0f-505b6bf9be3d');  
+}
 .footerBg {
   background-color: #8BC34A;
   text-align: center;
@@ -225,7 +228,7 @@
 .section-content-title{
   text-indent: 20px;
   font-family: 'Roboto';
-  font-weight:100;
+  font-weight:bolder;
   font-size:30px;
   color:#0d5d92;
 }
@@ -235,7 +238,7 @@
   padding-right: 20px;
   text-align: justify;
   font-family: 'verdana';
-  font-weight: 100;
+  font-weight: bolder;
   font-size: 15px;
   color:#013659;
 }
@@ -250,26 +253,35 @@
   color:#013659;
 }
 
+.popupStyle .popup{
+  width: 80%;
+  /*height: 80%;*/
+}
+
 /* DELETE/REORDER ICON OPTION */
 .deleteOn {
   background-color:#EF473A;
   border:1px solid black;
   border-radius:3px;
+  color:white;
 }
 .deleteOff{
   background-color:white;
   border:1px solid black;
   border-radius:3px;
+  color:black;
 }
 .reorderOn{
   background-color:#1ea4e8;
   border:1px solid black;
   border-radius:3px;
+  color:white;
 }
 .reorderOff{
   background-color:white;
   border:1px solid black;
   border-radius:3px;
+  color:#1ea4e8;
 }
 /* End of DELETE/REORDER ICON OPTION*/
 

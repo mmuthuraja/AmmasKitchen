@@ -116,6 +116,62 @@ angular.module('starter')
 		}
 	}
 })
+.service("popupService", function($ionicPopup, $timeout, $document){
+	var oPopup = {};
+	var lastPopup;
+	oPopup.showPopup = function(scopeObject, popupTitle, popupTemplate, popupSubtitle, popupButtons){
+		var templatePopup = $ionicPopup.show({
+			template: popupSubtitle+"<br>"+popupTemplate,
+			title: "<b>"+popupTitle+"</b>",
+			scope: scopeObject,
+			cssClass: 'popupStyle',
+			buttons: popupButtons
+		});		
+		return templatePopup;
+	};
+	oPopup.showConfirm = function(confirmTitle, confirmMessage){
+		var confirmPopup = $ionicPopup.confirm({
+			title: "<b>"+confirmTitle+"</b>",
+			template: confirmMessage
+		});
+		return confirmPopup;
+	};
+	oPopup.showAlert = function(alertTitle, alertMessage) {
+     	var alertPopup = $ionicPopup.alert({
+       		title: "<b>"+alertTitle+"</b>",
+       		template: alertMessage
+     	});
+     	return alertPopup;
+   	};
+   	oPopup.closeActivePopup = function(){
+   		if(lastPopup) {
+   			$timeout(lastPopup.close);
+   			return lastPopup;
+   		}
+   	};
+   	oPopup.registerForAutoCloseOnTap = function(popup){
+   		$timeout(function(){
+        var element = $ionicPopup._popupStack.length>0 ? $ionicPopup._popupStack[0].element : null;
+        if(!element || !popup || !popup.close) return;
+        element = element && element.children ? angular.element(element.children()[0]) : null;
+        lastPopup  = popup;
+        var insideClickHandler = function(event){
+          event.stopPropagation();
+        };
+        var outsideHandler = function() {
+          popup.close();
+        };
+        element.on('click', insideClickHandler);
+        $document.on('click', outsideHandler);
+        popup.then(function(){
+          lastPopup = null;
+          element.off('click', insideClickHandler);
+          $document.off('click', outsideHandler);
+        });
+      });
+   	};
+	return oPopup;
+})
 .service("categorySettings", function(){
 	var categories = [];
 	var localServiceObject = {};
@@ -141,6 +197,50 @@ angular.module('starter')
 		return categories;
 	}
 	return localServiceObject;
+})
+.service("imageUrlService",function(){
+	var images = {
+		AddItem2cartIcon:"",
+		AmmakitchenLogo: "",
+		AmmaKitchenTitleTrans: "",
+		AppBackground: "",
+		CallIcon: "",
+		ChefSpecialIcon: "",
+		EditTodaysMenuTrans: "",
+		ForgotPassword: "",
+		ItemAlreadyAdded2CartIcon: "",
+		ItemCategory: "",
+		ItemCategoryTrans: "",
+		LocationIcon: "",
+		NewUser: "",
+		OrderHistoryIcon: "",
+		RightArrowCircleIcon: "",
+		SpicyIcon: "",
+		TodayMenuHomeIcon: "",
+		TodaysMenuEnd: "",
+		TodaysMenuStart: "",
+		EditFoodItemIcon: ""
+	};
+	var imageObject = {};
+	imageObject.loadImages = function(){
+		if(images.AmmakitchenLogo==""){
+			dBase.ref('/ImageList').once('value')
+				.then(function(snapshot){
+					images = snapshot.val();
+				})
+		    	.catch(function(err){
+		    		images = {};
+			    });	
+		}
+	};
+	imageObject.getImageUrl = function(imageName){
+		if(images!=null || images==undefined || images=="undefined")
+			return images[imageName];
+		else
+			return "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FDummyFood.jpg?alt=media&token=e082e16b-71b9-45ed-bcba-a2e61a6e738a";
+	}
+	if(images.AmmakitchenLogo=="") imageObject.loadImages();
+	return imageObject;
 })
 .service("todayMenuSettings", function(){
 	var categories = [];
