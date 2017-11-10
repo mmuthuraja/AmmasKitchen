@@ -1,40 +1,62 @@
 {
-  "Category" : [ null, null, null, {
-    "Id" : "CVC",
-    "Name" : "Veg Curry",
-    "Position" : 8
-  }, {
-    "Id" : "CD",
+  "Category" : [ {
+    "Id" : "TGVKO_DOSA",
     "Name" : "Dosa",
     "Position" : 1
   }, {
-    "Id" : "CSF",
-    "Name" : "Sea Food",
+    "Id" : "MPOWZ_VEG.APPETIZER",
+    "Name" : "Vegetarian Appetizer",
     "Position" : 2
   }, {
-    "Id" : "CKP",
-    "Name" : "Kothu Parotta",
+    "Id" : "ORARX_NON-VEG.APPETIZER",
+    "Name" : "Non-Veg. Appetizer",
     "Position" : 3
   }, {
-    "Id" : "CNVA",
-    "Name" : "Non-Veg. Appetizer",
-    "Position" : 5
-  }, {
-    "Id" : "CVA",
-    "Name" : "Veg. Appetizer",
+    "Id" : "UJAWL_VEGCURRY",
+    "Name" : "Vegetarian Curry",
     "Position" : 4
   }, {
-    "Id" : "CNVC",
+    "Id" : "RKLVH_NON-VEG.CURRY",
     "Name" : "Non-Veg. Curry",
+    "Position" : 5
+  }, {
+    "Id" : "VAQUV_KOTHUPAROTTA",
+    "Name" : "Kothu Parotta",
     "Position" : 6
   }, {
-    "Id" : "CB",
+    "Id" : "HIHVB_BIRYANI",
     "Name" : "Biryani",
     "Position" : 7
+  }, {
+    "Id" : "XWENH_SEAFOOD",
+    "Name" : "Sea Food",
+    "Position" : 8
   } ],
+  "ImageList" : {
+    "AddItem2CartIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fadd2Cart.png?alt=media&token=93cb273b-9f73-4e90-9e07-03c1349f2e9c",
+    "AmmaKitchenLogo" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FLogo_icon.png?alt=media&token=05d8d769-5171-4a25-a869-c59e12aa9ff6",
+    "AmmaKitchenTitleTrans" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Flogo-trans.png?alt=media&token=e4f4d9ac-165f-46af-b436-daa049c59c4c",
+    "AppBackground" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fbg3.png?alt=media&token=e042b5e5-54f4-432a-ac0f-505b6bf9be3d",
+    "CallIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FCall.png?alt=media&token=f5014a39-0d24-4105-8886-6891a266191b",
+    "ChefSpecialIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FChefSpecial.png?alt=media&token=35c4581d-9978-4834-9c55-8f9128050780",
+    "EditFoodItemIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FEditFoodItemIcon.png?alt=media&token=6cacbe79-4fd0-4489-b26b-c8a3126ca3c5",
+    "EditTodaysMenuTrans" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FEditTodaysMenu.png?alt=media&token=4a1f50eb-6d97-40b1-9720-bde2650b3ef4",
+    "ForgotPassword" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fforgotpassword.png?alt=media&token=39ada751-5826-40fd-b027-2256291b1827",
+    "ItemAlreadyAdded2CartIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fadded2Cart.png?alt=media&token=696b0bf7-40c5-4b2a-b951-f5476c0d2b36",
+    "ItemCategory" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FItemsCategory.jpg?alt=media&token=780ca23f-860c-431f-ab13-9d71f68cac61",
+    "ItemCategoryTrans" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FItemsCategory.gif?alt=media&token=98685b64-b5aa-4107-8d70-f086b8bd5453",
+    "LocationIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Flocation.png?alt=media&token=1cedf910-4948-4de0-a4bb-40bfd2788697",
+    "NewUser" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fnewuser.png?alt=media&token=b29f39aa-5097-4f3e-bc0a-7fffc599f5ff",
+    "OrderHistoryIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FOrderHistory.png?alt=media&token=41085f24-dd4a-4463-a43a-846e38322a5b",
+    "RightArrowCircleIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Frightarrowcircle.png?alt=media&token=710b2497-2261-4516-83cd-697a94448382",
+    "SpicyIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fspicy.png?alt=media&token=c66e74eb-7bf4-480f-9ff6-cc93434ec131",
+    "TodayMenuHomeIcon" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FTodayMenu.jpg?alt=media&token=0f2d8378-15ce-4236-a944-8073d0cc3ef0",
+    "TodaysMenuEnd" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FTodaysMenuEnd.png?alt=media&token=cb5b4df0-a3fb-488c-9821-96a17bd8c70f",
+    "TodaysMenuStart" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2FTodaysMenu.png?alt=media&token=a7406d46-3357-4f23-94e0-830d22642426"
+  },
   "Items" : {
     "1G6J7W9185QPY" : {
-      "CategoryId" : "CNVC",
+      "CategoryId" : "RKLVH_NON-VEG.CURRY",
       "ChiefSpecial" : false,
       "Desc" : "Chicken cooked with coconut gravy & south Indian spices.",
       "Id" : "1G6J7W9185QPY",
@@ -44,7 +66,7 @@
       "Spicy" : "Normal"
     },
     "1KG9P1CS2A9W6" : {
-      "CategoryId" : "CVA",
+      "CategoryId" : "MPOWZ_VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "baby corn fritters fried in spicy batter.",
       "Id" : "1KG9P1CS2A9W6",
@@ -54,7 +76,7 @@
       "Spicy" : "Normal"
     },
     "1PFVV9KT75C9T" : {
-      "CategoryId" : "CB",
+      "CategoryId" : "HIHVB_BIRYANI",
       "ChiefSpecial" : false,
       "Desc" : "Ambur Biryani is an Indian chicken & basmati rice recipe that is cooked on dum over slow heat marinated with fresh herbs, spices.",
       "Id" : "1PFVV9KT75C9T",
@@ -64,7 +86,7 @@
       "Spicy" : "Normal"
     },
     "1XMXG74D4YTH2" : {
-      "CategoryId" : "CD",
+      "CategoryId" : "TGVKO_DOSA",
       "ChiefSpecial" : false,
       "Desc" : "Ground rice / lentil crepe rolled with cheese, served with chutney and sambhar",
       "Id" : "1XMXG74D4YTH2",
@@ -74,7 +96,7 @@
       "Spicy" : "Normal"
     },
     "3ER67PHHVQ8RP" : {
-      "CategoryId" : "CKP",
+      "CategoryId" : "VAQUV_KOTHUPAROTTA",
       "ChiefSpecial" : false,
       "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked with lamp, onions, tomatoes with spices.",
       "Id" : "3ER67PHHVQ8RP",
@@ -84,7 +106,7 @@
       "Spicy" : "Normal"
     },
     "4DHZHTQ4GE6F0" : {
-      "CategoryId" : "CVC",
+      "CategoryId" : "UJAWL_VEGCURRY",
       "ChiefSpecial" : false,
       "Desc" : "Loosened yellow lentil cooked with spices, tomato / spinach, green chilli, cumins & onions",
       "Id" : "4DHZHTQ4GE6F0",
@@ -94,7 +116,7 @@
       "Spicy" : "Normal"
     },
     "4G1B3V4RAV5N0" : {
-      "CategoryId" : "CNVC",
+      "CategoryId" : "RKLVH_NON-VEG.CURRY",
       "ChiefSpecial" : false,
       "Desc" : "Chunks of chicken in clay oven & then cooked in a light creamy tomato sauce with bell peppers & onions.",
       "Id" : "4G1B3V4RAV5N0",
@@ -104,7 +126,7 @@
       "Spicy" : "Normal"
     },
     "622MKPPY26P8J" : {
-      "CategoryId" : "CNVC",
+      "CategoryId" : "RKLVH_NON-VEG.CURRY",
       "ChiefSpecial" : false,
       "Desc" : "Cooked chicken with homemade spices & special Andhra style gravy.",
       "Id" : "622MKPPY26P8J",
@@ -114,7 +136,7 @@
       "Spicy" : "Normal"
     },
     "7GTV46F67ZJM6" : {
-      "CategoryId" : "CVC",
+      "CategoryId" : "UJAWL_VEGCURRY",
       "ChiefSpecial" : false,
       "Desc" : "Marinated and salted cottage cheese with bell peppers and onions finished with spicy creamy sauce. Gluten free and low carb. Served with rice, raitha and a pickle.",
       "Id" : "7GTV46F67ZJM6",
@@ -124,7 +146,7 @@
       "Spicy" : "Normal"
     },
     "92MY25WAT4AXP" : {
-      "CategoryId" : "CSF",
+      "CategoryId" : "XWENH_SEAFOOD",
       "ChiefSpecial" : false,
       "Desc" : "Dry fried Shrimp sauteeed in a onion, black pepper powder and chief special masala powder.",
       "Id" : "92MY25WAT4AXP",
@@ -134,7 +156,7 @@
       "Spicy" : "Normal"
     },
     "9KV7P57CACMA8" : {
-      "CategoryId" : "CD",
+      "CategoryId" : "TGVKO_DOSA",
       "ChiefSpecial" : false,
       "Desc" : "Crispy, savory pancake-crepe made from fermented rice and black lentils batter with potato filling.",
       "Id" : "9KV7P57CACMA8",
@@ -144,7 +166,7 @@
       "Spicy" : "Normal"
     },
     "A1Y957QZW12J0" : {
-      "CategoryId" : "CSF",
+      "CategoryId" : "XWENH_SEAFOOD",
       "ChiefSpecial" : false,
       "Desc" : "Fish curry cooked in Kerala style with special recipe.",
       "Id" : "A1Y957QZW12J0",
@@ -154,7 +176,7 @@
       "Spicy" : "Normal"
     },
     "BXDGGFEP43EXC" : {
-      "CategoryId" : "CNVA",
+      "CategoryId" : "ORARX_NON-VEG.APPETIZER",
       "ChiefSpecial" : true,
       "Desc" : "Boneless chicken sauteeed in a chef speciality 555 sause with red chilly sauce.",
       "Id" : "BXDGGFEP43EXC",
@@ -164,7 +186,7 @@
       "Spicy" : "Normal"
     },
     "CDV6MDPXZ6MT4" : {
-      "CategoryId" : "CB",
+      "CategoryId" : "HIHVB_BIRYANI",
       "ChiefSpecial" : false,
       "Desc" : "Basmati rice cooked with Chettinad style chicken and flavored with cloves, cinnamon, cardoamon, Bay leaf, coriander, mint ginger, garlic and onions ",
       "Id" : "CDV6MDPXZ6MT4",
@@ -174,7 +196,7 @@
       "Spicy" : "Normal"
     },
     "CH3NFBEMAC5JW" : {
-      "CategoryId" : "CVC",
+      "CategoryId" : "UJAWL_VEGCURRY",
       "ChiefSpecial" : false,
       "Desc" : "Peeled whole garlic cooked in chettinad style",
       "Id" : "CH3NFBEMAC5JW",
@@ -184,7 +206,7 @@
       "Spicy" : "Normal"
     },
     "CK4HV9NKQWZKP" : {
-      "CategoryId" : "CNVA",
+      "CategoryId" : "ORARX_NON-VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Quail marinated with selected blend of Chettinad spices cooked dry",
       "Id" : "CK4HV9NKQWZKP",
@@ -194,7 +216,7 @@
       "Spicy" : "Normal"
     },
     "D6XBN1J7VEJKW" : {
-      "CategoryId" : "CKP",
+      "CategoryId" : "VAQUV_KOTHUPAROTTA",
       "ChiefSpecial" : false,
       "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked onions, tomatoes with spices.",
       "Id" : "D6XBN1J7VEJKW",
@@ -203,8 +225,18 @@
       "Price" : 7,
       "Spicy" : "Normal"
     },
+    "DUMMY" : {
+      "CategoryId" : "Dummy",
+      "ChiefSpecial" : false,
+      "Desc" : "Dummy",
+      "Id" : "Dummy",
+      "ImageUrl" : "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/images%2FDummyFood.jpg?alt=media&token=4fb37e6f-d559-4599-8579-c5394e3a2461",
+      "Name" : "DUMMY",
+      "Price" : 0,
+      "Spicy" : "Normal"
+    },
     "E7DV8NNPSJ6TG" : {
-      "CategoryId" : "CD",
+      "CategoryId" : "TGVKO_DOSA",
       "ChiefSpecial" : false,
       "Desc" : "Crepe rolled with cheese, spicy sauce and potato masala.",
       "Id" : "E7DV8NNPSJ6TG",
@@ -214,7 +246,7 @@
       "Spicy" : "Normal"
     },
     "EXBAXYJ3T16SG" : {
-      "CategoryId" : "CNVA",
+      "CategoryId" : "ORARX_NON-VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Boneless cubes of chicken marinated with Indian spices and deep friend. A popular Indian bar room snack",
       "Id" : "EXBAXYJ3T16SG",
@@ -224,7 +256,7 @@
       "Spicy" : "Normal"
     },
     "FRSFKW1P498YG" : {
-      "CategoryId" : "CKP",
+      "CategoryId" : "VAQUV_KOTHUPAROTTA",
       "ChiefSpecial" : false,
       "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked with chicken, onions, tomatoes with spices.",
       "Id" : "FRSFKW1P498YG",
@@ -234,7 +266,7 @@
       "Spicy" : "Normal"
     },
     "FXMRM43HYAV32" : {
-      "CategoryId" : "CVC",
+      "CategoryId" : "UJAWL_VEGCURRY",
       "ChiefSpecial" : false,
       "Desc" : "Authentic spicy curry cooked with mixed vegetables traditional South Indian Karaikudi grounded masala.",
       "Id" : "FXMRM43HYAV32",
@@ -244,7 +276,7 @@
       "Spicy" : "Normal"
     },
     "GMXS5DXFBS274" : {
-      "CategoryId" : "CVA",
+      "CategoryId" : "MPOWZ_VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Andra style sphere allpurpose flour vada with little seasoning spices",
       "Id" : "GMXS5DXFBS274",
@@ -254,7 +286,7 @@
       "Spicy" : "Normal"
     },
     "GQ9GHG8PGGXAE" : {
-      "CategoryId" : "CNVA",
+      "CategoryId" : "ORARX_NON-VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Dry fried boneless mutton sauteeed in a onion, black pepper powder and chief special masala powder.",
       "Id" : "GQ9GHG8PGGXAE",
@@ -264,7 +296,7 @@
       "Spicy" : "Normal"
     },
     "J3DG63F7NZT4P" : {
-      "CategoryId" : "CSF",
+      "CategoryId" : "XWENH_SEAFOOD",
       "ChiefSpecial" : false,
       "Desc" : "Shrimp cooked with chettinad spices",
       "Id" : "J3DG63F7NZT4P",
@@ -274,7 +306,7 @@
       "Spicy" : "Normal"
     },
     "J9MMW20S83WQW" : {
-      "CategoryId" : "CNVA",
+      "CategoryId" : "ORARX_NON-VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Dry fried boneless chicken sauteeed in a onion, black pepper powder and chief special masala powder.",
       "Id" : "J9MMW20S83WQW",
@@ -284,7 +316,7 @@
       "Spicy" : "Normal"
     },
     "JWKXM39C98AG2" : {
-      "CategoryId" : "CVC",
+      "CategoryId" : "UJAWL_VEGCURRY",
       "ChiefSpecial" : false,
       "Desc" : "Mixed vegetables cooked with cottage cheese, cashews, raisins, turmeric & fenugreek leaves in a rich creamy gourmet sauce.",
       "Id" : "JWKXM39C98AG2",
@@ -294,7 +326,7 @@
       "Spicy" : "Normal"
     },
     "KDH3ZZQKDNX04" : {
-      "CategoryId" : "CNVC",
+      "CategoryId" : "RKLVH_NON-VEG.CURRY",
       "ChiefSpecial" : false,
       "Desc" : "South Indian style cooked Mutton with authentic chettinad masala gravy.",
       "Id" : "KDH3ZZQKDNX04",
@@ -304,7 +336,7 @@
       "Spicy" : "Normal"
     },
     "MCE033MSTX7C0" : {
-      "CategoryId" : "CVA",
+      "CategoryId" : "MPOWZ_VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Indian cottage cheese (Paneer) stir-fried in Indian sauce with onions, peppers and chilies",
       "Id" : "MCE033MSTX7C0",
@@ -314,7 +346,7 @@
       "Spicy" : "Normal"
     },
     "MP4K8M8S50658" : {
-      "CategoryId" : "CKP",
+      "CategoryId" : "VAQUV_KOTHUPAROTTA",
       "ChiefSpecial" : false,
       "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked with eggs, onions, tomatoes with spices.",
       "Id" : "MP4K8M8S50658",
@@ -324,7 +356,7 @@
       "Spicy" : "Normal"
     },
     "N6H2W2K2MCWSJ" : {
-      "CategoryId" : "CVA",
+      "CategoryId" : "MPOWZ_VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Stemed rice cake sauted in lintle grinded spices.",
       "Id" : "N6H2W2K2MCWSJ",
@@ -334,7 +366,7 @@
       "Spicy" : "Normal"
     },
     "Q98Y2BNDSNY6C" : {
-      "CategoryId" : "CSF",
+      "CategoryId" : "XWENH_SEAFOOD",
       "ChiefSpecial" : false,
       "Desc" : "Boneless fillets cleaned, de-skinned, deveined, cut into slices, slightly batter coated & deep fried.",
       "Id" : "Q98Y2BNDSNY6C",
@@ -344,7 +376,7 @@
       "Spicy" : "Normal"
     },
     "QG7ETZKRDBAWR" : {
-      "CategoryId" : "CKP",
+      "CategoryId" : "VAQUV_KOTHUPAROTTA",
       "ChiefSpecial" : false,
       "Desc" : "South Indian Parotta (multilayered wheat bread) chopped and cooked with chettinad style chicken masala with onions, tomatoes and spices",
       "Id" : "QG7ETZKRDBAWR",
@@ -354,7 +386,7 @@
       "Spicy" : "Normal"
     },
     "QX1JKFSRY7JPM" : {
-      "CategoryId" : "CB",
+      "CategoryId" : "HIHVB_BIRYANI",
       "ChiefSpecial" : false,
       "Desc" : "Dindukal thalappakatti style biryani with basmati rice flavored with cloves, cinnamon, cardoamon, Bay leaf, coriander, mint ginger, garlic and onions with EGG",
       "Id" : "QX1JKFSRY7JPM",
@@ -364,7 +396,7 @@
       "Spicy" : "Normal"
     },
     "R4DMT7ZR00F12" : {
-      "CategoryId" : "CD",
+      "CategoryId" : "TGVKO_DOSA",
       "ChiefSpecial" : false,
       "Desc" : "Crepe rolled with cheese, spicy sauce and potato masala.",
       "Id" : "R4DMT7ZR00F12",
@@ -374,7 +406,7 @@
       "Spicy" : "Normal"
     },
     "RT0S78DDB1XVM" : {
-      "CategoryId" : "CVC",
+      "CategoryId" : "UJAWL_VEGCURRY",
       "ChiefSpecial" : false,
       "Desc" : "Homemade cheese cooked with fresh spinach spies and cream.",
       "Id" : "RT0S78DDB1XVM",
@@ -384,7 +416,7 @@
       "Spicy" : "Normal"
     },
     "RV1W4M52VCNRY" : {
-      "CategoryId" : "CSF",
+      "CategoryId" : "XWENH_SEAFOOD",
       "ChiefSpecial" : false,
       "Desc" : "Marinated special shrimp deep friend and sauteed with spices.",
       "Id" : "RV1W4M52VCNRY",
@@ -394,7 +426,7 @@
       "Spicy" : "Normal"
     },
     "T8FN91FYZTH64" : {
-      "CategoryId" : "CVA",
+      "CategoryId" : "MPOWZ_VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Cauliflower fritters fried in spicy batter.",
       "Id" : "T8FN91FYZTH64",
@@ -404,7 +436,7 @@
       "Spicy" : "Medium"
     },
     "TNTQ1CQ35HF42" : {
-      "CategoryId" : "CVA",
+      "CategoryId" : "MPOWZ_VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Stemed rice cake seasoned with pepper, cumin seeds and herbs.",
       "Id" : "TNTQ1CQ35HF42",
@@ -414,7 +446,7 @@
       "Spicy" : "Normal"
     },
     "TSKP2W05TAW08" : {
-      "CategoryId" : "CSF",
+      "CategoryId" : "XWENH_SEAFOOD",
       "ChiefSpecial" : false,
       "Desc" : "Boneless fish coated with spices and deep fried (6 pcs).",
       "Id" : "TSKP2W05TAW08",
@@ -424,7 +456,7 @@
       "Spicy" : "Normal"
     },
     "TVPT1K0466H0A" : {
-      "CategoryId" : "CD",
+      "CategoryId" : "TGVKO_DOSA",
       "ChiefSpecial" : false,
       "Desc" : "A fermented crepe or pancake made from rice served with chutney & sambar",
       "Id" : "TVPT1K0466H0A",
@@ -434,7 +466,7 @@
       "Spicy" : "Normal"
     },
     "VBP68QKXRC0VG" : {
-      "CategoryId" : "CB",
+      "CategoryId" : "HIHVB_BIRYANI",
       "ChiefSpecial" : false,
       "Desc" : "Basmati rice flavored with cloves, cinnamon, cardoamon, Bay leaf, coriander, mint ginger, garlic and onions with EGG",
       "Id" : "VBP68QKXRC0VG",
@@ -444,7 +476,7 @@
       "Spicy" : "Normal"
     },
     "VDTT6Q39M7R6J" : {
-      "CategoryId" : "CNVA",
+      "CategoryId" : "ORARX_NON-VEG.APPETIZER",
       "ChiefSpecial" : false,
       "Desc" : "Egg booked on pan on one side with powders of black pepper, and cummin",
       "Id" : "VDTT6Q39M7R6J",
@@ -454,7 +486,7 @@
       "Spicy" : "Normal"
     },
     "VMB5FP181SGQ2" : {
-      "CategoryId" : "CNVC",
+      "CategoryId" : "RKLVH_NON-VEG.CURRY",
       "ChiefSpecial" : false,
       "Desc" : "Juicy goat pieces cooked with spices.",
       "Id" : "VMB5FP181SGQ2",
@@ -464,7 +496,7 @@
       "Spicy" : "Normal"
     },
     "VZ8WFF5VBHM7M" : {
-      "CategoryId" : "CSF",
+      "CategoryId" : "XWENH_SEAFOOD",
       "ChiefSpecial" : false,
       "Desc" : "Kerala style fish curry with Coconut milk.",
       "Id" : "VZ8WFF5VBHM7M",
@@ -474,7 +506,7 @@
       "Spicy" : "Hot"
     },
     "WD56J3DPJGZ5R" : {
-      "CategoryId" : "CNVC",
+      "CategoryId" : "RKLVH_NON-VEG.CURRY",
       "ChiefSpecial" : false,
       "Desc" : "Authentic spicy curry cooked with traditional South Indian Karaikudi grounded masala.",
       "Id" : "WD56J3DPJGZ5R",
@@ -484,7 +516,7 @@
       "Spicy" : "Normal"
     },
     "XF0NY3TEK36FW" : {
-      "CategoryId" : "CVC",
+      "CategoryId" : "UJAWL_VEGCURRY",
       "ChiefSpecial" : false,
       "Desc" : "Sundakkai vathal cooked with chettinad style spices.",
       "Id" : "XF0NY3TEK36FW",
@@ -494,7 +526,7 @@
       "Spicy" : "Normal"
     },
     "YKMB5C2R5QYSY" : {
-      "CategoryId" : "CNVC",
+      "CategoryId" : "RKLVH_NON-VEG.CURRY",
       "ChiefSpecial" : false,
       "Desc" : "Chunks of chicken sauteed with garlic and tomatoes",
       "Id" : "YKMB5C2R5QYSY",
@@ -504,7 +536,7 @@
       "Spicy" : "Normal"
     },
     "ZF9571HNE5TZC" : {
-      "CategoryId" : "CNVC",
+      "CategoryId" : "RKLVH_NON-VEG.CURRY",
       "ChiefSpecial" : false,
       "Desc" : "A homemade mouth watering curry made with boiled eggs & onion gravy.",
       "Id" : "ZF9571HNE5TZC",
@@ -625,19 +657,89 @@
     } ]
   },
   "TodayMenuItem" : [ {
-    "Id" : "J9MMW20S83WQW"
+    "Id" : "DUMMY"
+  }, {
+    "Id" : "1G6J7W9185QPY"
+  }, {
+    "Id" : "4G1B3V4RAV5N0"
+  }, {
+    "Id" : "622MKPPY26P8J"
+  }, {
+    "Id" : "KDH3ZZQKDNX04"
+  }, {
+    "Id" : "VMB5FP181SGQ2"
+  }, {
+    "Id" : "WD56J3DPJGZ5R"
+  }, {
+    "Id" : "YKMB5C2R5QYSY"
+  }, {
+    "Id" : "ZF9571HNE5TZC"
+  }, {
+    "Id" : "1PFVV9KT75C9T"
+  }, {
+    "Id" : "CDV6MDPXZ6MT4"
   }, {
     "Id" : "QX1JKFSRY7JPM"
   }, {
+    "Id" : "VBP68QKXRC0VG"
+  }, {
+    "Id" : "1XMXG74D4YTH2"
+  }, {
     "Id" : "9KV7P57CACMA8"
   }, {
-    "Id" : "RT0S78DDB1XVM"
-  }, {
-    "Id" : "E7DV8NNPSJ6TG"
+    "Id" : "R4DMT7ZR00F12"
   }, {
     "Id" : "TVPT1K0466H0A"
   }, {
+    "Id" : "D6XBN1J7VEJKW"
+  }, {
+    "Id" : "MP4K8M8S50658"
+  }, {
+    "Id" : "QG7ETZKRDBAWR"
+  }, {
+    "Id" : "92MY25WAT4AXP"
+  }, {
+    "Id" : "J3DG63F7NZT4P"
+  }, {
+    "Id" : "Q98Y2BNDSNY6C"
+  }, {
     "Id" : "RV1W4M52VCNRY"
+  }, {
+    "Id" : "TSKP2W05TAW08"
+  }, {
+    "Id" : "VZ8WFF5VBHM7M"
+  }, {
+    "Id" : "BXDGGFEP43EXC"
+  }, {
+    "Id" : "CK4HV9NKQWZKP"
+  }, {
+    "Id" : "EXBAXYJ3T16SG"
+  }, {
+    "Id" : "J9MMW20S83WQW"
+  }, {
+    "Id" : "VDTT6Q39M7R6J"
+  }, {
+    "Id" : "1KG9P1CS2A9W6"
+  }, {
+    "Id" : "GMXS5DXFBS274"
+  }, {
+    "Id" : "MCE033MSTX7C0"
+  }, {
+    "Id" : "N6H2W2K2MCWSJ"
+  }, {
+    "Id" : "T8FN91FYZTH64"
+  }, {
+    "Id" : "4DHZHTQ4GE6F0"
+  }, {
+    "Id" : "7GTV46F67ZJM6"
+  }, {
+    "Id" : "CH3NFBEMAC5JW"
+  }, {
+    "Id" : "FXMRM43HYAV32"
+  }, {
+    "Id" : "JWKXM39C98AG2"
+  }, {
+    "Id" : "RT0S78DDB1XVM"
   } ],
   "Users" : {
     "muthuajaryahoocom" : {
