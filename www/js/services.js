@@ -122,7 +122,7 @@ angular.module('starter')
 	oPopup.showPopup = function(scopeObject, popupTitle, popupTemplate, popupSubtitle, popupButtons){
 		var templatePopup = $ionicPopup.show({
 			template: popupSubtitle+"<br>"+popupTemplate,
-			title: "<b>"+popupTitle+"</b>",
+			title: "<table style='width:100%;backgroun-color:darkgray;color:white;'><tr><td><b>"+popupTitle+"</b></td></tr></table>",
 			scope: scopeObject,
 			cssClass: 'popupStyle',
 			buttons: popupButtons
@@ -219,7 +219,9 @@ angular.module('starter')
 		TodayMenuHomeIcon: "",
 		TodaysMenuEnd: "",
 		TodaysMenuStart: "",
-		EditFoodItemIcon: ""
+		EditFoodItemIcon: "",
+		ImageIcon: "",
+		NewItemImage: ""
 	};
 	var imageObject = {};
 	imageObject.loadImages = function(){

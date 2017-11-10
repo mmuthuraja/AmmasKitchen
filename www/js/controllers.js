@@ -26,8 +26,8 @@ angular.module('starter.controllers',[])
       spinningService.hide();
     };
 })
-.controller('settingsCtrl',function($scope, $ionicPopup, $ionicListDelegate, todayMenuSettings, categorySettings, spinningService, popupService,
-                                  imageUrlService){
+.controller('settingsCtrl',function($scope, $ionicPopup, $ionicListDelegate, todayMenuSettings, 
+                                    categorySettings, spinningService, popupService, imageUrlService){
     
     $scope.getImageUrl = function(imagename){
       return imageUrlService.getImageUrl(imagename);
@@ -51,6 +51,74 @@ angular.module('starter.controllers',[])
     todayMenuSettings.loadCategories(refreshCategories);
   };
   /***** for settings -- END **************/
+
+  /****** for Item Edit - START  *****************/
+  function generateRandomItemNumber() {
+    var chars='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    var length=13;
+    var code = '';
+    for (var i = length; i > 0; --i) code += chars[Math.floor(Math.random() * chars.length)];
+    if($scope.Items[code]) code = generateRandomItemNumber();
+    return code.toUpperCase();
+  }
+  $scope.showImage = function(itemName,imageUrl,itemCategory){
+      var imagePopup = popupService.showPopup($scope, itemName, 
+        "<center><img src='"+imageUrl+"' style='border:1px solid gray;width:90%;height:90%'></center>", 
+        "<center style='font-weight:smaller'>("+itemCategory+")</center>", 
+        [{text:'Close'}])
+      .then(function(res){});
+      popupService.registerForAutoCloseOnTap(imagePopup);
+    };
+  $scope.closeOptionButton = function(){
+    $ionicListDelegate.closeOptionButtons();
+  };
+  $scope.showItemDetailsPopup = function(oItem){
+    $ionicListDelegate.closeOptionButtons(); 
+    if(oItem==null || oItem==undefined || oItem=="undefined"){
+      oItem = {
+        "CategoryId": $scope.SelectedCategory.Id,
+        "ChiefSpecial": false,
+        "Desc": "",
+        "Id": generateRandomItemNumber(),
+        "Name": "",
+        "Price": 0,
+        "Spicy": "Normal",
+        "ImageUrl": imageUrlService.NewItemImage,
+        "Checked": false
+      };
+    }
+    $scope.tempItem = {
+            "ChiefSpecial": oItem.ChiefSpecial,
+            "Desc": oItem.Desc,
+            "Id": oItem.Id,
+            "Name": oItem.Name,
+            "Price": oItem.Price,
+            "Spicy": oItem.Spicy,
+            "ImageUrl": oItem.ImageUrl,
+            "Checked": oItem.Checked};
+    $scope.EditItemData = oItem;
+    var pTitle = ($scope.tempItem.Name=="")?"Add New Item":"Edit "+$scope.tempItem.Name+" Details";
+    var bName = ($scope.tempItem.Name=="")?"Add":"Update";
+    var templateContent = "<table><tr><td colspan='2' style='text-align:center;'><img ng-src='{{tempItem.ImageUrl}}' ng-click='' style='width:60%;border:1px solid gray;'></td></tr><tr><td colspan='2'><label class='item-input-wrapper inputTypeBox'><input type='text' placeholder='Name' ng-model='tempItem.Name' ></label></td></tr><tr><td colspan='2'><label class='item-input-wrapper inputTypeBox'><textarea placeholder='Item Description' ng-model='tempItem.Name' ></textarea></label></td></tr><tr><td colspan='2'><label class='item-input-wrapper inputTypeBox'><input type='text' placeholder='Price' ng-model='tempItem.Price' style='align:right;'></label></td></tr><tr><td><ion-label>ChiefSpecial</ion-label></td><td><ion-list><ion-radio ng-model='tempItem.ChiefSpecial' ng-value='true'>Yes</ion-radio><ion-radio ng-model='tempItem.ChiefSpecial' ng-value='false'>No</ion-radio></ion-list></td></tr><tr><td><ion-label>Spicy</ion-label></td><td><ion-list><ion-radio ng-model='tempItem.Spicy' ng-value='Normal'>Normal</ion-radio><ion-radio ng-model='tempItem.Spicy' ng-value='Medium'>Medium</ion-radio><ion-radio ng-model='tempItem.Spicy' ng-value='Hot'>Hot</ion-radio></ion-list></td></tr></table>";
+    popupService.showPopup($scope, pTitle, templateContent, 
+        "", 
+        [{text:'Cancel'},
+         {text:'<b>'+bName+'</b>',
+          type: 'button-positive',
+          onTap: function(e){
+              if(!$scope.tempItem.catName){
+                e.preventDetault();
+              }else {
+                return $scope.tempItem.Name;
+              }
+            }
+        }])
+    .then(function(res){
+      alert("Add or Edit Item");
+    });
+    
+  };
+  /****** for Item Edit - END  *****************/
 
   /***** for Category Menu settings -- START **************/
   $scope.showDeleteForCategory = false;

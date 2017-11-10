@@ -253,9 +253,41 @@
   color:#013659;
 }
 
+.inputTypeBox{
+  border: 1px solid gray;
+  background: #e8f8f9;
+  bord:2px;
+  padding: 5px 5px 5px 5px;
+}
 .popupStyle .popup{
   width: 80%;
   /*height: 80%;*/
+}
+/*$assertive :#ef473a;*/
+.button-float{
+  background: #EB5B2F !important;
+  color:white !important;
+  z-index: 12 !important;
+  position: relative !important; 
+  margin-top: 8%;
+  margin-left:15%;
+  bottom: 10px !important;
+  right: 10px !important;
+  border-radius: 50% !important;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26) !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+  transform: translate3d(0, 0, 0) !important;
+  -webkit-transition: 0.2s linear !important;
+  transition: 0.2s linear !important;
+  -webkit-transition-property: -webkit-transform, all !important;
+  transition-property: transform, all !important;
+}
+
+.button-float:hover{
+  -webkit-transform: translate3d(0, -1px, 0)  !important;
+  transform: translate3d(0, -1px, 0) !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4) !important;
+    background: darken(#EB5B2F, 10%) !important;
 }
 
 /* DELETE/REORDER ICON OPTION */
