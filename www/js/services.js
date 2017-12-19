@@ -122,7 +122,7 @@ angular.module('starter')
 	oPopup.showPopup = function(scopeObject, popupTitle, popupTemplate, popupSubtitle, popupButtons){
 		var templatePopup = $ionicPopup.show({
 			template: popupSubtitle+"<br>"+popupTemplate,
-			title: "<table style='width:100%;backgroun-color:darkgray;color:white;'><tr><td><b>"+popupTitle+"</b></td></tr></table>",
+			title: "<center><table style='width:100%;backgroun-color:darkgray;color:white;'><tr><td><b>"+popupTitle+"</b></td></tr></table></center>",
 			scope: scopeObject,
 			cssClass: 'popupStyle',
 			buttons: popupButtons
@@ -221,7 +221,7 @@ angular.module('starter')
 		TodaysMenuStart: "",
 		EditFoodItemIcon: "",
 		ImageIcon: "",
-		NewItemImage: ""
+		NewItemImage: "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fpicture.png?alt=media&token=5d84d19a-fdd4-4f9b-a041-cfd3a8f2891c"
 	};
 	var imageObject = {};
 	imageObject.loadImages = function(){
@@ -431,6 +431,60 @@ angular.module('starter')
 	// localServiceObject.loadItems();
 	// while(!localServiceObject.doneItems){}
 	return localServiceObject;
+})
+.factory("ImageService", function($cordovaCamera, $q, $cordovaFile){
+	var selectedImageUrlForAnItem = "";
+	function optionsForType(type){
+		var source;
+		 //Picture Source Type:
+		 //	 	0:Photo Library, 1=Camera, 2=Saved Photo Album
+		 //Destination Type:
+		 //		0:DATA_URL, 1:FILE_URI, 2:NATIVE_URI
+		 //Encoding Type
+		 //		0: JPEG, 1:PNG
+		 // Media Type:
+		 //		0:Picture, 1:Video, 2:All media
+		 //Popover Arrow Direction:
+		 //		1:ARROW_UP, 2:ARROW_DOWN, 4:ARROW_LEFT, 8:ARROW_RIGHT, 15:ARROW_ANY
+		switch(type){
+			case 0:
+				source= 1; //$cordovaCamera.PictureSourceType.CAMERA;
+				break;
+			case 1: 
+				source= 0; //$cordovaCamera.PictureSourceType.PHOTOLIBRARY;
+				break;
+		}
+		return{
+			destinationType: 1, //$cordovaCamera.DestinationType.FILE_URI,
+			sourceType: source,
+			allowEdit: false,
+			encodingType: 0, //$cordovaCamera.encodingType.JPEG,
+			//popoverOptions:  new CameraPopoverOptions(300, 300, 100, 100, 15),//CameraPopoverOptions,
+			saveToPhotoAlbum: true
+		}
+	}
+	function makeId(){
+		var text='';
+		var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		for(var i=0;i<5; i++){
+			text += possible.charAt(Math.floor(Math.random() * possible.length));
+		}
+		return text;
+	}
+	function getImageUrl(){
+		return selectedImageUrlForAnItem;
+	}
+	function setSelectedImage(imageUrl){
+		alert(imageUrl);
+	}
+	function saveMedia(type){
+		var options = optionsForType(type);
+		$cordovaCamera.getPicture(options).then(setSelectedImage);
+	};
+	return {
+		handleMediaDialog: saveMedia,
+		selectedImageUrl: getImageUrl
+	};
 })
 .service("currentUser", function(){
 	var emailKey = '';

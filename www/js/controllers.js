@@ -27,12 +27,14 @@ angular.module('starter.controllers',[])
     };
 })
 .controller('settingsCtrl',function($scope, $ionicPopup, $ionicListDelegate, todayMenuSettings, 
-                                    categorySettings, spinningService, popupService, imageUrlService){
+                                    categorySettings, spinningService, popupService, imageUrlService,
+                                    $cordovaDevice, $cordovaFile, $ionicPlatform, $ionicActionSheet, ImageService){
     
     $scope.getImageUrl = function(imagename){
       return imageUrlService.getImageUrl(imagename);
     }
   /***** for settings -- START **************/
+  $scope.radioOptions = "Normal,Medium,Very Hot,Farhan,Muthuraja,Dhaval";
   $scope.settings = [{"Name":"Today's Menu", "Code":"TM" },
                      {"Name":"Items","Code":"I"},
                      {"Name":"Categories","Code":"C"},
@@ -83,7 +85,8 @@ angular.module('starter.controllers',[])
         "Name": "",
         "Price": 0,
         "Spicy": "Normal",
-        "ImageUrl": imageUrlService.NewItemImage,
+        //"ImageUrl": imageUrlService.NewItemImage,
+        "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/ammakitchen-db.appspot.com/o/appSettingsImages%2Fpicture.png?alt=media&token=5d84d19a-fdd4-4f9b-a041-cfd3a8f2891c",
         "Checked": false
       };
     }
@@ -99,7 +102,7 @@ angular.module('starter.controllers',[])
     $scope.EditItemData = oItem;
     var pTitle = ($scope.tempItem.Name=="")?"Add New Item":"Edit "+$scope.tempItem.Name+" Details";
     var bName = ($scope.tempItem.Name=="")?"Add":"Update";
-    var templateContent = "<table><tr><td colspan='2' style='text-align:center;'><img ng-src='{{tempItem.ImageUrl}}' ng-click='' style='width:60%;border:1px solid gray;'></td></tr><tr><td colspan='2'><label class='item-input-wrapper inputTypeBox'><input type='text' placeholder='Name' ng-model='tempItem.Name' ></label></td></tr><tr><td colspan='2'><label class='item-input-wrapper inputTypeBox'><textarea placeholder='Item Description' ng-model='tempItem.Name' ></textarea></label></td></tr><tr><td colspan='2'><label class='item-input-wrapper inputTypeBox'><input type='text' placeholder='Price' ng-model='tempItem.Price' style='align:right;'></label></td></tr><tr><td><ion-label>ChiefSpecial</ion-label></td><td><ion-list><ion-radio ng-model='tempItem.ChiefSpecial' ng-value='true'>Yes</ion-radio><ion-radio ng-model='tempItem.ChiefSpecial' ng-value='false'>No</ion-radio></ion-list></td></tr><tr><td><ion-label>Spicy</ion-label></td><td><ion-list><ion-radio ng-model='tempItem.Spicy' ng-value='Normal'>Normal</ion-radio><ion-radio ng-model='tempItem.Spicy' ng-value='Medium'>Medium</ion-radio><ion-radio ng-model='tempItem.Spicy' ng-value='Hot'>Hot</ion-radio></ion-list></td></tr></table>";
+    var templateContent = "<center><table style='width:80%;'><tr><td colspan='2' style='text-align:center;'><img ng-src='{{tempItem.ImageUrl}}' ng-click='pickImage()' style='width:60%;border:1px solid gray;'></td></tr><tr><td colspan='2'><label class='item-input-wrapper inputTypeBox'><input type='text' placeholder='Name' ng-model='tempItem.Name' ></label></td></tr><tr><td colspan='2'><label class='item-input-wrapper inputTypeBox'><textarea placeholder='Item Description' ng-model='tempItem.Desc' ></textarea></label></td></tr><tr><td colspan='2'><label class='item-input-wrapper inputTypeBox'><input type='text' placeholder='Price' ng-model='tempItem.Price' style='align:right;'></label></td></tr><tr><td nowrap><ion-label>Chief Special</ion-label></td><td> <label class='toggle'> <input type='checkbox' ng-model='tempItem.ChiefSpecial'><div class='track'><div class='handle'></div></div></label></td></tr><tr><td><ion-label>Spicy</ion-label></td><td><radio-button-group options='Normal,Medium,Hot' type='oval' selectedbutton='tempItem.Spicy'></radio-button-group></td></tr></table></center>";
     popupService.showPopup($scope, pTitle, templateContent, 
         "", 
         [{text:'Cancel'},
@@ -114,10 +117,31 @@ angular.module('starter.controllers',[])
             }
         }])
     .then(function(res){
-      alert("Add or Edit Item");
+      alert("Add or Edit Item\n" + $scope.tempItem.Spicy);
     });
     
   };
+  $scope.pickImage = function(){
+    $scope.hideSheet = $ionicActionSheet.show({
+      buttons: [ {text: 'Take photo'},
+                {text: 'Photo from gallery'}],
+      titleText: 'Select an item image',
+      cancelText: '<font color="red"> Cancel </font>',
+      buttonClicked: function(index){
+        $scope.addImage(index);
+      }
+    });
+  };
+  $scope.addImage = function(type){
+    $scope.hideSheet();
+    ImageService.handleMediaDialog(type)
+      .then(function(){
+        $scope.apply();
+        alert("Selected Image Url:" + ImageService.selectedImageUrl());
+      });
+
+  };
+
   /****** for Item Edit - END  *****************/
 
   /***** for Category Menu settings -- START **************/

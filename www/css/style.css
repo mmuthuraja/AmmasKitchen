@@ -253,6 +253,180 @@
   color:#013659;
 }
 
+/********** ACTION SHEET STYLES ***********/
+.platform-android .action-sheet-backdrop.active {
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.platform-android .action-sheet {
+    margin-left: 8px;
+    margin-right: 8px;
+    width: auto;
+    z-index: 11;
+    overflow: hidden;
+}
+
+.platform-android .action-sheet .action-sheet-title,
+.platform-android .action-sheet .button {
+    display: block;
+    padding: 1px;
+    width: 100%;
+    border-radius: 0;
+    border-color: #d1d3d6;
+    background-color: transparent;
+    color: #007aff;
+    font-size: 21px;
+    text-align: center;
+}
+
+.platform-android .action-sheet .action-sheet-title {
+
+    padding: 16px;
+
+    color: #8f8f8f;
+
+    text-align: center;
+
+    font-size: 13px;
+
+}
+
+.platform-android .action-sheet .button.active,
+
+.platform-android .action-sheet .button.activated {
+
+    background: #e8e8e8;
+
+}
+
+.platform-android .action-sheet-group {
+
+    margin-bottom: 8px;
+
+    border-radius: 4px;
+
+    background-color: #fff;
+
+    overflow: hidden;
+
+}
+
+.platform-android .action-sheet-group .button {
+
+    border-width: 1px
+0  0;
+
+}
+
+.platform-android .action-sheet .button {
+
+    display: block;
+
+    padding: 1px;
+
+    width: 100%;
+
+    border-radius: 0;
+
+    border-color: #d1d3d6;
+
+    background-color: transparent;
+
+    color: #007aff;
+
+    font-size: 21px;
+
+}
+
+.platform-android .action-sheet-cancel {
+
+    font-weight: 500;
+
+    display: block;
+
+}
+
+.platform-android .action-sheet-has-icons .button {}
+/********* ACTION SHEET STYLES END ********/
+
+/***** RADIO BUTTON STYLE *****/
+.radioButtonGroupSquareActive{
+  background: #4CD964;
+  color:white;
+  padding:5px 5px 5px 5px;
+  border:1px solid darkgray;
+}
+.radioButtonGroupSquare{
+  background:lightgray;
+  color:black;
+  border:1px solid darkgray;
+  padding:5px 5px 5px 5px;
+}
+.radioButtonGroupActive{
+  background: #4CD964;
+  color:white;
+  padding:5px 5px 5px 5px;
+  border-top:1px solid darkgray;
+  border-bottom:1px solid darkgray;
+  border-right:1px solid darkgray;
+  /*-webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;*/
+}
+.radioButtonGroup{
+  background:lightgray;
+  color:black;
+  border-top:1px solid darkgray;
+  border-bottom:1px solid darkgray;
+  border-right:1px solid darkgray;
+  padding:5px 5px 5px 5px;
+}
+
+.radioButtonGroupLeftEndActive{
+  background: #4CD964;
+  color:white;
+  padding:5px 5px 5px 5px;
+  border-top:1px solid darkgray;
+  border-left:1px solid darkgray;
+  border-bottom:1px solid darkgray;
+  border-right:1px solid darkgray;
+  border-top-left-radius:15px;
+  border-bottom-left-radius:15px;
+}
+.radioButtonGroupLeftEnd{
+  background:lightgray;
+  color:black;
+  padding:5px 5px 5px 5px;
+  border-top:1px solid darkgray;
+  border-left:1px solid darkgray;
+  border-bottom:1px solid darkgray;
+  border-right:1px solid darkgray;
+  border-top-left-radius:15px;
+  border-bottom-left-radius:15px;
+}
+.radioButtonGroupRightEndActive{
+  background: #4CD964;
+  color:white;
+  padding:5px 5px 5px 5px;
+  border:1px solid darkgray;
+  border-top:1px solid darkgray;
+  border-right:1px solid darkgray;
+  border-bottom:1px solid darkgray;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
+}
+.radioButtonGroupRightEnd{
+  background:lightgray;
+  color:black;
+  padding:5px 5px 5px 5px;
+  border-top:1px solid darkgray;
+  border-right:1px solid darkgray;
+  border-bottom:1px solid darkgray;
+  border-top-right-radius:15px;
+  border-bottom-right-radius:15px;
+}
+/****************** END *************/
 .inputTypeBox{
   border: 1px solid gray;
   background: #e8f8f9;

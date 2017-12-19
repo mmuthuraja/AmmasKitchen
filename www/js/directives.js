@@ -1,83 +1,73 @@
-// angular.module('starter')  
-//   .directive('spinner', function () {
-//     return {
-//       restrict: 'EA',
-//       replace: true,
-//       transclude: true,
-//       scope: {
-//         name: '@?',
-//         group: '@?',
-//         show: '=?',
-//         imgSrc: '@?',
-//         register: '@?',
-//         onLoaded: '&?',
-//         onShow: '&?',
-//         onHide: '&?'
-//       },
-//       template: [
-//         '<span ng-show="show">',
-//         '  <img ng-show="imgSrc" ng-src="{{imgSrc}}" />',
-//         '  <span ng-transclude></span>',
-//         '</span>'
-//       ].join(''),
-//       controller: function ($scope, ) {
+angular.module('starter')  
+.directive('radioButtonGroup', function(){
 
-//         // // register should be true by default if not specified.
-//         // if (!$scope.hasOwnProperty('register')) {
-//         //   $scope.register = true;
-//         // } else {
-//         //   $scope.register = !!$scope.register;
-//         // }
+	var dController = ['$scope', function($scope){
+		$scope.buttons = $scope.options.split(',');
+		$scope.leftEndButton = -1;
+		$scope.rightEndButton = 1;
+		$scope.middleButton = 0;
+		$scope.activeButtonIndex = -1;
+		$scope.setButtonIndex = function(buttonCaption){
+			var bIndex = -1;
+			for(var index in $scope.buttons)
+				if($scope.buttons[index]==buttonCaption)
+					{bIndex = index;break;}
+			$scope.activeButtonIndex = bIndex;
+			$scope.selectedbutton = buttonCaption;
+			return bIndex;
+		}
+		$scope.getButtonIndex = function(buttonCaption){
+			var bIndex = -1;
+			for(var index in $scope.buttons)
+				if($scope.buttons[index]==buttonCaption)
+					{bIndex = index;break;}
+			return bIndex;
+		}
+		$scope.buttonPosition = function(buttonCaption){
+			var position = $scope.middleButton;
+			var buttonsCount = $scope.buttons.length;
+			if($scope.buttons!=null){
+				if(buttonsCount>0){
+					if($scope.buttons[0]==buttonCaption)
+						position = $scope.leftEndButton;
+				}
+				if(buttonsCount>1){
+					if($scope.buttons[buttonsCount-1]==buttonCaption)
+						position = $scope.rightEndButton;
+				}
+			}
+			return position;
+		};
+		$scope.getButtonCSSClass = function(buttonCaption){
+			var isActive = ($scope.getButtonIndex(buttonCaption) == $scope.activeButtonIndex);
+			switch($scope.buttonPosition(buttonCaption)){
+				case $scope.leftEndButton:
+					return ($scope.type.toUpperCase()=="OVAL") ? "radioButtonGroupLeftEnd" + (isActive?"Active":"") : "radioButtonGroupSquare"+ (isActive?"Active":"");
+				case $scope.rightEndButton:
+					return ($scope.type.toUpperCase()=="OVAL") ? "radioButtonGroupRightEnd" + (isActive?"Active":"") : "radioButtonGroupSquare"+ (isActive?"Active":"");
+				case $scope.middleButton:
+					return ($scope.type.toUpperCase()=="OVAL") ? "radioButtonGroup" + (isActive?"Active":"") : "radioButtonGroupSquare"+ (isActive?"Active":"");
+			}
+		};
+		$scope.setButtonIndex($scope.selectedbutton);
+	}];
 
-//         // // Declare a mini-API to hand off to our service so the 
-//         // // service doesn't have a direct reference to this
-//         // // directive's scope.
-//         // var api = {
-//         //   name: $scope.name,
-//         //   group: $scope.group,
-//         //   show: function () {
-//         //     $scope.show = true;
-//         //   },
-//         //   hide: function () {
-//         //     $scope.show = false;
-//         //   },
-//         //   toggle: function () {
-//         //     $scope.show = !$scope.show;
-//         //   }
-//         // };
+	function generateTemplate(){
+		var templateContent = "<h1>{{options}}</h1>";
+		//templateContent += "<p ng-repeat='opt in options'>{{opt}}</p>"
+		return templateContent;
+	};
 
-//         // // Register this spinner with the spinner service.
-//         // if ($scope.register === true) {
-//         //   spinnerService._register(api);
-//         // }
-
-//         // // If an onShow or onHide expression was provided,
-//         // // register a watcher that will fire the relevant
-//         // // expression when show's value changes.
-//         // if ($scope.onShow || $scope.onHide) {
-//         //   $scope.$watch('show', function (show) {
-//         //     if (show && $scope.onShow) {
-//         //       $scope.onShow({
-//         //         spinnerService: spinnerService,
-//         //         spinnerApi: api
-//         //       });
-//         //     } else if (!show && $scope.onHide) {
-//         //       $scope.onHide({
-//         //         spinnerService: spinnerService,
-//         //         spinnerApi: api
-//         //       });
-//         //     }
-//         //   });
-//         // }
-
-//         // // This spinner is good to go.
-//         // // Fire the onLoaded expression if provided.
-//         // if ($scope.onLoaded) {
-//         //   $scope.onLoaded({
-//         //     spinnerService: spinnerService,
-//         //     spinnerApi: api
-//         //   });
-//         // }
-//       }
-//     };
-//   });
+	return {
+		restrict: 'E',
+		scope: {
+			options: '@' ,
+			type : '@',
+			selectedbutton: '='
+		},
+		controller: dController,
+		//template: generateTemplate()
+		templateUrl: "templates/radiobutton.html"
+	};
+});
+  
